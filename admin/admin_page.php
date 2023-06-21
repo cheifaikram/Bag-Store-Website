@@ -13,6 +13,6 @@ session_start();
 </head>
 <body>
     <?php include 'admin_header.php'; ?>
-     <!-- <script src="../js/admin_script.js"></script>  -->
+     <script src="../js/admin_script.js"></script> 
 </body>
 </html>
