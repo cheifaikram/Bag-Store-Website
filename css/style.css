@@ -62,6 +62,7 @@ html{
 }
 
 body{
+    overflow: hidden;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     background: linear-gradient(170deg, #8a9981 20%,
@@ -76,11 +77,12 @@ h1, h2, h3{
 
 .form-box{
     width: 380px;
-    height: 480px;
+    height: 500px;
     position: relative;
     margin: 6% auto;
+    margin-top: 3%;
     border: 8px solid #243e20;
-    padding: 5%;
+    padding: 4%;
     overflow: hidden;
     box-shadow: -5px -5px 15px rgba(255, 255, 255, .1), 5px 5px 5px rgba(0,0,0,.35),
     inset -5px -5px 15px rgba(255, 255, 255, .1),
@@ -90,7 +92,7 @@ h1, h2, h3{
 
 .button-box{
     width: 220px;
-    margin: 0 10px;
+    margin: 0 15px;
     position: relative;
     box-shadow: 0 0 12px 8px #221f17;
     border-radius: 30px;
@@ -126,7 +128,7 @@ h1, h2, h3{
 }
 
 .input-group{
-    top: 110px;
+    top: 90px;
     position: absolute;
     width: 280px;
     transition: .5s;
@@ -173,6 +175,7 @@ top: -5px;
     top: 10px;
 }
 
+
 .select-menu{
     width: 100px;
     margin: 15px 0;
@@ -204,33 +207,34 @@ top: -5px;
 
 .select-menu .options{
     position: relative;
-    /* padding: 20px;
-    margin-top: 10px; */
     border-radius: 8px;
-    background: #fff;
     box-shadow: 0 0 3px rgba(0,0,0,0.1);
     display: none;
 }
 
 .select-menu.active .options{
-    display: block;
+    display:block;
 }
 
 .options .option{
     display: flex;
-    height: 55px;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
     cursor: pointer;
-    padding: 0 16px;
+    text-align: center;
     border-radius: 8px;
     align-items: center;
-    background: #fff;
+    background: #606C5D;
+    color: var(--text-color-light);
+    font-size: 10px;
+    margin: 5px 0;
 }
 
 .btn_sec{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .btn{
@@ -242,7 +246,7 @@ top: -5px;
     font-size: 14px;
     box-shadow: 0, 16px, 32px hsla(252, 54%, 35%, 0.25);
     cursor: pointer;
-    margin-top: 10px;
+    
 }
 
 .btn:hover{
@@ -250,3 +254,12 @@ top: -5px;
     color: #606C5D ;
 }
 
+.btn-log{
+    margin-top: 15%;
+    margin-right: 8%;
+}
+
+.option-input {
+    display: none;
+  }
+  
