@@ -11,6 +11,7 @@
 </head>
 <body>
 
+
     <div class="form-box">
         <div class="button-box">
             <div id="btn"></div>
@@ -43,20 +44,38 @@
                 <label for="">Confirm Password</label>
             </div>
 
-            <select name="user_type" class="box">
+            <!-- <select name="user_type" class="box">
                 <option value="user">user</option>
                 <option value="admin">admin</option>
-            </select>
+            </select> -->
 
-           <input type="submit" name="submit" value="register now" class="btn">
-           <p>already have an account? <a href="login.php">login now</a></p>
+            <div class="select-menu box">
+                <div class="select-btn">
+                    <span>Select Type</span>
+                    <i class="bx bx-chevron-down"></i>
+                </div>
+        
+                <ul class="options">
+                    <li class="option">
+                        <span class="option-text">User</span>
+                    </li>
+
+                    <li class="option">
+                        <span class="option-text">Admin</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="btn_sec">
+                <input type="submit" name="submit" value="Register Now" class="btn">
+            </div>
+           
         </form>
 
         <form action="login.php" method="post" id="login" class="input-group">
             <input type="email" name="email" placeholder="enter your email" required class="box">
             <input type="password" name="password" placeholder="enter your password" required class="box">
             <input type="submit" name="submit" value="login now" class="btn">
-            <p>don't have an account? <a href="register.php">register now</a></p>
         </form>        
       
     </div>

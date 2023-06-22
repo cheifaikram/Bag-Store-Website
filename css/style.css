@@ -11,7 +11,7 @@
 
     --title-color: hsl(133, 47%, 15%);
     --text-color: hsl(0, 0%, 0%);
-    --text-color-light: hsl(225, 4%, 18%);
+    --text-color-light: hsl(0, 0%, 100%);
     --border-color: hsl(228, 99%, 98%);
     --body-color: #ffffff;
     --container-color: #fff;
@@ -64,7 +64,8 @@ html{
 body{
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
-    background-color: var(--body-color);
+    background: linear-gradient(170deg, #8a9981 20%,
+        #C1D0B5 40% ,#D6E8DB 60%, #FFF8DE 90% );
     color: var(--text-color);
 }
 
@@ -78,16 +79,20 @@ h1, h2, h3{
     height: 480px;
     position: relative;
     margin: 6% auto;
-    border: 1px solid rgb(0, 0, 0);
+    border: 8px solid #243e20;
     padding: 5%;
     overflow: hidden;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, .1), 5px 5px 5px rgba(0,0,0,.35),
+    inset -5px -5px 15px rgba(255, 255, 255, .1),
+    inset 5px 5px 5px rgba(0,0,0,.35);
+    border-radius: 20px;
 }
 
 .button-box{
     width: 220px;
-    margin: 35px auto;
+    margin: 0 10px;
     position: relative;
-    box-shadow: 0 0 10px 9px #A0C49D;
+    box-shadow: 0 0 12px 8px #221f17;
     border-radius: 30px;
 }
 
@@ -97,6 +102,7 @@ h1, h2, h3{
     border: 0;
     outline: none;
     position: relative;
+    
 }
 
 #btn{
@@ -105,9 +111,10 @@ h1, h2, h3{
     position: absolute;
     width: 110px;
     height: 100%;
-    background-image:linear-gradient(to right, #675D50,#91887d) ;
+    background-image:linear-gradient(to right, #394337 ,#5d665a,#7c8e77) ;
     border-radius: 30px;
     transition: .5s;
+    
 }
 
 #login{
@@ -119,7 +126,7 @@ h1, h2, h3{
 }
 
 .input-group{
-    top:150px;
+    top: 110px;
     position: absolute;
     width: 280px;
     transition: .5s;
@@ -165,3 +172,81 @@ top: -5px;
     font-size: 1.2em;
     top: 10px;
 }
+
+.select-menu{
+    width: 100px;
+    margin: 15px 0;
+}
+
+.select-menu .select-btn{
+    display: flex;
+    height: 1px;
+    background: #606C5D ;
+    padding: 15px 5px;
+    font-size: 11px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    color: var(--text-color-light);
+}
+
+.select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.select-menu.active .select-btn i{
+    transform: rotate(-180deg);
+}
+
+.select-menu .options{
+    position: relative;
+    /* padding: 20px;
+    margin-top: 10px; */
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.select-menu.active .options{
+    display: block;
+}
+
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+
+.btn_sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn{
+    display: inline-block;
+    background: #606C5D ;
+    color: white;
+    padding: 12px 25px;
+    border-radius: .5rem;
+    font-size: 14px;
+    box-shadow: 0, 16px, 32px hsla(252, 54%, 35%, 0.25);
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #606C5D ;
+}
+
