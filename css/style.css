@@ -59,7 +59,7 @@
 
 html{
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body{
@@ -78,10 +78,14 @@ h1, h2, h3{
     font-weight: var(--font-semi-bold);
 }
 
+.container {
+    height: 100%;
+}  
+
 .form-box{
     width: 380px;
-    height: 500px;
-    position: relative;
+    height: 100%;
+    position:relative;
     margin: 6% auto;
     margin-top: 3%;
     border: 8px solid #243e20;
@@ -264,5 +268,13 @@ top: -5px;
 
 .option-input {
     display: none;
-  }
-  
+}
+
+ /* For small devices */
+ @media screen and (max-width: 750px) {
+    .form-box{
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+}
