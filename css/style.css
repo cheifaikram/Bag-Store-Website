@@ -59,15 +59,18 @@
 
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body{
-    overflow: hidden;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
-    background: linear-gradient(170deg, #8a9981 20%,
+    background-image: linear-gradient(170deg, #8a9981 20%,
         #C1D0B5 40% ,#D6E8DB 60%, #FFF8DE 90% );
     color: var(--text-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
 }
 
 h1, h2, h3{
