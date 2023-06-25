@@ -1,35 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>signin-signup</title>
+</head>
+<body>
+    <div class="container">
+        <div class="signin-signup">
+            <form action="login.php" method="post" id="log" class="sign-in-form">
+                <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="email" placeholder="Username">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <input type="submit" name="submit" value="Login" class="btn">
+               
+                <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
+            </form>
+            <form action="registre.php" method="post" class="sign-up-form">
+                <h2 class="title">Sign up</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" placeholder="Username">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" name="email" placeholder="Email">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="cpassword" placeholder="Confirm Password">
+                </div>
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="images/bag-logo.png" type="image/x-icon">
+                <div class="cont">
+                    <input type="hidden" name="user_type" id="user_type_input">
+                    <div class="select-menu">
+                        <div class="select-btn" onclick="toggleOptions()">
+                            <span class="sBtn-text" id="selected_text">Select Type</span>
+                            <i class="bx bx-chevron-down"></i>
+                        </div>
 
-        <!--=============== BOXICONS ===============-->
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        
-        <!--=============== SWIPER CSS ===============-->
-        <link rel="stylesheet" href="css/swiper-bundle.min.css">
-
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="css/style.css">
-
-        <title>Real state website</title>
-    </head>
-    <body>
-        <button id="myButton">Click me</button>
-
-  <script>
-    // Find the button element by its ID
-    const button = document.getElementById('myButton');
-
-    // Add a click event listener to the button
-    button.addEventListener('click', function() {
-      // Redirect the user to another page
-      window.location.href = "reg-log.html"; // Replace with your desired URL
-    });
-  </script>
-    </body>
+                        <ul class="options" id="options_list">
+                            <li class="option" onclick="selectOption('user')">User</li>
+                            <li class="option" onclick="selectOption('admin')">Admin</li>
+                        </ul>
+                    </div>
+                    <div class="cont_btn">
+                        <input type="submit" name="submit" value="Sign up" class="btn">
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Member of Brand?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt minima iure?</p>
+                    <button class="btn" id="sign-in-btn">Sign in</button>
+                </div>
+                <img src="images/signin.svg" alt="" class="image">
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>New to Brand?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt minima iure?</p>
+                    <button class="btn" id="sign-up-btn">Sign up</button>
+                </div>
+                <img src="images/signup.svg" alt="" class="image">
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
 </html>
+
+
+
+
+

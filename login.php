@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
 
    }else{  
     echo '<script>alert("incorrect email or password!. Please try again.");';
-    echo 'window.location.href = "reg-log.html#log"';
+    echo 'window.location.href = "index.html"';
     echo '</script>';
     exit; 
    }

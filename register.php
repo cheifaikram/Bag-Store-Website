@@ -24,17 +24,17 @@ if(isset($_POST['submit'])){
    }     
 
    echo '<script>';
-    echo 'var message = "' . $message . '";';
-    echo 'var alertType = "' . $alertType . '";';
-    echo 'alert(message);';
-    echo 'console.log(alertType);';
-    if ($alertType === 'success') {
-      echo 'window.location.href = "reg-log.html#log";';
+   echo 'var message = "' . $message . '";';
+   echo 'var alertType = "' . $alertType . '";';
+   echo 'alert(message);';
+   echo 'console.log(alertType);';
+   if ($alertType === 'success') {
+      echo 'window.location.href = "index.html#log"';
   } else {
-   echo 'setTimeout(function() { window.location.href = "reg-log.html"; }, 100);';
+   echo 'setTimeout(function() { window.location.href = "index.html"; }, 100);';
   }
    echo '</script>';
-   exit; 
+   exit;
 
    
 }
