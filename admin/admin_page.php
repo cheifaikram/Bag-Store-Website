@@ -8,7 +8,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Page</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/admin_style.css">
 </head>
 <body>
@@ -70,10 +71,77 @@ session_start();
                 </li>
             </ul>
         </div>
+
+
+        <div class="main--container">
+            <div class="section--title">
+                <h3 class="title">Welcome back, kim</h3>
+            </div>
+            <div class="cards">
+                <div class="card card-1">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class='bx bxs-hourglass-bottom'></i></span>
+                        <span>Total Pendings</span>
+                        <?php 
+                        $total_pendings = 0;
+                        $select_pending = mysqli_query($conn, "SELECT total_price FROM `orders` WHERE payement_status = 'pending'") or die('query failed');
+                        if(mysqli_num_rows($select_pending) > 0){
+                            while($fetch_pendings = mysqli_fetch_assoc($select_pending)){
+                               $total_price = $fetch_pendings['total_price'];
+                               $total_pendings += $total_price;
+                            };
+                        };?>
+                        <h3>$<?php echo $total_pendings; ?>/-</h3>
+                    </div>
+                </div>
+                <div class="card card-2">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class='bx bx-check-square'></i></span>
+                        <span>Completed Payments</span>
+                    </div>
+                </div>
+                <div class="card card-3">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class='bx bx-cart'></i></span>
+                        <span>Orders Placed</span>
+                    </div>
+                </div>
+                <div class="card card-4">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class='bx bx-cart-add'></i></span>
+                        <span>Products Added</span>
+                    </div>
+                </div>
+                <div class="card card-4">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class='bx bx-user'></i></span>
+                        <span>Normal Users</span>
+                    </div>
+                </div>
+                <div class="card card-3">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class='bx bxs-user-check'></i></span>
+                        <span>Admins</span>
+                    </div>
+                </div>
+                <div class="card card-2">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class='bx bxs-user-account'></i></span>
+                        <span>Total Accounts</span>
+                    </div>
+                </div>
+                <div class="card card-1">
+                    <div class="card--title">
+                        <span class="card--icon icon"><i class='bx bx-chat'></i></span>
+                        <span>New Messages</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
-<section class="dashboard">
-    <h1 class="title">dashboard</h1>
+
     <div class="box-container">
       <div class="box">
          <?php
@@ -161,7 +229,7 @@ session_start();
 
     </div>
 
-</section>
+
 
 <!-- admin dashboard section ends -->
 
