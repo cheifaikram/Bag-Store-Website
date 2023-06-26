@@ -43,9 +43,6 @@ session_start();
     </section>
     
 
-
-
-
 <!-- admin dashboard section starts  -->
 
 <section class="main">

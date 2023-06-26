@@ -1,11 +1,3 @@
-// let accountBox = document.querySelector('.header .account-box');
-
-// document.querySelector('#user-btn').onclick = () =>{
-//    // accountBox.classList.toggle('active');
-//    accountBox.style.display = "block";
-
-// }
-
 
 let userBtn = document.querySelector('#user-btn');
 let accountBox = document.querySelector('.account-box');
