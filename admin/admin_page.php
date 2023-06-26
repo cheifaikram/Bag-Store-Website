@@ -11,13 +11,46 @@ session_start();
     <title>Admin Page</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/admin_style.css">
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+
 </head>
 <body>
-    <?php include 'admin_header.php'; ?>
+<section class="head">
+        <div class="logo">
+            <i class="ri-menu-line menu"></i>
+            <h2><span>KIM</span> Store.</h2>
+        </div>
+        <div class="header--items">
+            
+            <div class="dark--theme--btn">
+                <i class="ri-moon-line moon"></i>
+                <i class="ri-sun-line sun"></i>
+            </div>
+            
+            <div class="icons">
+                <img id="user-btn" src="../images/profile.jpeg" alt="">
+            </div>
+            <div class="account-box">
+                <p>username : <span><?php echo $_SESSION['admin_name']; ?></span></p>
+                <p>email : <span><?php echo $_SESSION['admin_email']; ?></span></p>
+                <a href="../logout.php" class="delete-btn">logout</a>  
+              </div>
+        </div>
+    </section>
+    
+
+
+
+
 <!-- admin dashboard section starts  -->
 
 <section class="main">
-    <div class="main--container">
+<?php include 'admin_header.php'; ?>
+<div class="main--container">
             <div class="section--title">
                 <h3 class="title">Welcome back, kim</h3>
             </div>
@@ -148,7 +181,7 @@ session_start();
 
             </div>
         </div>
-    </section>
+</section>
 
 
 

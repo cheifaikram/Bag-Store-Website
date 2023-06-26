@@ -59,6 +59,7 @@
       opacity: .2s;
    }
 }
+/* 
 .header{
     position: sticky;
     top:0; left:0; right:0;
@@ -104,11 +105,27 @@
 
 .header .flex .icons div:hover{
    color:purple;
+} */
+
+.icons {
+   margin-left: 1.5rem;
+   font-size: 1.5rem;
+   cursor: pointer;
+   color:black;
+
+   position: relative;
+   width: 40px;
+   height: 40px;
+   overflow: hidden;
+   border-radius: 50%;
 }
 
-.header .flex .account-box{
+
+
+
+.account-box{
    position: absolute;
-   top:120%; right:2rem;
+   top:120%; left:2rem;
    width: 15rem;
    box-shadow: black;
    border-radius: .5rem;
@@ -119,38 +136,39 @@
    background-color: white;
    display: none; 
    animation:fadeIn .2s linear;
+   z-index: 2;
 }
 
 
-.header .flex .account-box.active{
-   display: inline-block;
+.account-box.active{
+   display: block;
 }
 
-.header .flex .account-box p{
+.account-box p{
    font-size: 1rem;
    color:black;
    margin-bottom: .35rem;
 }
 
-.header .flex .account-box p span{
+ .account-box p span{
    color:purple;
 }
 
-.header .flex .account-box .delete-btn{
+.account-box .delete-btn{
    margin-top: 0;
 }
 
-.header .flex .account-box div{
+.account-box div{
    margin-top: 1.5rem;
    font-size: 2rem;
    color:white;
 }
 
-.header .flex .account-box div a{
+.account-box div a{
    color:orange;
 }
 
-.header .flex .account-box div a:hover{
+.account-box div a:hover{
    text-decoration: underline;
 }
 
@@ -236,7 +254,6 @@ a.active{
    overflow-y: scroll;
    overflow-x: hidden;
    background-color: var(--bg-color-second);
-   z-index: 2;
 }
 
 .section--title{
@@ -368,4 +385,95 @@ select{
       font-size: 3rem;
    }
 
+}
+
+
+
+
+
+.head{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 70px;
+   padding: 0 20px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+   z-index: 999;
+   background: var(--bg-color-first);
+   color: var(--text-color-first);
+}
+
+.logo{
+   display: flex;
+   align-items: center;
+}
+
+.logo i{
+   font-size: 1.5rem;
+   margin-right: 15px;
+}
+
+.logo h2{
+   font-family: 'Oswald', sans-serif;
+}
+
+.logo span{
+   color: var(--text-color-third);
+   font-family: 'Oswald', sans-serif;
+}
+
+.header--items{
+   display: flex;
+   align-items: center;
+}
+
+.header--items i{
+   font-size: 1.3rem;
+   margin-right: 25px;
+   cursor: pointer;
+   color: var(--text-color-first);
+}
+
+.header--items i:hover{
+   color: var(--text-color-third);
+}
+
+.dark--theme--btn{
+   display: flex;
+   align-items: center;
+}
+
+i.moon{
+   display: block;
+   color: var(--text-color-third);
+}
+
+.body.dark--mode .moon{
+   display: none;
+}
+
+i.sun{
+   color: #ecd765;
+   display: none;
+}
+
+.body.dark--mode .sun{
+   display: block;
+}
+
+/* .profile{
+   position: relative;
+   width: 40px;
+   height: 40px;
+   overflow: hidden;
+   border-radius: 50%;
+} */
+
+img{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   object-fit: cover;
 }

@@ -1,23 +1,28 @@
+// let accountBox = document.querySelector('.header .account-box');
 
-let navbar = document.querySelector('.header .navbar');
-let accountBox = document.querySelector('.header .account-box');
+// document.querySelector('#user-btn').onclick = () =>{
+//    // accountBox.classList.toggle('active');
+//    accountBox.style.display = "block";
 
-document.querySelector('#menu-btn').onclick = () =>{
-   navbar.classList.toggle('active');
-   accountBox.classList.remove('active');
-}
+// }
 
-document.querySelector('#user-btn').onclick = () =>{
-   accountBox.classList.toggle('active');
-   navbar.classList.remove('active');
-}
 
-window.onscroll = () =>{
-   navbar.classList.remove('active');
-   accountBox.classList.remove('active');
-}
+let userBtn = document.querySelector('#user-btn');
+let accountBox = document.querySelector('.account-box');
+let mainContainer = document.querySelector('.main--container');
 
-document.querySelector('#close-update').onclick = () =>{
-   document.querySelector('.edit-product-form').style.display = 'none';
-   window.location.href = 'admin_products.php';
-}
+userBtn.onclick = () => {
+  accountBox.style.display = "block";
+  mainContainer.style.zIndex = -1; // Set a lower z-index value for main--container
+};
+
+// Close the account box when clicking outside of it
+document.onclick = (e) => {
+  if (!accountBox.contains(e.target) && !userBtn.contains(e.target)) {
+    accountBox.style.display = "none";
+    mainContainer.style.zIndex = 1; // Restore the original z-index value for main--container
+  }
+};
+
+
+
