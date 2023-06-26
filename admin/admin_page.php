@@ -17,7 +17,7 @@ session_start();
 <!-- admin dashboard section starts  -->
 
 <section class="main">
-        <div class="sidebar">
+        <!-- <div class="sidebar">
             <ul class="sidebar--items">
                 <li>
                     <a href="#" class="active">
@@ -70,7 +70,7 @@ session_start();
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
 
 
         <div class="main--container">
