@@ -7,16 +7,16 @@
 :root{
    --bg-color-first:#fff;
    --bg-color-second:#e9edf1;
-   --bg-color-third:#3bc59a;
+   --bg-color-third:#006FFF;
 
    --text-color-first:#000;
    --text-color-second:#3d3c3c;
-   --text-color-third:#3bc59a;
+   --text-color-third:#006FFF;
 
    --hover-text-color:#fff;
 
    --bg-card-1:#ecd765;
-   --bg-card-2:#7f91f9;
+   --bg-card-2:#3bc59a;
    --bg-card-3:#eec79c;
    --bg-card-4:#cb84f9;
 
@@ -30,23 +30,40 @@
    
 
    --text-color-first:#fff;
-   --text-color-second:#9b9a9a;
+   --text-color-second:#c9c7c7;
    
 
    --hover-text-color:#000;
 
-   --bg-card-1:linear-gradient(to bottom right, #242424, #3d381a);
-   --bg-card-2:linear-gradient(to bottom right, #242424, #2d3353);
-   --bg-card-3:linear-gradient(to bottom right, #242424, #4d3720);
-   --bg-card-4:linear-gradient(to bottom right, #242424, #4c325e);
+   --bg-card-1:linear-gradient(to bottom right, #2b2b2b, #69602e);
+   --bg-card-2:linear-gradient(to bottom right, #2b2b2b, #2c715b);
+   --bg-card-3:linear-gradient(to bottom right, #2b2b2b, #654828);
+   --bg-card-4:linear-gradient(to bottom right, #2b2b2b, #755090);
 
-   --more-and-less:#3bc59a;
+   --more-and-less:#237158;
 }
 
-
-.delete-btn{
-   background-color: red;
+.dbtn_container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
+
+.dbtn_container .delete-btn{
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 30px;
+  background-color: #006FFF;
+  border: none;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.dbtn_container a.delete-btn {
+   text-decoration: none !important;
+ }
 
 .white-btn:hover{
    background-color: white;
@@ -202,7 +219,7 @@ img{
    text-decoration: underline;
 }
 
-#menu-btn{
+.menu{
    display: none;
 }
 
@@ -371,6 +388,10 @@ select{
 
 /* media queries  */
 @media screen and (max-width:1025px){
+   .menu{
+      display: block;
+   }
+
    .cards{
        overflow-x: scroll;
        
@@ -394,6 +415,10 @@ select{
 }
 
 @media screen and (max-width:775px){
+   .menu{
+      display: block;
+   }
+
    .sidebar{
       z-index: 10;
       width: 300px;
@@ -411,9 +436,16 @@ select{
    .main--container{
       width:100%;
    }
+
+   .sidebar.activemenu{
+      transform: translateX(0);
+  }
 }
 
 @media screen and (max-width:640px){
+   .menu{
+      display: block;
+   }
 
    .sidebar{
       padding: 10px;
@@ -431,5 +463,9 @@ select{
 
    .header--items i{
        margin-right: 10px;
+   }
+
+   .logo h2{
+      font-size: 16px;
    }
 }
