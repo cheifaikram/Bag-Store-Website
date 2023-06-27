@@ -34,8 +34,8 @@ session_start();
                 <img id="user-btn" src="../images/profile.jpeg" alt="">
             </div>
             <div class="account-box">
-                <p>username : <span><?php echo $_SESSION['admin_name']; ?></span></p>
-                <p>email : <span><?php echo $_SESSION['admin_email']; ?></span></p>
+                <p>Username : <span><?php echo $_SESSION['admin_name']; ?></span></p>
+                <p>Email : <span><?php echo $_SESSION['admin_email']; ?></span></p>
                 <div class="dbtn_container">
                    <a href="../logout.php" class="delete-btn">Logout</a>
                 </div>
