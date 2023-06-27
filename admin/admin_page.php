@@ -18,14 +18,13 @@ session_start();
 
 
 </head>
-<body>
+<body class="body">
 <section class="head">
         <div class="logo">
             <i class="ri-menu-line menu"></i>
             <h2><span>KIM</span> Store.</h2>
         </div>
         <div class="header--items">
-            
             <div class="dark--theme--btn">
                 <i class="ri-moon-line moon"></i>
                 <i class="ri-sun-line sun"></i>
