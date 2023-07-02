@@ -197,11 +197,18 @@ if (isset($_POST['update_product'])) {
                         $product_price = $fetch_products['price'];
                         $product_id = $fetch_products['id']; ?>
                         <div class="box">
-                           <img src="<?php echo $image_path; ?>" alt="">
-                           <div class="name"><?php echo $product_name; ?></div>
-                           <div class="price">$<?php echo $product_price; ?>/-</div>
-                           <a href="admin_products.php?update=<?php echo $product_id; ?>" class="option-btn">update</a>
-                           <a href="#" class="delete-btn" data-product-id="<?php echo $product_id; ?>">delete</a>
+                           <div class="image-container">
+                              <img src="<?php echo $image_path; ?>" alt="">
+                           </div>
+                           <div class="details">
+                              <div class="name"><?php echo $product_name; ?></div>
+                              <div class="price">$<?php echo $product_price; ?>/-</div>
+                              <div class="buttons">
+                                 <a href="admin_products.php?update=<?php echo $product_id; ?>" class="option-btn">update</a>
+                                 <a href="#" class="delete-btn" data-product-id="<?php echo $product_id; ?>">delete</a>
+                              </div>
+                           </div>
+                           
                         </div>
 
                         <script>
@@ -259,7 +266,7 @@ if (isset($_POST['update_product'])) {
          </div>
       </div>
    </section>
-   
+
    <script src="../js/admin_script.js"></script> 
 </body>
 </html>
