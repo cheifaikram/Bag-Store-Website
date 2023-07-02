@@ -166,6 +166,7 @@ if (isset($_POST['update_product'])) {
 <section class="main">
 
 <?php include 'admin_header.php'; ?>
+
 <div class="main--container">
 <section class="add-products">
    <h1 class="title">Shop Products</h1>
@@ -188,6 +189,65 @@ if (isset($_POST['update_product'])) {
       </div>
    </form>
 </section>
+
+<section class="show-products">
+   <div class="box-container">
+   <?php
+   $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+
+ if(mysqli_num_rows($select_products) > 0){
+    while($fetch_products = mysqli_fetch_assoc($select_products)){
+        $image_path = "uploaded_img/" . $fetch_products['image'];
+        $product_name = $fetch_products['name'];
+        $product_price = $fetch_products['price'];
+        $product_id = $fetch_products['id'];
+ ?>
+        <div class="box">
+    <img src="<?php echo $image_path; ?>" alt="">
+    <div class="name"><?php echo $product_name; ?></div>
+    <div class="price">$<?php echo $product_price; ?>/-</div>
+    <a href="admin_products.php?update=<?php echo $product_id; ?>" class="option-btn">update</a>
+    <a href="#" class="delete-btn" data-product-id="<?php echo $product_id; ?>">delete</a>
+</div>
+
+<script>
+    // Delete button click event
+    document.querySelectorAll('.delete-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var productId = this.getAttribute('data-product-id');
+            confirmDelete(productId);
+        });
+    });
+
+    // Confirm delete function using SweetAlert2
+    function confirmDelete(productId) {
+        Swal.fire({
+            title: 'Delete Product',
+            text: 'Are you sure you want to delete this product?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'Cancel',
+        }).then(function(result) {
+            if (result.isConfirmed) {
+                // Redirect to delete page or perform deletion logic here
+                window.location.href = 'admin_products.php?delete=' + productId;
+            }
+        });
+    }
+</script>
+
+ <?php
+    }
+ } else {
+    echo '<p class="empty">no products added yet!</p>';
+ }
+ ?>
+   </div>
+</section>
+
+
 </div>
 </section>
 
