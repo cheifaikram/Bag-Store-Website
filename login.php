@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
 <?php
 
 include 'config.php';
@@ -31,12 +42,21 @@ if(isset($_POST['submit'])){
       }
 
    }else{  
-    echo '<script>alert("incorrect email or password!. Please try again.");';
-    echo 'window.location.href = "index.html"';
+    echo '<script>';
+    echo 'Swal.fire({';
+    echo '   icon: "error",';
+    echo '   title: "Incorrect email or password!",';
+    echo '   text: "Please try again.",';
+    echo '}).then(function() {';
+    echo '   window.location.href = "index.html";';
+    echo '});';
     echo '</script>';
-    exit; 
+    exit;
    }
 }
 
 
 ?>
+
+</body>
+</html>
