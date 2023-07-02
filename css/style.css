@@ -252,6 +252,11 @@ form.sign-up-form {
     width: 100%;
 }
 
+.swal2-confirm.custom-success-button {
+    background-color: #006FFF !important; 
+ }
+
+
 /*Responsive*/
 @media (max-width:779px) {
     .container {
