@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>produits</h1>
 <?php
-
 include '../config.php';
-
 session_start();
 
 $admin_id = $_SESSION['admin_id'];
@@ -19,37 +8,7 @@ if(!isset($admin_id)){
    header('location:login.php');
 };
 
-// if (isset($_POST['add_product'])) {
-//     $name = mysqli_real_escape_string($conn, $_POST['name']);
-//     $price = $_POST['price'];
-//     $image = $_FILES['image']['name'];
-//     $image_size = $_FILES['image']['size'];
-//     $image_tmp_name = $_FILES['image']['tmp_name'];
-//     $image_folder = 'uploaded_img/'.$image;
- 
-//     $select_product_query = "SELECT name FROM products WHERE name = '$name'";
-//     $result_product = mysqli_query($conn, $select_product_query);
- 
-//     if (mysqli_num_rows($result_product) > 0) {
-//        $message[] = 'Product name already added';
-//     } else {
-//        $insert_product_query = "INSERT INTO products (name, price, image) VALUES ('$name', '$price', '$image')";
-//        $result_insert = mysqli_query($conn, $insert_product_query);
- 
-//        if ($result_insert) {
-//           if ($image_size > 2000000) {
-//              $message[] = 'Image size is too large';
-//           } else {
-//              move_uploaded_file($image_tmp_name, $image_folder);
-//              $message[] = 'Product added successfully!';
-//           }
-//        } else {
-//           $message[] = 'Product could not be added!';
-//        }
-//     }
-//  }
-
-
+//ADD A PRODUCT 
 
 if (isset($_POST['add_product'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -105,6 +64,134 @@ if (isset($_POST['add_product'])) {
     }
  }
  
+ // DELETE A PRODUCT 
+ if (isset($_GET['delete'])) {
+   $delete_id = $_GET['delete'];
+   
+   $delete_image_query = mysqli_query($conn, "SELECT image FROM `products` WHERE id = '$delete_id'") or die('query failed');
+   $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
+   $image_path = 'uploaded_img/' . $fetch_delete_image['image'];
+
+   if (file_exists($image_path)) {
+      unlink($image_path);
+   }
+   
+   mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed');
+   
+   header('location:admin_products.php');
+}
+
+// UPDATE A PRODUCT
+if (isset($_POST['update_product'])) {
+   $update_p_id = $_POST['update_p_id'];
+   $update_name = $_POST['update_name'];
+   $update_price = $_POST['update_price'];
+
+   // Update name and price in the database
+   $update_query = mysqli_prepare($conn, "UPDATE `products` SET name = ?, price = ? WHERE id = ?");
+   mysqli_stmt_bind_param($update_query, 'sdi', $update_name, $update_price, $update_p_id);
+   mysqli_stmt_execute($update_query);
+
+   $update_image = $_FILES['update_image']['name'];
+   $update_image_tmp_name = $_FILES['update_image']['tmp_name'];
+   $update_image_size = $_FILES['update_image']['size'];
+   $update_folder = 'uploaded_img/'.$update_image;
+   $update_old_image = $_POST['update_old_image'];
+
+   if (!empty($update_image)) {
+      if ($update_image_size > 2000000) {
+         $message = 'Image file size is too large.';
+         $alertType = 'error';
+      } else {
+         // Update image in the database
+         $update_image_query = mysqli_prepare($conn, "UPDATE `products` SET image = ? WHERE id = ?");
+         mysqli_stmt_bind_param($update_image_query, 'si', $update_image, $update_p_id);
+         mysqli_stmt_execute($update_image_query);
+
+         move_uploaded_file($update_image_tmp_name, $update_folder);
+         unlink('uploaded_img/'.$update_old_image);
+
+         $message = 'Product updated successfully.';
+         $alertType = 'success';
+      }
+   } else {
+      $message = 'Product updated successfully.';
+      $alertType = 'success';
+   }
+
+   echo '<script>';
+   echo 'var message = "' . $message . '";';
+   echo 'var alertType = "' . $alertType . '";';
+
+   if ($alertType === 'success') {
+      echo 'Swal.fire({
+               icon: "success",
+               title: "Success",
+               text: message
+            }).then(function() {
+               window.location.href = "admin_products.php";
+            });';
+   } else {
+      echo 'Swal.fire({
+               icon: "error",
+               title: "Error",
+               text: message
+            });';
+   }
+
+   echo '</script>';
+   exit;
+}
+
+
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+   <link rel="stylesheet" href="../css/admin_style.css">
+
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="body">
+   
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+<!-- admin head part  -->
+<?php include 'admin_head.php'; ?>
+<section class="main">
+
+<?php include 'admin_header.php'; ?>
+<div class="main--container">
+<section class="add-products">
+   <h1 class="title">Shop Products</h1>
+   <form action="" method="post" enctype="multipart/form-data">
+      <h3>Add Product</h3>
+      <div>
+         <label for="name">Product Name:</label>
+         <input type="text" name="name" id="name" class="box" placeholder="Enter product name" required>
+      </div>
+      <div>
+         <label for="price">Product Price:</label>
+         <input type="number" min="0" name="price" id="price" class="box" placeholder="Enter product price" required>
+      </div>
+      <div>
+         <label for="image">Product Image:</label>
+         <input type="file" name="image" id="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
+      </div>
+      <div>
+         <input type="submit" value="Add Product" name="add_product" class="btn">
+      </div>
+   </form>
+</section>
+</div>
+</section>
+
+
+<script src="../js/admin_script.js"></script> 
 </body>
 </html>

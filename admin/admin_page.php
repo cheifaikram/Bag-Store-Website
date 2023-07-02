@@ -9,46 +9,22 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/admin_style.css">
-
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
 </head>
 <body class="body">
-<section class="head">
-        <div class="logo">
-            <i class="ri-menu-line menu"></i>
-            <h2><span>KIM</span> Store.</h2>
-        </div>
-        <div class="header--items">
-            <div class="dark--theme--btn">
-                <i class="ri-moon-line moon"></i>
-                <i class="ri-sun-line sun"></i>
-            </div>
-            
-            <div class="icons">
-                <img id="user-btn" src="../images/profile.jpeg" alt="">
-            </div>
-            <div class="account-box">
-                <p>Username : <span><?php echo $_SESSION['admin_name']; ?></span></p>
-                <p>Email : <span><?php echo $_SESSION['admin_email']; ?></span></p>
-                <div class="dbtn_container">
-                   <a href="../logout.php" class="delete-btn">Logout</a>
-                </div>
-                 
-              </div>
-        </div>
-    </section>
-    
-
-<!-- admin dashboard section starts  -->
+<!-- admin head part  -->
+<?php include 'admin_head.php'; ?>
 
 <section class="main">
+<!-- admin header part  -->
 <?php include 'admin_header.php'; ?>
+
 <div class="main--container">
             <div class="section--title">
                 <h3 class="title">Welcome back, kim</h3>
@@ -182,8 +158,6 @@ session_start();
         </div>
 </section>
 
-
-
-    <script src="../js/admin_script.js"></script> 
+<script src="../js/admin_script.js"></script> 
 </body>
 </html>

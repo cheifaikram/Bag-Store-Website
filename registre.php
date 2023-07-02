@@ -44,10 +44,7 @@ if (isset($_POST['submit'])) {
       echo 'Swal.fire({
                icon: "success",
                title: "Success",
-               text: message,
-               customClass: {
-               confirmButton: "custom-success-button"
-               }
+               text: message
             }).then(function() {
                window.location.href = "index.html#log";
             });';
