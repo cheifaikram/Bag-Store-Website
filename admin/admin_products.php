@@ -81,16 +81,13 @@ if (isset($_POST['add_product'])) {
    header('location:admin_products.php');
 }
 
-// UPDATE A PRODUCT
+//UPDATE A PRODUCT
 if (isset($_POST['update_product'])) {
    $update_p_id = $_POST['update_p_id'];
    $update_name = $_POST['update_name'];
    $update_price = $_POST['update_price'];
 
-   // Update name and price in the database
-   $update_query = mysqli_prepare($conn, "UPDATE `products` SET name = ?, price = ? WHERE id = ?");
-   mysqli_stmt_bind_param($update_query, 'sdi', $update_name, $update_price, $update_p_id);
-   mysqli_stmt_execute($update_query);
+   mysqli_query($conn, "UPDATE `products` SET name = '$update_name', price = '$update_price' WHERE id = '$update_p_id'") or die('query failed');
 
    $update_image = $_FILES['update_image']['name'];
    $update_image_tmp_name = $_FILES['update_image']['tmp_name'];
@@ -100,51 +97,23 @@ if (isset($_POST['update_product'])) {
 
    if (!empty($update_image)) {
       if ($update_image_size > 2000000) {
-         $message = 'Image file size is too large.';
          $alertType = 'error';
+         $message = 'Image file size is too large.';
       } else {
-         // Update image in the database
-         $update_image_query = mysqli_prepare($conn, "UPDATE `products` SET image = ? WHERE id = ?");
-         mysqli_stmt_bind_param($update_image_query, 'si', $update_image, $update_p_id);
-         mysqli_stmt_execute($update_image_query);
-
+         mysqli_query($conn, "UPDATE `products` SET image = '$update_image' WHERE id = '$update_p_id'") or die('query failed');
          move_uploaded_file($update_image_tmp_name, $update_folder);
          unlink('uploaded_img/'.$update_old_image);
-
-         $message = 'Product updated successfully.';
          $alertType = 'success';
+         $message = 'Product updated successfully.';
       }
    } else {
-      $message = 'Product updated successfully.';
       $alertType = 'success';
+      $message = 'Product updated successfully.';
    }
-
-   echo '<script>';
-   echo 'var message = "' . $message . '";';
-   echo 'var alertType = "' . $alertType . '";';
-
-   if ($alertType === 'success') {
-      echo 'Swal.fire({
-               icon: "success",
-               title: "Success",
-               text: message
-            }).then(function() {
-               window.location.href = "admin_products.php";
-            });';
-   } else {
-      echo 'Swal.fire({
-               icon: "error",
-               title: "Error",
-               text: message
-            });';
-   }
-
-   echo '</script>';
-   exit;
 }
 
-
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -163,7 +132,7 @@ if (isset($_POST['update_product'])) {
    <section class="main">
 
       <?php include 'admin_header.php'; ?>
-      
+
       <div class="shop--container">
          <section class="add-products">
                <h1 class="title">Shop Products</h1>
@@ -264,7 +233,55 @@ if (isset($_POST['update_product'])) {
          </section>
       </div>
 
-   </section>
+<section class="edit-product-form">
+   <?php
+   if (isset($_GET['update'])) {
+      $update_id = $_GET['update'];
+      $update_query = mysqli_query($conn, "SELECT * FROM `products` WHERE id = '$update_id'") or die('query failed');
+      if (mysqli_num_rows($update_query) > 0) {
+         while ($fetch_update = mysqli_fetch_assoc($update_query)) {
+   ?>
+   <form action="" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id']; ?>">
+      <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
+      <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
+      <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box" required placeholder="enter product name">
+      <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box" required placeholder="enter product price">
+      <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">
+      <input type="submit" value="update" name="update_product" class="btn">
+      <input type="reset" value="cancel" id="close-update" class="option-btn">
+   </form>
+   <?php
+         }
+      }
+   } else {
+      echo '<script>document.querySelector(".edit-product-form").style.display = "none";</script>';
+   }
+   ?>
+</section>
+
+
+
+<script>
+   <?php if (isset($_POST['update_product'])) : ?>
+   var alertType = "<?php echo $alertType; ?>";
+   var message = "<?php echo $message; ?>";
+
+   Swal.fire({
+      icon: alertType,
+      title: alertType.charAt(0).toUpperCase() + alertType.slice(1),
+      text: message,
+      didOpen: function() {
+         var form = document.querySelector(".edit-product-form");
+         form.style.display = "none"; // Hide the form immediately
+         
+      }
+   });
+   <?php endif; ?>
+</script>
+
+
+
 
    <script src="../js/admin_script.js"></script> 
 </body>
