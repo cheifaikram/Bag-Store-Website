@@ -8,6 +8,7 @@
    --bg-color-first:#fff;
    --bg-color-second:#e9edf1;
    --bg-color-third:#006FFF;
+   --bg-color-grey:rgb(255, 253, 253);
 
    --text-color-first:#000;
    --text-color-second:#3d3c3c;
@@ -432,7 +433,7 @@ select{
    width: 400px;
    background-color: var(--bg-color-grey);
    border-radius: 8px;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.6);
    padding: 20px;
 }
 
