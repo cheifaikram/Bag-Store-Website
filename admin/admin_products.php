@@ -9,7 +9,6 @@ if(!isset($admin_id)){
 };
 
 //ADD A PRODUCT 
-
 if (isset($_POST['add_product'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $price = $_POST['price'];
