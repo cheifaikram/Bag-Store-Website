@@ -16,7 +16,6 @@ document.onclick = (e) => {
   }
 };
 
-
 let body = document.querySelector(".body")
 let sun = document.querySelector(".sun")
 let moon = document.querySelector(".moon")
@@ -36,3 +35,9 @@ menu.onclick = function(){
 mainContainer.onclick = function(){
     sidebar.classList.remove("activemenu")
 }
+
+
+
+
+
+

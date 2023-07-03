@@ -173,8 +173,8 @@ if (isset($_POST['update_product'])) {
                               <div class="name"><?php echo $product_name; ?></div>
                               <div class="price">$<?php echo $product_price; ?>/-</div>
                               <div class="buttons">
-                                 <a href="admin_products.php?update=<?php echo $product_id; ?>" class="option-btn">update</a>
-                                 <a href="#" class="delete-btn" data-product-id="<?php echo $product_id; ?>">delete</a>
+                                 <a href="admin_products.php?update=<?php echo $product_id; ?>" class="option-btn">Update</a>
+                                 <a href="#" class="delete-btn" data-product-id="<?php echo $product_id; ?>">Delete</a>
                               </div>
                            </div>
                         </div>
@@ -232,39 +232,38 @@ if (isset($_POST['update_product'])) {
                </div>
          </section>
       </div>
+   </section>
 
-<section class="edit-product-form">
-   <?php
-   if (isset($_GET['update'])) {
-      $update_id = $_GET['update'];
-      $update_query = mysqli_query($conn, "SELECT * FROM `products` WHERE id = '$update_id'") or die('query failed');
-      if (mysqli_num_rows($update_query) > 0) {
-         while ($fetch_update = mysqli_fetch_assoc($update_query)) {
-   ?>
-   <form action="" method="post" enctype="multipart/form-data">
-      <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id']; ?>">
-      <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
-      <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
-      <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box" required placeholder="enter product name">
-      <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box" required placeholder="enter product price">
-      <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">
-      <input type="submit" value="update" name="update_product" class="btn">
-      <input type="reset" value="cancel" id="close-update" class="option-btn">
-   </form>
-   <?php
+   <section class="edit">
+   <section class="edit-product-form">
+      <?php
+      if (isset($_GET['update'])) {
+         $update_id = $_GET['update'];
+         $update_query = mysqli_query($conn, "SELECT * FROM `products` WHERE id = '$update_id'") or die('query failed');
+         if (mysqli_num_rows($update_query) > 0) {
+            while ($fetch_update = mysqli_fetch_assoc($update_query)) { 
+               ?>
+               <form action="" method="post" enctype="multipart/form-data" class="edit-form">
+                  <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id']; ?>">
+                  <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
+                  <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
+                  <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box input" required placeholder="enter product name">
+                  <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box input" required placeholder="enter product price">
+                  <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">
+                  <div class="edit-buttons">
+                     <input type="submit" value="Update" name="update_product" class="btn">
+                     <input type="reset" value="Cancel" id="close-update" class="option-btn">
+                  </div>
+               </form>
+               <?php
+            }
          }
-      }
-   } else {
-      echo '<script>document.querySelector(".edit-product-form").style.display = "none";</script>';
-   }
-   ?>
-
-
-<script>
+      } else {
+      echo '<script>document.querySelector(".edit-product-form").style.display = "none";</script>'; }?>
+      <script>
    <?php if (isset($_POST['update_product'])) : ?>
    var alertType = "<?php echo $alertType; ?>";
    var message = "<?php echo $message; ?>";
-
    Swal.fire({
       icon: alertType,
       title: alertType.charAt(0).toUpperCase() + alertType.slice(1),
@@ -272,18 +271,32 @@ if (isset($_POST['update_product'])) {
       didOpen: function() {
          var form = document.querySelector(".edit-product-form");
          form.style.display = "none"; // Hide the form immediately
+         var overlay = document.querySelector(".edit-page-overlay");
+         overlay.classList.add("active"); // Show the overlay
+      },
+      willClose: function() {
+         var overlay = document.querySelector(".edit-page-overlay");
+         overlay.classList.remove("active"); // Hide the overlay when the alert is closed
       }
    }).then(function(result) {
-      // Redirect to admin_products.php if the update was successful
       if (result.isConfirmed && alertType === 'success') {
          window.location.href = "admin_products.php";
       }
    });
    <?php endif; ?>
 </script>
-</section>
 
+   </section>
+   <div class="edit-page-overlay"></div>
+   </section>
 
-   <script src="../js/admin_script.js"></script> 
+   <script>
+      document.getElementById('close-update').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.querySelector('.edit-product-form').style.display = 'none';
+      window.location.href = 'admin_products.php';});
+  </script>
+
+   <script src="../js/admin_script.js" defer></script> 
 </body>
 </html>
