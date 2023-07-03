@@ -1,4 +1,3 @@
-
 let userBtn = document.querySelector('#user-btn');
 let accountBox = document.querySelector('.account-box');
 let mainContainer = document.querySelector('.main--container');
@@ -12,21 +11,26 @@ userBtn.onclick = () => {
 document.onclick = (e) => {
   if (!accountBox.contains(e.target) && !userBtn.contains(e.target)) {
     accountBox.style.display = "none";
-    mainContainer.style.zIndex = 1; // Restore the original z-index value for main--container
+    // mainContainer.style.zIndex = 1; // Restore the original z-index value for main--container
   }
 };
 
-const body = document.querySelector(".body");
-const sun = document.querySelector(".sun");
-const moon = document.querySelector(".moon");
-const menu = document.querySelector(".menu");
-const sidebar = document.querySelector(".sidebar");
+const body = document.querySelector(".body")
+const sun = document.querySelector(".sun")
+const moon = document.querySelector(".moon")
 
 const darkMode = 'dark--mode';
 
 // Function to set the dark mode in local storage
 const setDarkMode = (mode) => {
+  body.classList.toggle(darkMode, mode === 'dark');
   localStorage.setItem('dark-mode', mode);
+};
+
+// Function to remove dark mode from local storage
+const removeDarkMode = () => {
+  body.classList.remove(darkMode);
+  localStorage.removeItem('dark-mode');
 };
 
 // Function to get the current dark mode
@@ -37,30 +41,29 @@ const selectedMode = localStorage.getItem('dark-mode');
 
 // Apply the selected mode
 if (selectedMode) {
-  body.classList.add(selectedMode === 'dark' ? darkMode : '');
+  setDarkMode(selectedMode);
 }
 
 // Toggle between dark and light mode
 moon.addEventListener('click', () => {
-  body.classList.add(darkMode);
   setDarkMode('dark');
 });
 
 sun.addEventListener('click', () => {
-  body.classList.remove(darkMode);
   setDarkMode('light');
 });
 
-// Toggle the sidebar menu
-menu.addEventListener('click', () => {
-  sidebar.classList.toggle('activemenu');
-});
+document.addEventListener('DOMContentLoaded', function() {
+  let menu = document.querySelector(".menu");
+  let sidebar = document.querySelector(".sidebar");
+  let mainContainer = document.querySelector('.main--container');
 
-// Close the sidebar menu when clicking outside
-document.addEventListener('click', (event) => {
-  const targetElement = event.target;
-  if (!targetElement.closest('.menu') && !targetElement.closest('.sidebar')) {
-    sidebar.classList.remove('activemenu');
+  menu.onclick = function() {
+    sidebar.classList.toggle("activemenu");
+  }
+
+  mainContainer.onclick = function() {
+    sidebar.classList.remove("activemenu");
   }
 });
 

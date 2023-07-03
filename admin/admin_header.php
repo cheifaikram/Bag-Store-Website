@@ -6,7 +6,7 @@
 <div class="sidebar">
    <ul class="sidebar--items">
                <li>
-                    <a href="admin_page.php" class="active">
+                    <a href="admin_page.php">
                         <span class="icon"><i class='bx bxs-home'></i></span>
                         <div class="sidebar--item">Home</div>
                     </a>
@@ -46,5 +46,23 @@
 
             </ul>
 </div>
+
+<script>
+    const currentPageUrl = window.location.href;
+
+// Get all the navigation links
+const navLinks = document.querySelectorAll('a');
+
+// Iterate through the navigation links
+navLinks.forEach(link => {
+  // Check if the link's href matches the current page URL
+  if (link.href === currentPageUrl) {
+    // Add the active class to the link
+    link.classList.add('active');
+  }
+});
+</script>
+
+<script src="../js/admin_script.js"></script> 
 
 
