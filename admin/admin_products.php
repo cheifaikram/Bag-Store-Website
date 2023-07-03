@@ -163,9 +163,9 @@ if (isset($_POST['update_product'])) {
    <section class="main">
 
       <?php include 'admin_header.php'; ?>
-      <div class="main--container">
-         <div class="shop--container">
-            <section class="add-products">
+      
+      <div class="shop--container">
+         <section class="add-products">
                <h1 class="title">Shop Products</h1>
                <form action="" method="post" enctype="multipart/form-data">
                   <h3>Add Product</h3>
@@ -185,9 +185,9 @@ if (isset($_POST['update_product'])) {
                      <input type="submit" value="Add Product" name="add_product" class="btn">
                   </div>
                </form>
-            </section>
+         </section>
 
-            <section class="show-products">
+         <section class="show-products">
                <div class="box-container">
                   <?php $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
                   if(mysqli_num_rows($select_products) > 0){
@@ -197,7 +197,7 @@ if (isset($_POST['update_product'])) {
                         $product_price = $fetch_products['price'];
                         $product_id = $fetch_products['id']; ?>
                         <div class="box">
-                           <div class="image-container">
+                          <div class="image-container">
                               <img src="<?php echo $image_path; ?>" alt="">
                            </div>
                            <div class="details">
@@ -208,7 +208,6 @@ if (isset($_POST['update_product'])) {
                                  <a href="#" class="delete-btn" data-product-id="<?php echo $product_id; ?>">delete</a>
                               </div>
                            </div>
-                           
                         </div>
 
                         <script>
@@ -262,9 +261,9 @@ if (isset($_POST['update_product'])) {
                      }
                      ?>
                </div>
-            </section>
-         </div>
+         </section>
       </div>
+
    </section>
 
    <script src="../js/admin_script.js"></script> 
