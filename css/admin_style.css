@@ -12,6 +12,7 @@
    --text-color-first:#000;
    --text-color-second:#3d3c3c;
    --text-color-third:#006FFF;
+   --text-color-light:white;
 
    --hover-text-color:#fff;
 
@@ -19,18 +20,22 @@
    --bg-card-2:#3bc59a;
    --bg-card-3:#eec79c;
    --bg-card-4:#cb84f9;
+   --bg-card-5:#d1e5ff;
 
    --more-and-less:#555;
+
+   --bg-edit-product-form: rgba(0, 0, 0, 0.7);
 }
 
 /* variables dark mode */
 .body.dark--mode{
    --bg-color-first:linear-gradient(to bottom right, #242424,#3d3d3d);
    --bg-color-second:#202020;
-   
+   --bg-color-grey:rgb(77, 77, 77);
 
    --text-color-first:#fff;
    --text-color-second:#c9c7c7;
+   --text-color-light: black;
    
 
    --hover-text-color:#000;
@@ -39,8 +44,12 @@
    --bg-card-2:linear-gradient(to bottom right, #2b2b2b, #2c715b);
    --bg-card-3:linear-gradient(to bottom right, #2b2b2b, #654828);
    --bg-card-4:linear-gradient(to bottom right, #2b2b2b, #755090);
+   --bg-card-5:linear-gradient(to bottom right, #2b2b2b, #060b2d);
+
 
    --more-and-less:#237158;
+
+   --bg-edit-product-form: rgba(255, 255, 255,0.7);
 }
 
 .dbtn_container{
@@ -415,12 +424,13 @@ select{
 .add-products .title{
    font-size: 28px;
    margin: .5rem 0;
+   color: var(--text-color-first);
 
 }
 
 .add-products form {
    width: 400px;
-   background-color: #fff;
+   background-color: var(--bg-color-grey);
    border-radius: 8px;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
    padding: 20px;
@@ -429,28 +439,31 @@ select{
 .add-products h3 {
    font-size: 1.2rem;
    margin-bottom: 10px;
-   color: #333;
+   color: var(--text-color-first);
 }
 
 .add-products label {
    display: block;
    margin-bottom: 5px;
-   color: #333;
+   color: var(--text-color-first);
 }
 
 .add-products .box {
    width: 100%;
    padding: 10px;
-   border: 1px solid #ccc;
    border-radius: 4px;
    font-size: 1rem;
    margin: .25rem 0;
 }
 
+.add-products .input {
+   border: 1px solid var(--text-color-first);
+}
+
 .add-products .btn {
    width: 100%;
    padding: 10px;
-   background-color: #2196f3;
+   background-color: var(--bg-color-third);
    border: none;
    border-radius: 4px;
    color: #fff;
@@ -459,9 +472,7 @@ select{
    margin-top: .5rem;
 }
 
-.add-products .btn:hover {
-   background-color: #0c7de8;
-}
+
 
 /*++++++++++++++++++++ DISPLAYING PRODUCTS AREA ++++++++++++++++++*/
 .show-products {
@@ -482,10 +493,9 @@ select{
    padding: 15px;
    cursor: pointer;
    border-radius: 15px; 
-   background-color: #d1e5ff;
+   background: var(--bg-card-5);
    border: 2.5px solid #006FFF;
    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
-
 }
 
 .box .image-container {
@@ -516,13 +526,13 @@ select{
 .name {
    font-size: 20px;
    margin: 15px 0;
-   color: #000000;
+   color: var(--text-color-first);
 }
 
 .price {
    font-size: 18px;
    margin-bottom: 15px;
-   color: #06006f;
+   color: var(--text-color-second);
 }
 
 .buttons {
@@ -534,8 +544,8 @@ select{
    padding: .5rem 1.75rem;
    border: none;
    border-radius: 3px;
-   background-color: #007bff;
-   color: white;
+   background-color: var(--text-color-third);
+   color: var(--text-color-first);
    cursor: pointer;
    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
@@ -544,7 +554,7 @@ select{
 .edit-product-form {
    max-width: 500px;
    width: 100%;
-   background-color: rgba(0, 0, 0, 0.3);
+   background-color: var(--bg-edit-product-form);
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -587,6 +597,7 @@ select{
 
 .edit-form h2{
    margin-bottom: 10px;
+   color: var(--text-color-light);
 }
 
 .edit-form img {
@@ -608,8 +619,6 @@ select{
    color: var(--black);
    width: 90%; 
    height: 2.8rem;
-   
-   
 }
 
 .edit-form .input{

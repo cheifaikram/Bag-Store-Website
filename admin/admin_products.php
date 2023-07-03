@@ -139,11 +139,11 @@ if (isset($_POST['update_product'])) {
                   <h3>Add Product</h3>
                   <div>
                      <label for="name">Product Name:</label>
-                     <input type="text" name="name" id="name" class="box" placeholder="Enter product name" required>
+                     <input type="text" name="name" id="name" class="box input" placeholder="Enter product name" required>
                   </div>
                   <div>
                      <label for="price">Product Price:</label>
-                     <input type="number" min="0" name="price" id="price" class="box" placeholder="Enter product price" required>
+                     <input type="number" min="0" name="price" id="price" class="box input" placeholder="Enter product price" required>
                   </div>
                   <div>
                      <label for="image">Product Image:</label>
