@@ -244,6 +244,7 @@ if (isset($_POST['update_product'])) {
             while ($fetch_update = mysqli_fetch_assoc($update_query)) { 
                ?>
                <form action="" method="post" enctype="multipart/form-data" class="edit-form">
+                  <h2> Update Product</h2>
                   <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id']; ?>">
                   <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
                   <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
