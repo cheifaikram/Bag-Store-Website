@@ -258,8 +258,6 @@ if (isset($_POST['update_product'])) {
       echo '<script>document.querySelector(".edit-product-form").style.display = "none";</script>';
    }
    ?>
-</section>
-
 
 
 <script>
@@ -274,11 +272,20 @@ if (isset($_POST['update_product'])) {
       didOpen: function() {
          var form = document.querySelector(".edit-product-form");
          form.style.display = "none"; // Hide the form immediately
-         
+      }
+   }).then(function(result) {
+      // Redirect to admin_products.php if the update was successful
+      if (result.isConfirmed && alertType === 'success') {
+         window.location.href = "admin_products.php";
       }
    });
    <?php endif; ?>
 </script>
+</section>
+
+
+
+
 
 
 
