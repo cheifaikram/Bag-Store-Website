@@ -16,25 +16,56 @@ document.onclick = (e) => {
   }
 };
 
-let body = document.querySelector(".body")
-let sun = document.querySelector(".sun")
-let moon = document.querySelector(".moon")
-let menu = document.querySelector(".menu")
-let sidebar = document.querySelector(".sidebar")
+const body = document.querySelector(".body");
+const sun = document.querySelector(".sun");
+const moon = document.querySelector(".moon");
+const menu = document.querySelector(".menu");
+const sidebar = document.querySelector(".sidebar");
 
-moon.onclick = function(){
-    body.classList.add("dark--mode")
-}
-sun.onclick = function(){
-    body.classList.remove("dark--mode")
+const darkMode = 'dark--mode';
+
+// Function to set the dark mode in local storage
+const setDarkMode = (mode) => {
+  localStorage.setItem('dark-mode', mode);
+};
+
+// Function to get the current dark mode
+const getCurrentMode = () => document.body.classList.contains(darkMode) ? 'dark' : 'light';
+
+// Check if dark mode is already selected in local storage
+const selectedMode = localStorage.getItem('dark-mode');
+
+// Apply the selected mode
+if (selectedMode) {
+  body.classList.add(selectedMode === 'dark' ? darkMode : '');
 }
 
-menu.onclick = function(){
-    sidebar.classList.toggle("activemenu")
-}
-mainContainer.onclick = function(){
-    sidebar.classList.remove("activemenu")
-}
+// Toggle between dark and light mode
+moon.addEventListener('click', () => {
+  body.classList.add(darkMode);
+  setDarkMode('dark');
+});
+
+sun.addEventListener('click', () => {
+  body.classList.remove(darkMode);
+  setDarkMode('light');
+});
+
+// Toggle the sidebar menu
+menu.addEventListener('click', () => {
+  sidebar.classList.toggle('activemenu');
+});
+
+// Close the sidebar menu when clicking outside
+document.addEventListener('click', (event) => {
+  const targetElement = event.target;
+  if (!targetElement.closest('.menu') && !targetElement.closest('.sidebar')) {
+    sidebar.classList.remove('activemenu');
+  }
+});
+
+
+
 
 
 
