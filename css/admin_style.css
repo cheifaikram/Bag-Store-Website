@@ -641,6 +641,21 @@ select{
    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
 }
 
+/* ++++++++++++++++++++++++++  OREDERS  +++++++++++++++++++++++*/
+.order--container {
+   /* display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto 1fr;
+   gap: 20px; */
+   position: absolute;
+   top: 0;
+   right: 0;
+   height: 100%;
+   width: calc(100% - 250px);
+   overflow-x: hidden;
+   overflow-y: scroll;
+   background-color: var(--bg-color-second);
+}
 /* media queries  */
 @media screen and (max-width:1025px){
    .menu{
