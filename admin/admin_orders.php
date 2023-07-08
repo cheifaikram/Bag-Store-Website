@@ -67,7 +67,7 @@ if(isset($_GET['delete'])) {
       <?php include 'admin_header.php'; ?>
       <div class="order--container">
         <h1 class="title">Placed Orders</h1>
-        <div class="box-containerr">
+        <div class="box-container-ord">
         <?php
 $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
 
@@ -82,11 +82,12 @@ if(mysqli_num_rows($select_orders) > 0) {
       $address = $fetch_orders['adress'];
       $totalProducts = $fetch_orders['total_products'];
       $totalPrice = $fetch_orders['total_price'];
+      $method = $fetch_orders['method'];
       $paymentStatus = $fetch_orders['payement_status'];
 
       // Display the order information
       ?>
-      <div class="boxx">
+      <div class="box-ord">
          <p> user id: <span><?php echo $userId; ?></span> </p>
          <p> placed on: <span><?php echo $placedOn; ?></span> </p>
          <p> name: <span><?php echo $name; ?></span> </p>
@@ -95,7 +96,7 @@ if(mysqli_num_rows($select_orders) > 0) {
          <p> address: <span><?php echo $address; ?></span> </p>
          <p> total products: <span><?php echo $totalProducts; ?></span> </p>
          <p> total price: <span>$<?php echo $totalPrice; ?>/-</span> </p>
-         <p> payment method: <span><?php echo $paymentStatus; ?></span> </p>
+         <p> payment method: <span><?php echo $method; ?></span> </p>
 
          <form action="" method="post">
             <input type="hidden" name="order_id" value="<?php echo $orderId; ?>">

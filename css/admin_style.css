@@ -657,15 +657,16 @@ select{
    overflow-y: scroll;
    background-color: var(--bg-color-second);
 }
-.box-containerr {
+
+.box-container-ord {
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
    grid-auto-rows: 1fr;
-   grid-gap: 20px;
+   grid-gap: 5px;
    justify-content: center;
 }
 
-.box-containerr .boxx {
+.box-container-ord .box-ord {
    position: relative;
    width: 80%;
    padding: 15px;
