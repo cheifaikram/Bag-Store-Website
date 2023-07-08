@@ -68,7 +68,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+function confirmDeleteUser(userId) {
+  Swal.fire({
+     icon: 'warning',
+     title: 'Are you sure?',
+     text: 'This action cannot be undone.',
+     showCancelButton: true,
+     confirmButtonColor: '#d33',
+     cancelButtonColor: '#3085d6',
+     confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+     if (result.isConfirmed) {
+        // Proceed with the delete operation
+        window.location.href = 'admin_users.php?delete=' + userId;
+     }
+  });
+}
 
 
 

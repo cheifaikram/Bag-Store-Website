@@ -649,9 +649,10 @@ select{
    overflow-x: hidden;
    overflow-y: scroll;
    background-color: var(--bg-color-second);
+   padding: 2rem;
 }
 
-.box-container-ord {
+.box-container-user ,.box-container-ord {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
    grid-auto-rows: 1fr;
@@ -659,7 +660,7 @@ select{
    justify-content: center;
 }
 
-.box-container-ord .box-ord {
+.box-container-user .box-user ,.box-container-ord .box-ord {
    position: relative;
    width: 80%;
    padding: 20px;
@@ -684,9 +685,7 @@ select{
    font-weight: 400;
 }
 
-.order--section{ 
-   padding: 2rem;
-}
+
 
 .select-container {
    display: flex;

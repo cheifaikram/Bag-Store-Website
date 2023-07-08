@@ -80,7 +80,6 @@ if(isset($_GET['delete'])) {
    <section class="main">
       <?php include 'admin_header.php'; ?>
       <div class="order--container">
-         <div class="order--section">
             <h1 class="title">Placed Orders</h1>
             <div class="box-container-ord">
                <?php
@@ -154,8 +153,7 @@ if(isset($_GET['delete'])) {
                   echo '<p class="empty">no orders placed yet!</p>';
                }
                ?>
-            </div>
-         </div>  
+            </div> 
       </div>
    </section>
 </body>
