@@ -655,8 +655,9 @@ select{
 .box-container-msg, .box-container-user ,.box-container-ord {
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-between;
-   gap: 20px;
+   justify-content:center;
+   align-items: flex-start;
+   gap: 50px;   
 }
 
 .box-container-msg .box-msg, .box-container-user .box-user ,.box-container-ord .box-ord {

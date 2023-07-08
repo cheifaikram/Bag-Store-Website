@@ -10,40 +10,46 @@ if(!isset($admin_id)){
     header('location:login.php');
 }
 
+if(isset($_POST['delete_message'])) {
+   $delete_id = $_POST['message_id'];
+   $result = mysqli_query($conn, "DELETE FROM `message` WHERE id = '$delete_id'") or die('query failed');
+   // echo '<script> window.location.href = "admin_contacts.php"; </script>';
+   if($result) {
+      $message = 'Message has been deleted!';
+      echo '<script>
+               Swal.fire({
+                  icon: "success",
+                  title: "Success!",
+                  text: "'. $message .'",
+               }).then((result) => {
+                  if (result.isConfirmed) {
+                     window.location.href = "admin_contacts.php";
+                  }
+               });
+            </script>';
+   } else {
+      $message = 'Failed to delete message.';
+      echo '<script>
+               Swal.fire({
+                  icon: "error",
+                  title: "Error!",
+                  text: "'. $message .'",
+               }).then((result) => {
+                  if (result.isConfirmed) {
+                     window.location.href = "admin_contacts.php";
+                  }
+               });
+            </script>';
+   }
+}
+
 //delete
-if(isset($_GET['delete'])){
-    $delete_id = $_GET['delete'];
-    $query = "DELETE FROM `message` WHERE id = '$delete_id'";
-    $result = mysqli_query($conn, $query);
+// if(isset($_GET['delete'])){
+//     $delete_id = $_GET['delete'];
+//     $query = "DELETE FROM `message` WHERE id = '$delete_id'";
+//     $result = mysqli_query($conn, $query);
  
-    if($result) {
-       $message = 'Message has been deleted!';
-       echo '<script>
-                Swal.fire({
-                   icon: "success",
-                   title: "Success!",
-                   text: "'. $message .'",
-                }).then((result) => {
-                   if (result.isConfirmed) {
-                      window.location.href = "admin_contacts.php";
-                   }
-                });
-             </script>';
-    } else {
-       $message = 'Failed to delete message.';
-       echo '<script>
-                Swal.fire({
-                   icon: "error",
-                   title: "Error!",
-                   text: "'. $message .'",
-                }).then((result) => {
-                   if (result.isConfirmed) {
-                      window.location.href = "admin_contacts.php";
-                   }
-                });
-             </script>';
-    }
- }
+
  
 
 ?>
