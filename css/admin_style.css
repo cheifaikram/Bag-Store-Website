@@ -71,7 +71,7 @@
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.dbtn_container a.delete-btn {
+.dbtn_container a.delete-btn{
    text-decoration: none !important;
  }
 
@@ -422,7 +422,7 @@ select{
    flex-direction: column;
 }
 
-.add-products .title{
+.title{
    font-size: 28px;
    margin: .5rem 0;
    color: var(--text-color-first);
@@ -472,8 +472,6 @@ select{
    cursor: pointer;
    margin-top: .5rem;
 }
-
-
 
 /*++++++++++++++++++++ DISPLAYING PRODUCTS AREA ++++++++++++++++++*/
 .show-products {
@@ -544,7 +542,7 @@ select{
 .btn, .option-btn, .delete-btn{
    padding: .5rem 1.75rem;
    border: none;
-   border-radius: 3px;
+   border-radius: 5px;
    background-color: var(--text-color-third);
    color: var(--text-color-first);
    cursor: pointer;
@@ -642,12 +640,7 @@ select{
 }
 
 /* ++++++++++++++++++++++++++  OREDERS  +++++++++++++++++++++++*/
-.order--container {
-   /* display: grid;
-   grid-template-columns: 1fr;
-   grid-template-rows: auto 1fr;
-   gap: 20px; */
-
+.user--container, .order--container {
    position: absolute;
    top: 0;
    right: 0;
@@ -660,7 +653,7 @@ select{
 
 .box-container-ord {
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
    grid-auto-rows: 1fr;
    grid-gap: 5px;
    justify-content: center;
@@ -669,13 +662,51 @@ select{
 .box-container-ord .box-ord {
    position: relative;
    width: 80%;
-   padding: 15px;
-   cursor: pointer;
+   padding: 20px;
    border-radius: 15px;
    background: var(--bg-card-5);
-   border: 2.5px solid #720030;
+   border: 2.5px solid var(--text-color-third);
    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+   margin-bottom:15px ;
+   color: var(--text-color-first);
+   text-align: center;
 }
+
+.box-ord p{
+   font-size: 14px;
+   margin: 4px 0;
+   color: var(--text-color-first);
+   font-weight: 600;
+}
+
+.box-ord span{
+   color: var(--text-color-second);
+   font-weight: 400;
+}
+
+.order--section{ 
+   padding: 2rem;
+}
+
+.select-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px 0;
+}
+ 
+.select-container select {
+   padding: 5px;
+   border: none;
+   border-radius: 5px;
+   background-color: var(--bg-color-grey);
+   font-size: 16px;
+   color: var(--text-color-first);
+   outline: none;
+}
+ 
+ 
+
 /* media queries  */
 @media screen and (max-width:1025px){
    .menu{
@@ -699,7 +730,7 @@ select{
        display: none;
    }
 
-   .shop--container , .main--container{
+   .order--container, .shop--container , .main--container{
        width: calc(100% - 80px);
    }
 
@@ -731,7 +762,7 @@ select{
       display: block;
    }
 
-   .shop--container, .main--container{
+   .order--container, .shop--container, .main--container{
       width:100%;
    }
 
@@ -757,7 +788,7 @@ select{
       padding: 10px;
    }
 
-   .shop--container, .main--container{
+   .order--container, .shop--container, .main--container{
       padding: 10px;
    }
 
@@ -790,6 +821,4 @@ select{
    .edit-buttons .btn, .edit-buttons .option-btn{
       padding: 0.4rem 1.5rem;
    }
-  
-      
 }
