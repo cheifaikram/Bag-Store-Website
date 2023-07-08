@@ -35,17 +35,17 @@ if(isset($_GET['delete'])){
    <section class="main">
       <?php include 'admin_header.php'; ?>
       <div class="user--container">
-        <h1 class="title"> user accounts </h1>
+        <h1 class="title"> User Accounts </h1>
         <div class="box-container-user">
       <?php
          $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
          while($fetch_users = mysqli_fetch_assoc($select_users)){
       ?>
       <div class="box-user">
-        <p> user id: <span><?php echo $fetch_users['id']; ?></span> </p>
-        <p> username: <span><?php echo $fetch_users['name']; ?></span> </p>
-        <p> email: <span><?php echo $fetch_users['email']; ?></span> </p>
-        <p> user type: <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'red'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
+        <p> User ID: <span><?php echo $fetch_users['id']; ?></span> </p>
+        <p> Username: <span><?php echo $fetch_users['name']; ?></span> </p>
+        <p> Email: <span><?php echo $fetch_users['email']; ?></span> </p>
+        <p> User Type: <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'red'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
         <button onclick="confirmDeleteUser(<?php echo $fetch_users['id']; ?>)" class="delete-btn">delete user</button>
       </div>
 
@@ -55,8 +55,6 @@ if(isset($_GET['delete'])){
     </div>
    </div>
  </section>
-
-
 
 </body>
 </html>

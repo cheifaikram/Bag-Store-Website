@@ -673,19 +673,17 @@ select{
    text-align: center;
 }
 
-.box-ord p{
+.box-ord p, .box-user p{
    font-size: 14px;
    margin: 4px 0;
    color: var(--text-color-first);
    font-weight: 600;
 }
 
-.box-ord span{
+.box-ord span, .box-user span{
    color: var(--text-color-second);
    font-weight: 400;
 }
-
-
 
 .select-container {
    display: flex;
