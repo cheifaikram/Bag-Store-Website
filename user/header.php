@@ -18,7 +18,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <body>
     <nav class="navbar">
         <div class="navbar-left">
-          <div class="logo">Logo Title</div>
+           <div class="logo">
+              <h2><span>KIM</span> Store.</h2>
+           </div>
         </div>
         <div class="navigation">
             <ul class="menu menu-mob">

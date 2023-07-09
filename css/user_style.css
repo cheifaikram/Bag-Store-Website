@@ -1,3 +1,60 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bg-color-first:#fff;
+  --bg-color-second:#e9edf1;
+  --bg-color-third:#006FFF;
+  --bg-color-grey:rgb(255, 253, 253);
+
+  --text-color-first:#000;
+  --text-color-second:#3d3c3c;
+  --text-color-third:#006FFF;
+  --text-color-light:white;
+
+  --hover-text-color:#fff;
+
+  --bg-card-1:#ecd765;
+  --bg-card-2:#3bc59a;
+  --bg-card-3:#eec79c;
+  --bg-card-4:#cb84f9;
+  --bg-card-5:#d1e5ff;
+
+  --more-and-less:#555;
+
+  --bg-edit-product-form: rgba(0, 0, 0, 0.7);
+}
+
+/* variables dark mode */
+.body.dark--mode{
+  --bg-color-first:linear-gradient(to bottom right, #242424,#3d3d3d);
+  --bg-color-second:#202020;
+  --bg-color-grey:rgb(77, 77, 77);
+
+  --text-color-first:#fff;
+  --text-color-second:#c9c7c7;
+  --text-color-light: black;
+  
+
+  --hover-text-color:#000;
+
+  --bg-card-1:linear-gradient(to bottom right, #2b2b2b, #69602e);
+  --bg-card-2:linear-gradient(to bottom right, #2b2b2b, #2c715b);
+  --bg-card-3:linear-gradient(to bottom right, #2b2b2b, #654828);
+  --bg-card-4:linear-gradient(to bottom right, #2b2b2b, #755090);
+  --bg-card-5:linear-gradient(to bottom right, #2b2b2b, #060b2d);
+
+
+  --more-and-less:#237158;
+
+  --bg-edit-product-form: rgba(255, 255, 255,0.7);
+}
+
+/* HEADER */
 .navbar {
     display: flex;
     align-items: center;
@@ -14,6 +71,15 @@
   .logo {
     margin-right: 20px;
   }
+
+  .logo h2{
+    font-size: 16px;
+  }
+
+  .logo span{
+    color: var(--text-color-third);
+    font-family: 'Oswald', sans-serif;
+ }
   
   .menu {
     list-style: none;
@@ -26,7 +92,7 @@
   }
   
   .menu li {
-    margin-right: 15px;
+    margin-right: 3rem;
   }
   
   .menu li a {
@@ -42,7 +108,11 @@
   
   .logo-icons {
     height: 30px;
-    margin-right: 10px;
+    margin-right: 1.5rem;
+  }
+
+  .logo-icons i{
+    font-size: 24px;
   }
   
  .icon, .circle{
@@ -56,140 +126,141 @@
       bottom: 2rem;
       box-shadow: 0 8px 24px hsla(228, 66%, 45%, .15);
       width: 80%;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
 
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 0.1rem;
-        padding-top: 2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-bottom: 0.1rem;
+      padding-top: 2rem;
 
-        border-radius: 1.25rem;
-        transition: .4s;
-        background-color: #000000;
-        display: flex;
+      border-radius: 1.25rem;
+      transition: .4s;
+      background-color: #000000;
+      display: flex;
     }
 
     .menu{
-        display: none;
+      display: none;
     }
 
     .menu-mob{
-        display: flex;
-        align-items:center;
-        justify-content:space-around;
+      display: flex;
+      align-items:center;
+      justify-content: center;
     }
 
     .navigation ul {
-        display: flex;
-        width: 350px;
+      display: flex;
+      width: 350px;
     }
     
     .navigation ul li {
-        position: relative;
-        width: 70px;
-        height: 70px;
-        list-style: none;
-        z-index: 1;
+      position: relative;
+      width: 70px;
+      height: 70px;
+      list-style: none;
+      z-index: 1;
+      
     }
     
     .navigation ul li a {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        font-weight: 500;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
     }
     
     .navigation ul li a .icon {
-        position: relative;
-        display: block;
-        line-height: 75px;
-        font-size: 1.5em;
-        text-align: center;
-        color: #fff;
-        transition: .5s;
+      position: relative;
+      display: block;
+      line-height: 75px;
+      font-size: 1.5em;
+      text-align: center;
+      color: #fff;
+      transition: .5s;
     }
     
     .navigation ul li.active a .icon {
-        transform: translateY(-32px);
+      transform: translateY(-32px);
     }
     
     .navigation ul li a .text {
-        position: absolute;
-        color: #fff;
-        font-weight: 400;
-        font-size: .75em;
-        letter-spacing: .05em;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: .5s;
+      position: absolute;
+      color: #fff;
+      font-weight: 400;
+      font-size: .75em;
+      letter-spacing: .05em;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: .5s;
     }
     
     .navigation ul li.active a .text {
-        opacity: 1;
-        transform: translateY(10px);
+      opacity: 1;
+      transform: translateY(10px);
     }
 
     
     .navigation ul li a .circle {
-        position: absolute;
-        display: block;
-        width: 50px;
-        height: 50px;
-        background: transparent;
-        border-radius: 50%;
-        border: 1.8px solid #fff;
-        transform: translateY(-37px) scale(0);
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      border-radius: 50%;
+      border: 1.8px solid #fff;
+      transform: translateY(-37px) scale(0);
     }
     
     .navigation ul li.active a .circle {
-        transition: .5s;
-        transition-delay: .5s;
-        transform: translateY(-37px) scale(1);
-        background: linear-gradient(45deg, #2196f3, #e91e63);
-        z-index: -1000;
+      transition: .5s;
+      transition-delay: .5s;
+      transform: translateY(-37px) scale(1);
+      background: linear-gradient(45deg, #2196f3, #e91e63);
+      z-index: -1000;
     }
 
 }
   @media screen and (max-width: 1024px) {
     body{
-        background-color: red;
+      background-color: red;
     }
 
     .navigation{
-        width: 65%;
+      width: 80%;
     }
     
   }
   
   @media screen and (max-width: 768px) {
     body{
-        background-color: blue;
+      background-color: blue;
     }
 
     .navigation{
-        width: 70%;
+      width: 80%;
     }
     
   }
   
   @media screen and (max-width: 480px) {
     body{
-        background-color: green;
+      background-color: green;
     }
 
     .navigation{
-        width: 60%;
+      width: 100%;
     }
-
+    
     .navigation ul {
-        display: flex;
-        width: 250px;
+      display: flex;
+      width: 250px;
     }
     
   }
