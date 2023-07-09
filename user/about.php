@@ -6,6 +6,7 @@
     <title>about</title>
 </head>
 <body>
+<?php include 'header.php'; ?>
     <h1>about page</h1>
 </body>
 </html>

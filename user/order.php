@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+<?php include 'header.php'; ?>
     <h1>order here</h1>
 </body>
 </html>

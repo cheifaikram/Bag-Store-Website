@@ -1,3 +1,7 @@
+<?php
+$current_page = basename($_SERVER['PHP_SELF']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,7 @@
         <div class="navigation">
             <ul class="menu menu-mob">
 
-                <li class="list active">
+                <li class="list <?php echo ($current_page == 'home.php') ? 'active' : ''; ?>"> 
                     <a href="home.php">
                         <span class="icon">
                           <i class="ri-home-2-line"></i>
@@ -29,7 +33,7 @@
                     </a>
                 </li>
 
-                <li class="list">
+                <li class="list <?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">
                     <a href="about.php">
                         <span class="icon">
                            <i class="ri-information-line"></i>
@@ -38,7 +42,7 @@
                         <span class="circle"></span>
                     </a>
                 </li>
-                <li class="list">
+                <li class="list <?php echo ($current_page == 'shop.php') ? 'active' : ''; ?>">
                     <a href="shop.php">
                         <span class="icon">
                            <i class="ri-handbag-line"></i>
@@ -47,7 +51,7 @@
                         <span class="circle"></span>
                     </a>
                 </li>
-                <li class="list">
+                <li class="list <?php echo ($current_page == 'order.php') ? 'active' : ''; ?>">
                     <a href="order.php">
                         <span class="icon">
                            <i class="ri-shopping-cart-2-line"></i>
@@ -56,7 +60,7 @@
                         <span class="circle"></span>
                     </a>
                 </li>
-                <li class="list">
+                <li class="list <?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>">
                     <a href="contact.php">
                         <span class="icon">
                            <i class="ri-message-line"></i>
