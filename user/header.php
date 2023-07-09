@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <link rel="stylesheet" href="../css/user_style.css">
 </head>
 <body>
@@ -19,7 +22,7 @@
                 <li class="list active">
                     <a href="#home">
                         <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
+                          <i class="ri-home-2-line"></i>
                         </span>
                         <span class="text">Home</span>
                         <span class="circle"></span>
@@ -29,7 +32,7 @@
                 <li class="list">
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="information-outline"></ion-icon>
+                           <i class="ri-information-line"></i>
                         </span>
                         <span class="text">About</span>
                         <span class="circle"></span>
@@ -38,7 +41,7 @@
                 <li class="list">
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="bag-handle-outline"></ion-icon>
+                           <i class="ri-handbag-line"></i>
                         </span>
                         <span class="text">Shop</span>
                         <span class="circle"></span>
@@ -47,7 +50,7 @@
                 <li class="list">
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="bag-add-outline"></ion-icon>
+                           <i class="ri-shopping-cart-2-line"></i>
                         </span>
                         <span class="text">Orders</span>
                         <span class="circle"></span>
@@ -56,7 +59,7 @@
                 <li class="list">
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="mail-outline"></ion-icon>
+                           <i class="ri-message-line"></i>
                         </span>
                         <span class="text">Contact</span>
                         <span class="circle"></span>
@@ -67,11 +70,15 @@
         
         <div class="navbar-right">
           <div class="logo-icons">
-            <img src="logo1.png" alt="Logo 1">
-            <img src="logo2.png" alt="Logo 2">
-            <img src="logo3.png" alt="Logo 3">
-            <img src="logo4.png" alt="Logo 4">
-          </div>
+               <!-- <div class="dark--theme--btn">
+               
+                  <i class="ri-sun-line sun" style="display: none;"></i>
+               </div> -->
+               <i class="ri-moon-line moon"></i>
+               <i class="ri-search-2-line"></i>
+               <i class="ri-user-line"></i>
+               <i class="ri-shopping-cart-2-line"></i>
+            </div>
         </div>
       </nav>
       
