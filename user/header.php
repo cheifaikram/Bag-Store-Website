@@ -20,7 +20,7 @@
             <ul class="menu menu-mob">
 
                 <li class="list active">
-                    <a href="#home">
+                    <a href="home.php">
                         <span class="icon">
                           <i class="ri-home-2-line"></i>
                         </span>
@@ -30,7 +30,7 @@
                 </li>
 
                 <li class="list">
-                    <a href="#">
+                    <a href="about.php">
                         <span class="icon">
                            <i class="ri-information-line"></i>
                         </span>
@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li class="list">
-                    <a href="#">
+                    <a href="shop.php">
                         <span class="icon">
                            <i class="ri-handbag-line"></i>
                         </span>
@@ -48,7 +48,7 @@
                     </a>
                 </li>
                 <li class="list">
-                    <a href="#">
+                    <a href="order.php">
                         <span class="icon">
                            <i class="ri-shopping-cart-2-line"></i>
                         </span>
@@ -57,7 +57,7 @@
                     </a>
                 </li>
                 <li class="list">
-                    <a href="#">
+                    <a href="contact.php">
                         <span class="icon">
                            <i class="ri-message-line"></i>
                         </span>

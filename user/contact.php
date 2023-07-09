@@ -4,9 +4,9 @@ include '../config.php';
 
 session_start();
 
-$admin_id = $_SESSION['admin_id'];
+$user_id = $_SESSION['user_id'];
 
-if(!isset($admin_id)){
+if(!isset($user_id)){
    header('location:login.php');
 }
 
@@ -50,15 +50,7 @@ if(isset($_POST['send'])){
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body class="body">
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
-   <?php include 'admin_head.php'; ?>
-   <section class="main">
-      <?php include 'admin_header.php'; ?>
-      <div class="msg--container">
-        <h1 class="title"> Messages </h1>
+   <h1>contact</h1>
 
-
-      </div>
-   </section>
 </body>
 </html>
