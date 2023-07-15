@@ -73,28 +73,57 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </li>
               </ul>
         </div>
-        
+
+        <!-- <div class="dark--theme--btn">
+            <i class="ri-sun-line sun" style="display: none;"></i>
+            <i class="ri-moon-line moon"></i>
+        </div>  -->
+
         <div class="navbar-right">
-            <div class="log-reg">
-                <a href="login.php">Login <span> / </span></a>
-                <a href="registre.php">Register</a>
+            <?php
+            // Check if the user is logged in
+            if (isset($_SESSION['user_id'])) {
+                // User is logged in, hide the login/register buttons and the user/cart icons
+                ?>
+                <div class="logo-icons">
+                    <i class="ri-moon-line moon"></i>
+                    <i class="ri-search-2-line"></i>
+                    <i id="user-btn" class="ri-user-line"></i>
+                    <i class="ri-shopping-cart-2-line"></i>
+                </div>
+                <?php
+            } else {
+                // User is not logged in, display the login/register buttons and the user/cart icons
+                ?>
+                <div class="log-reg">
+                    <a href="login.php" class="log-reg-btn">Login</a>
+                    <a href="registre.php" class="log-reg-btn">Register</a>
+                </div>
+                <div class="logo-icons">
+                    <i class="ri-moon-line moon"></i>
+                    <i class="ri-search-2-line"></i>
+                    <i id="user-btn" class="ri-user-line"></i>
+                    <i class="ri-shopping-cart-2-line"></i>
+                </div>
                 
-            </div>
-          <div class="logo-icons">
-               <!-- <div class="dark--theme--btn">
-               
-                  <i class="ri-sun-line sun" style="display: none;"></i>
-               </div> -->
-               <i class="ri-moon-line moon"></i>
-               <i class="ri-search-2-line"></i>
-               <i class="ri-user-line"></i>
-               <i class="ri-shopping-cart-2-line"></i>
-            </div>
+                <?php
+            }
+            ?>
         </div>
+        <div class="account-box">
+                       <p>Username : <span><?php echo $_SESSION['user_name']; ?></span></p>
+                       <p>Email : <span><?php echo $_SESSION['user_email']; ?></span></p>
+                       <div class="dbtn_container">
+                           <a href="logout.php" class="delete-btn">Logout</a>
+                       </div>
+                    </div>
+
+
+
       </nav>
       
       
       
-    <script src="../js/user_script.js"></script>
+    <script src="js/user_script.js"></script>
 </body>
 </html>

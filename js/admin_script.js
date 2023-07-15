@@ -11,7 +11,6 @@ userBtn.onclick = () => {
 document.onclick = (e) => {
   if (!accountBox.contains(e.target) && !userBtn.contains(e.target)) {
     accountBox.style.display = "none";
-    // mainContainer.style.zIndex = 1; // Restore the original z-index value for main--container
   }
 };
 

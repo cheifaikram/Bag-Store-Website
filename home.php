@@ -34,6 +34,8 @@ if (isset($_SESSION['user_id'])) {
 </head>
 <body>
 <?php include 'header.php'; ?>
+<div class="main--container">
     <h1>HOMEEEEE</h1>
+</div>
 </body>
 </html>
