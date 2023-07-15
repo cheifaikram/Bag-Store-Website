@@ -13,7 +13,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="../css/user_style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav class="navbar">
@@ -75,6 +75,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </div>
         
         <div class="navbar-right">
+            <div class="log-reg">
+                <a href="login.php">Login <span> / </span></a>
+                <a href="registre.php">Register</a>
+                
+            </div>
           <div class="logo-icons">
                <!-- <div class="dark--theme--btn">
                

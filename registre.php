@@ -5,7 +5,7 @@
    <title>Your PHP File</title>
    
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/log-reg-style.css">
 </head>
 <body>
    
