@@ -81,9 +81,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
         <div class="navbar-right">
             <?php
-            // Check if the user is logged in
             if (isset($_SESSION['user_id'])) {
-                // User is logged in, hide the login/register buttons and the user/cart icons
                 ?>
                 <div class="logo-icons">
                     <i class="ri-moon-line moon"></i>
@@ -93,17 +91,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </div>
                 <?php
             } else {
-                // User is not logged in, display the login/register buttons and the user/cart icons
                 ?>
                 <div class="log-reg">
-                    <a href="login.php" class="log-reg-btn">Login</a>
-                    <a href="registre.php" class="log-reg-btn">Register</a>
+                    <a href="index.html" class="log-reg-btn">Login</a>
+                    <a href="index.html" class="log-reg-btn">Register</a>
                 </div>
                 <div class="logo-icons">
                     <i class="ri-moon-line moon"></i>
                     <i class="ri-search-2-line"></i>
-                    <i id="user-btn" class="ri-user-line"></i>
-                    <i class="ri-shopping-cart-2-line"></i>
                 </div>
                 
                 <?php
@@ -111,16 +106,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
             ?>
         </div>
         <div class="account-box">
-                       <p>Username : <span><?php echo $_SESSION['user_name']; ?></span></p>
-                       <p>Email : <span><?php echo $_SESSION['user_email']; ?></span></p>
-                       <div class="dbtn_container">
-                           <a href="logout.php" class="delete-btn">Logout</a>
-                       </div>
-                    </div>
-
-
-
-      </nav>
+            <p>Username : <span><?php echo $_SESSION['user_name']; ?></span></p>
+            <p>Email : <span><?php echo $_SESSION['user_email']; ?></span></p>
+            <div class="dbtn_container">
+                <a href="logout.php" class="delete-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
       
       
       
