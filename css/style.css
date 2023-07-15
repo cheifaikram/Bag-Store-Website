@@ -129,7 +129,6 @@
   font-size: 20px;
 }
 
-
 .icon,
 .circle {
   display: none;
@@ -151,6 +150,12 @@
   color: #000;
   border-radius: 15px;
   box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+}
+
+.logo-icons .cart-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .account-box{
