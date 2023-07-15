@@ -218,6 +218,72 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
+.footer {
+  background-color: var(--bg-color-first);
+
+}
+
+.footer .box-container {
+  margin: 0 auto;
+  margin-left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+
+.footer .box {
+  width: calc(25% - 3rem); /* Adjust the width as needed */
+  margin-bottom: 2rem; /* Adjust the margin as needed */
+}
+
+.footer .box h3 {
+  text-transform: uppercase;
+  color: var(--text-color-first);
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.footer .box p,
+.footer .box a {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-color-second);
+  padding: 0.5rem 0;
+}
+
+.footer .box p i,
+.footer .box a i {
+  color: var(--text-color-third);
+  padding-right: 0.5rem;
+}
+
+.footer .box a:hover {
+  color: var(--text-color-third);
+  text-decoration: underline;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+  .footer .box {
+    width: calc(33.33% - 2rem); /* Adjust the width as needed */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer .box {
+    width: calc(50% - 1rem); /* Adjust the width as needed */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer .box {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem; /* Adjust the margin as needed */
+  }
+}
+
 
 
 
