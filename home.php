@@ -8,7 +8,6 @@ if (isset($_SESSION['user_id'])) {
     echo "Welcome, User!";
   } else {
     echo "Welcome, Anonymous User!";
-    
   }
 
 ?>
