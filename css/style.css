@@ -181,18 +181,27 @@
 
 .account-box div{
   margin-top: 1.5rem;
-  font-size: 2rem;
+  font-size: 18px;
   color:white;
 }
 
 .account-box div a{
-  color:orange;
+  color:var(--hover-text-color);
 }
 
 .account-box div a:hover{
   text-decoration: underline;
 }
 
+.delete-btn{
+  padding: .5rem 1.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--text-color-third);
+  color: var(--text-color-first);
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
 
 
 
