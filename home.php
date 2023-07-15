@@ -6,10 +6,6 @@ if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
   
     echo "Welcome, User!";
-  } elseif (isset($_SESSION['admin_id'])) {
-    $admin_id = $_SESSION['admin_id'];
-  
-    echo "Welcome, Admin!";
   } else {
     echo "Welcome, Anonymous User!";
     
