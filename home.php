@@ -25,7 +25,16 @@ if (isset($_SESSION['user_id'])) {
 <?php include 'header.php'; ?>
 
 <div class="main--container">
-    <h1>HOMEEEEE</h1>
+    <section class="home-container">
+      <div class="left-cont">
+        <h1 class="home-title"> With <span>Kim's Shop</span> a Bag Would Change Your Life</h1>
+      </div>
+      <div class="right-cont">
+        <div class="home-pattern">
+          <img src="home-img.png" alt="woman holding a channel bag">
+        </div>
+      </div>
+    </section>
 </div>
 
 <section class="footer">
