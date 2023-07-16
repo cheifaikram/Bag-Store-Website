@@ -181,7 +181,6 @@ body{
   z-index: 2;
 }
 
-
 .account-box.active{
   display: block;
 }
@@ -286,7 +285,7 @@ body{
 
 .brands-container .brand-title{
   font-size: 32px;
-  margin: 1rem 2rem;
+  margin: 0 2rem;
 }
 
 .brand-images{
@@ -361,6 +360,32 @@ body{
   color: var(--text-color-first);
 }
 
+.button-cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.button-cont .bag-btn{
+  padding: .8rem 4rem;
+  background-color:var(--bg-color-third);
+  cursor: pointer;
+  color: var(--text-color-light);
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 15px;
+  box-shadow: 0 8px 12px hsla(0, 0%, 0%, 0.3);
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-cont .bag-btn:hover{
+  background-color:var(--text-color-light);
+  color: var(--bg-color-third); 
+}
+
 /* +++++++++++++++  FOOTER ++++++++++++++++++  */
 .footer {
   width: 100%;
@@ -408,6 +433,10 @@ body{
   
 /* Media Queries */
 @media screen and (max-width: 1024px), screen and (max-width: 768px), screen and (max-width: 480px),screen and (max-width: 260px) {
+  .navbar-right { 
+    width: 100%;
+  }
+
   .navigation {
     position: fixed;
     bottom: 2rem;
@@ -612,6 +641,10 @@ body{
     body {
       background-color: yellow;
     }
+
+    .log-reg-btn {
+      padding: 5px 10px;
+    }
   
     .navigation {
       width: 100%;
@@ -678,6 +711,11 @@ body{
       font-size: 16px;
     }
 
+    .button-cont .bag-btn{
+      margin: auto 2rem;
+      padding:.5rem 3rem;
+    }
+
     /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
     .footer .box {
       width: 100%;
@@ -689,6 +727,11 @@ body{
   @media screen and (max-width: 260px) {
     body {
       background-color: purple;
+    }
+
+    .log-reg-btn {
+      padding: 3px 6px;
+      font-size: 12px;
     }
   
     .navigation {
@@ -752,7 +795,7 @@ body{
     .bag-price {
       font-size: 14px;
     }
-    
+
     /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
     .footer .box {
       width: 100%;

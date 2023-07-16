@@ -52,7 +52,6 @@ if (isset($_SESSION['user_id'])) {
   <section class="bags-container">
     <h1 class="bag-title"> Our Best Selling Bags </h1>
     <div class="bag-cont">
-
       <div class="bag-box">
         <img src="images/bag_img1.jpg" alt="">
         <p class="brand-bag">Hermes</p>
@@ -77,10 +76,12 @@ if (isset($_SESSION['user_id'])) {
       <div class="bag-box">
         <img src="images/bag_img4.jpeg" alt="">
         <p class="brand-bag">Fendi</p>
-        <h2 class="bag-name">Fabric Jacquard 1974 Mini Baguette</h2>
+        <h2 class="bag-name">Fabric Jacquard Mini Baguette</h2>
         <p class="bag-price">$2275</p>
       </div>
-
+    </div>
+    <div class="button-cont">
+      <a href="shop.php" class="bag-btn">See All Products</a>
     </div>
 
   </section>
