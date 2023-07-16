@@ -313,6 +313,7 @@ body{
   font-size: 32px;
   margin: 0 2rem;
 }
+
 .bag-cont {
   display: flex;
   flex-wrap: wrap;
@@ -387,20 +388,45 @@ body{
 }
 
 /* +++++++++++++++  SHOWROOM ++++++++++++++++++  */
-.showroom-cont{
+.showroom-container{
   display: flex;
-  margin: 1rem 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  margin-bottom:5% ;
+
 }
 
-.showroom-cont .about-showroom{
+.showroom-container .title-desc{
+  display: flex;
+  flex-direction: column;
   width: 60%;
 }
 
-.showroom-cont .wrapper {
+.showroom-container .title-desc .showroom-title-cont{
+  width: 90%;
+}
+
+.showroom-container .title-desc .showroom-title-cont .showroom-title{
+  font-size: 32px;
+  margin: 0;
+}
+
+.showroom-container .title-desc .about-showroom{
+  padding: 2rem;
+  text-align: justify;
+  width: 90%;
+}
+
+.showroom-container .title-desc .about-showroom .showroom-par{
+  font-size: 18px;
+}
+
+.showroom-container .wrapper {
   display: flex;
   max-width: 90%;
-  width: 30%;
-  height: 200px;
+  width: 40%;
+  height: 300px;
   background: #fff;
   align-items: center;
   justify-content: center;
@@ -442,8 +468,8 @@ i#next {
 }
 
 .image-container {
-  width: 200px; /* Adjust the width as needed */
-  height: 200px; /* Adjust the height as needed */
+  width: 300px; 
+  height: 300px; 
   overflow-x: hidden;
 }
 
@@ -700,6 +726,27 @@ i#next {
   .bag-price {
     font-size: 18px;
   }
+/* +++++++++++++++++++++  SHOWROOM +++++++++++++++++ */
+  .showroom-container{
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .showroom-container .title-desc{
+    width: 90%;
+  }
+
+  .showroom-container .title-desc .about-showroom{
+    width: 100%;
+  }
+
+  .showroom-container .title-desc .showroom-title-cont .showroom-title{
+    margin: 0;
+  }
+
+  .showroom-container .wrapper {
+    width: 60%;
+  }
 
   /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
   .footer .box {
@@ -786,6 +833,11 @@ i#next {
       padding:.5rem 3rem;
     }
 
+    /* +++++++++++++++++++++  SHOWROOM +++++++++++++++++ */
+    .showroom-container .wrapper {
+      width: 80%;
+    }
+
     /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
     .footer .box {
       width: 100%;
@@ -864,6 +916,10 @@ i#next {
   
     .bag-price {
       font-size: 14px;
+    }
+    /* +++++++++++++++++++++  SHOWROOM +++++++++++++++++ */
+    .showroom-container .wrapper {
+      width: 100%;
     }
 
     /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */

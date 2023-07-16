@@ -92,22 +92,21 @@ if (isset($_SESSION['user_id'])) {
 
      <!-- SHOWROOM SECTION  -->
      <section class="showroom-container">
-    <h1 class="showroom-title"> Our Wellknown Showroom </h1>
-    <div class="showroom-cont">
-      <div class="about-showroom">
-        <p class="showroom-par">"Welcome to our exquisite showrooms, where luxury and elegance meet 
-        in a curated collection of the finest and most coveted designer bags. Step into a world of
+      <div class="title-desc">
+        <div class="showroom-title-cont">
+          <h1 class="showroom-title">Our Wellknown Showroom</h1>
+        </div>
+
+        <div class="about-showroom">
+          <p class="showroom-par">"Welcome to our exquisite showrooms, where luxury and elegance meet 
+         in a curated collection of the finest and most coveted designer bags. Step into a world of
          opulence and sophistication, where every corner showcases a meticulously handpicked 
          selection of the most sought-after and exclusive bags from renowned fashion houses. 
          Our showrooms are a haven for discerning individuals who appreciate the artistry, 
-         craftsmanship, and timeless allure of high-end bags. Immerse yourself in the luxurious 
-         ambiance, as the soft lighting accentuates the intricate details and exquisite materials 
-         of each bag. From iconic classics to limited editions, our showrooms offer an unparalleled
-          experience, allowing you to indulge in the world of exquisite fashion. Discover the 
-          embodiment of prestige and style as you explore our showrooms of expensive bags, where 
-          every visit is a journey into the epitome of elegance."</p>
+         craftsmanship, and timeless allure of high-end bags."</p>
+        </div>
       </div>
-
+      
      <div class="wrapper">
         <i class="fa-solid fa-arrow-left button" id="prev"></i>
         <div class="image-container">
@@ -192,7 +191,7 @@ if (isset($_SESSION['user_id'])) {
       wrapper.addEventListener("mouseleave", autoSlide);
 
     </script>
-    
+
     <script src="js/user_script.js"></script>
   </body>
 </html>
