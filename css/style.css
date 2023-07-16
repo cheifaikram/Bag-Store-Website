@@ -305,6 +305,96 @@ body{
   width: 200px;
 }
 
+/* +++++++++++++++  BAGS ++++++++++++++++++  */
+.bags-container .bag-title{
+  font-size: 32px;
+  margin: 0 2rem;
+}
+.bag-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  
+}
+
+.bag-box {
+  width: 23%;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.4);
+}
+
+.bag-box img {
+  width: 100%;
+  height: 60%;
+  border-radius: 12px;
+}
+
+.bag-name {
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+  color: var(--text-color-first);
+}
+
+.bag-price {
+  margin-top: 1rem;
+  font-size: 24px;
+  text-align: center;
+  color: var(--text-color-first);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1024px) {
+  .bag-box {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bag-box {
+    width: 45%;
+  }
+
+  .bag-name {
+    font-size: 20px;
+  }
+
+  .bag-price {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bag-box {
+    width: 100%;
+  }
+
+  .bag-name {
+    font-size: 18px;
+  }
+
+  .bag-price {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  .bag-name {
+    font-size: 16px;
+  }
+
+  .bag-price {
+    font-size: 14px;
+  }
+}
+
+
+
 /* +++++++++++++++  FOOTER ++++++++++++++++++  */
 .footer {
   width: 100%;

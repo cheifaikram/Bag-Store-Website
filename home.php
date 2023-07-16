@@ -50,7 +50,37 @@ if (isset($_SESSION['user_id'])) {
 
   <!-- BAGS SECTION  -->
   <section class="bags-container">
-  <h1 class="brand-title"> Our Best Selling Bags </h1>
+    <h1 class="bag-title"> Our Best Selling Bags </h1>
+    <div class="bag-cont">
+      <div class="bag-box">
+        <img src="images/bag_img1.jpg" alt="">
+        <h3 class="brand-bag">Hermes</h3>
+        <h2 class="bag-name"> Taurillon Novillo Birkin 25 Cuivre </h2>
+        <p class="bag-price">$21695</p>
+      </div>
+
+      <div class="bag-box">
+        <img src="images/bag_img2.jpg" alt="">
+        <h3 class="brand-bag">Celine</h3>
+        <h2 class="bag-name">Shiny Calfskin Triomphe Shoulder Bag</h2>
+        <p class="bag-price">$2695</p>
+      </div>
+
+      <div class="bag-box">
+        <img src="images/bag_img3.jpeg" alt="">
+        <h3 class="brand-bag">Louis vuitton</h3>
+        <h2 class="bag-name">Neverfull Nm Tote Monogram Canvas Pm</h2>
+        <p class="bag-price">$1580</p>
+      </div>
+
+      <div class="bag-box">
+        <h3 class="brand-bag">Fendi</h3>
+        <img src="images/bag_img4.jpeg" alt="">
+        <h2 class="bag-name">Fabric Jacquard Ff 1974 Mini Baguette</h2>
+        <p class="bag-price">$2275</p>
+      </div>
+
+    </div>
 
   </section>
 
