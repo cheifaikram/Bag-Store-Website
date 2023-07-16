@@ -92,7 +92,7 @@ if (isset($_SESSION['user_id'])) {
 
      <!-- SHOWROOM SECTION  -->
      <section class="showroom-container">
-      <div class="title-desc">
+       <div class="title-desc">
         <div class="showroom-title-cont">
           <h1 class="showroom-title">Our Wellknown Showroom</h1>
         </div>
@@ -105,22 +105,31 @@ if (isset($_SESSION['user_id'])) {
          Our showrooms are a haven for discerning individuals who appreciate the artistry, 
          craftsmanship, and timeless allure of high-end bags."</p>
         </div>
-      </div>
-      
-     <div class="wrapper">
-        <i class="fa-solid fa-arrow-left button" id="prev"></i>
-        <div class="image-container">
-          <div class="carousel">
-            <img class="img" src="images/showroom1.jpg" alt="" />
-            <img class="img" src="images/showroom2.jpg" alt="" />
-            <img class="img" src="images/showroom3.jpg" alt="" />
-            <img class="img" src="images/showroom4.jpg" alt="" />
+       </div>
+       <div class="wrapper">
+         <i class="fa-solid fa-arrow-left button" id="prev"></i>
+         <div class="image-container">
+           <div class="carousel">
+             <img class="img" src="images/showroom1.jpg" alt="" />
+             <img class="img" src="images/showroom2.jpg" alt="" />
+             <img class="img" src="images/showroom3.jpg" alt="" />
+             <img class="img" src="images/showroom4.jpg" alt="" />
+           </div>
+           <i class="fa-solid fa-arrow-right button" id="next"></i>
          </div>
-         <i class="fa-solid fa-arrow-right button" id="next"></i>
-      </div>
-    </div>
-    </div>
+       </div>
      </section>
+
+     <!-- CONTACT SECTION  -->
+     <section class="contact-container">
+      <div class="conatct-cont">
+        <h1 class="contact-title">Do You Have Any Question?</h1>
+        <div class="button-cont">
+          <a href="contact.php" class="bag-btn">Contact Us</a>
+        </div>
+      </div>
+     </section>
+
     </div>
     <!-- FOOTER SECTION  -->
     <section class="footer">

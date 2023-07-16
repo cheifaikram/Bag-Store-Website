@@ -295,6 +295,7 @@ body{
   background-color: white;
   margin: 1rem 2rem;
   box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.4);
+  border-radius: 20px;
 
 }
 
@@ -302,6 +303,7 @@ body{
   /* filter: brightness(0) invert(1); */
   height: auto;
   width: 200px;
+  
 }
 
 /* +++++++++++++++  BAGS ++++++++++++++++++  */
@@ -481,6 +483,31 @@ i#next {
   border: 10px solid #fff;
 }
 
+/* +++++++++++++++  Contact ++++++++++++++++++  */
+.contact-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.contact-container .conatct-cont{
+  width: 100%;
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.3);
+}
+
+.contact-container .conatct-cont .contact-title{
+  text-align: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  font-size: 32px;
+}
 
 /* +++++++++++++++  FOOTER ++++++++++++++++++  */
 .footer {
@@ -838,6 +865,12 @@ i#next {
       width: 80%;
     }
 
+    /* +++++++++++++++++++++  CONTACT +++++++++++++++++ */
+    .contact-container .conatct-cont .contact-title{
+      padding: 0 1rem;
+      font-size: 24px;
+    }
+
     /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
     .footer .box {
       width: 100%;
@@ -920,6 +953,12 @@ i#next {
     /* +++++++++++++++++++++  SHOWROOM +++++++++++++++++ */
     .showroom-container .wrapper {
       width: 100%;
+    }
+
+    /* +++++++++++++++++++++  CONTACT +++++++++++++++++ */
+    .contact-container .conatct-cont .contact-title{
+      padding: 0 1rem;
+      font-size: 18px;
     }
 
     /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
