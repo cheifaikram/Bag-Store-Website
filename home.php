@@ -21,20 +21,43 @@ if (isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
+<body class="body">
 <?php include 'header.php'; ?>
 
 <div class="main--container">
-    <section class="home-container">
-      <div class="left-cont">
-        <h1 class="home-title"> With <span>Kim's Shop</span> a Bag Would Change Your Life</h1>
-      </div>
-      <div class="right-cont">
-        <div class="home-pattern">
-          <img src="home-img.png" alt="woman holding a channel bag">
-        </div>
-      </div>
-    </section>
+  <!-- HOME SECTION  -->
+  <section class="home-container">
+    <div class="left-cont">
+      <h1 class="home-title"> With <span>Kim's Shop</span> a Bag Would Change Your Life</h1>
+    </div>
+    <div class="right-cont">
+      <img src="images/home-img.png" alt="woman holding a channel bag">
+    </div>
+  </section>
+
+  <!-- BRANDS SECTION  -->
+  <section class="brands-container">
+    <h1 class="brand-title"> Top Rated Brands</h1>
+
+    <div class="brand-images">
+      <img src="images/Gucci-Logo.png" alt="gucci">
+      <img src="images/prada-logo-1.png" alt="prada">
+      <img src="images/6160571a76000b00045a7d9e.png" alt="balenciaga">
+      <img src="images/Saint-Laurent-logo.png" alt="ysl">
+    </div>
+
+  </section>
+
+  <!-- BAGS SECTION  -->
+  <section class="bags-container">
+  <h1 class="brand-title"> Our Best Selling Bags </h1>
+  
+  </section>
+
+
+  
+
+
 </div>
 
 <section class="footer">
