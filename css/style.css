@@ -286,7 +286,7 @@ body{
 
 .brands-container .brand-title{
   font-size: 32px;
-  margin: 0 2rem;
+  margin: 1rem 2rem;
 }
 
 .brand-images{
@@ -306,6 +306,10 @@ body{
 }
 
 /* +++++++++++++++  BAGS ++++++++++++++++++  */
+.bags-container{
+  margin-top: 5%;
+}
+
 .bags-container .bag-title{
   font-size: 32px;
   margin: 0 2rem;
@@ -328,6 +332,13 @@ body{
   box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.4);
 }
 
+.bag-box .brand-bag{
+  text-align: center;
+  margin-bottom: .5rem;
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .bag-box img {
   width: 100%;
   height: 60%;
@@ -338,62 +349,17 @@ body{
   margin-top: 10px;
   font-size: 20px;
   text-align: center;
+  font-weight: 500;
   color: var(--text-color-first);
 }
 
 .bag-price {
   margin-top: 1rem;
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 600;
   text-align: center;
   color: var(--text-color-first);
 }
-
-/* Responsive styles */
-@media screen and (max-width: 1024px) {
-  .bag-box {
-    width: 30%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .bag-box {
-    width: 45%;
-  }
-
-  .bag-name {
-    font-size: 20px;
-  }
-
-  .bag-price {
-    font-size: 18px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .bag-box {
-    width: 100%;
-  }
-
-  .bag-name {
-    font-size: 18px;
-  }
-
-  .bag-price {
-    font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 260px) {
-  .bag-name {
-    font-size: 16px;
-  }
-
-  .bag-price {
-    font-size: 14px;
-  }
-}
-
-
 
 /* +++++++++++++++  FOOTER ++++++++++++++++++  */
 .footer {
@@ -571,6 +537,11 @@ body{
     flex-wrap: wrap;
   }
 
+  /* +++++++++++++++++++++  BAGS +++++++++++++++++ */
+  .bag-box {
+    width: 30%;
+  }
+
   /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
   .footer .box {
     width: calc(33.33% - 2rem); 
@@ -616,6 +587,19 @@ body{
   /* +++++++++++++++++++++  BRANDS +++++++++++++++++ */
   .brand-images {
     justify-content: center;
+  }
+
+  /* +++++++++++++++++++++  BAGS +++++++++++++++++ */
+  .bag-box {
+    width: 45%;
+  }
+
+  .bag-name {
+    font-size: 16px;
+  }
+
+  .bag-price {
+    font-size: 18px;
   }
 
   /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
@@ -681,6 +665,19 @@ body{
       align-items: center;
     }
 
+    /* +++++++++++++++++++++  BAGS +++++++++++++++++ */
+    .bag-box {
+      width: 100%;
+    }
+  
+    .bag-name {
+      font-size: 18px;
+    }
+  
+    .bag-price {
+      font-size: 16px;
+    }
+
     /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
     .footer .box {
       width: 100%;
@@ -741,6 +738,19 @@ body{
     /* +++++++++++++++++++++  BRANDS +++++++++++++++++ */
     .brand-images img {
       width: 150px;
+    }
+
+    /* +++++++++++++++++++++  BAGS +++++++++++++++++ */
+    .bag-box .brand-bag{
+      font-size: 15px;
+    }
+  
+    .bag-name {
+      font-size: 12px;
+    }
+  
+    .bag-price {
+      font-size: 14px;
     }
     
     /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
