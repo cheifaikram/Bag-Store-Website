@@ -15,18 +15,16 @@ if (isset($_SESSION['user_id'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME PAGE</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    
-    
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME PAGE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  
 </head>
-<body class="body">
+
+<body>
 <?php include 'header.php'; ?>
 
 <div class="main--container">
@@ -93,8 +91,8 @@ if (isset($_SESSION['user_id'])) {
   <!-- SHOWROOM SECTION  -->
   <section class="showroom-container">
   <h1 class="showroom-title"> Our Wellknown Showroom </h1>
-    <!-- <div class="showroom-cont"> -->
-      <!-- <div class="about-showroom">
+    <div class="showroom-cont">
+      <div class="about-showroom">
         <p class="showroom-par">"Welcome to our exquisite showrooms, where luxury and elegance meet 
         in a curated collection of the finest and most coveted designer bags. Step into a world of
          opulence and sophistication, where every corner showcases a meticulously handpicked 
@@ -106,24 +104,24 @@ if (isset($_SESSION['user_id'])) {
           experience, allowing you to indulge in the world of exquisite fashion. Discover the 
           embodiment of prestige and style as you explore our showrooms of expensive bags, where 
           every visit is a journey into the epitome of elegance."</p>
-      </div> -->
+      </div>
 
-      <div class="wrapper">
-      <i class="fa-solid fa-arrow-left button" id="prev"></i>
-      <div class="image-container">
-        <div class="carousel">
-          <img src="images/showroom1.jpg" alt="" />
-          <img src="images/showroom2.jpg" alt="" />
-          <img src="images/showroom3.jpg" alt="" />
-          <img src="images/showroom4.jpg" alt="" />
-        </div>
-        <i class="fa-solid fa-arrow-right button" id="next"></i>
+     <div class="wrapper">
+        <i class="fa-solid fa-arrow-left button" id="prev"></i>
+        <div class="image-container">
+          <div class="carousel">
+            <img class="img" src="images/showroom1.jpg" alt="" />
+            <img class="img" src="images/showroom2.jpg" alt="" />
+            <img class="img" src="images/showroom3.jpg" alt="" />
+            <img class="img" src="images/showroom4.jpg" alt="" />
+         </div>
+         <i class="fa-solid fa-arrow-right button" id="next"></i>
       </div>
     </div>
-    <!-- </div> -->
+    </div>
   </section>
-</div>
 
+</div>
 <section class="footer">
 
    <div class="box-container">
@@ -167,9 +165,10 @@ if (isset($_SESSION['user_id'])) {
       </div>
 
    </div>
-
-
 </section>
-<script src="js/user_script.js" defer></script>
+
+
+<script src="js/user_script.js"></script>
+
 </body>
 </html>

@@ -396,8 +396,7 @@ body{
   width: 60%;
 }
 
-
-.wrapper {
+.showroom-cont .wrapper {
   display: flex;
   max-width: 90%;
   width: 30%;
