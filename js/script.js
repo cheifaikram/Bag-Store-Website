@@ -28,12 +28,13 @@ function toggleOptions() {
   }
 
 function selectOption(value) {
-    var selectedText = document.getElementById("selected_text");
-    selectedText.textContent = value;
+  var selectedText = document.getElementById("selected_text");
+  selectedText.textContent = value;
 
-    var userInput = document.getElementById("user_type_input");
-    userInput.value = value;
+  var userInput = document.getElementById("user_type_input");
+  userInput.value = value;
 
-    var optionsList = document.getElementById("options_list");
-    optionsList.style.display = "none";
-  }
+  var optionsList = document.getElementById("options_list");
+  optionsList.style.display = "none";
+}
+
