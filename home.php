@@ -42,7 +42,7 @@ if (isset($_SESSION['user_id'])) {
     <div class="brand-images">
       <img src="images/Gucci-Logo.png" alt="gucci">
       <img src="images/prada-logo-1.png" alt="prada">
-      <img src="images/6160571a76000b00045a7d9e.png" alt="balenciaga">
+      <img src="images/Balenciaga-Logo.wine.png" alt="balenciaga">
       <img src="images/Saint-Laurent-logo.png" alt="ysl">
     </div>
 
@@ -51,7 +51,7 @@ if (isset($_SESSION['user_id'])) {
   <!-- BAGS SECTION  -->
   <section class="bags-container">
   <h1 class="brand-title"> Our Best Selling Bags </h1>
-  
+
   </section>
 
 
