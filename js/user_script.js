@@ -26,3 +26,35 @@ document.onclick = (e) => {
   }
 };
 
+//DARK MODE
+const body = document.querySelector(".body")
+const sun = document.querySelector(".sun")
+const moon = document.querySelector(".moon")
+
+const darkMode = 'dark--mode';
+
+const setDarkMode = (mode) => {
+body.classList.toggle(darkMode, mode === 'dark');
+localStorage.setItem('dark-mode', mode);
+};
+
+const removeDarkMode = () => {
+body.classList.remove(darkMode);
+localStorage.removeItem('dark-mode');
+};
+
+const getCurrentMode = () => document.body.classList.contains(darkMode) ? 'dark' : 'light';
+
+const selectedMode = localStorage.getItem('dark-mode');
+
+if (selectedMode) {
+setDarkMode(selectedMode);
+}
+
+moon.addEventListener('click', () => {
+setDarkMode('dark');
+});
+
+sun.addEventListener('click', () => {
+setDarkMode('light');
+});

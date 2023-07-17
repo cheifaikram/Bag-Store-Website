@@ -99,7 +99,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <a href="index.html" class="log-reg-btn">Register</a>
                 </div>
                 <div class="logo-icons">
-                <i class="ri-sun-line sun"></i>
+                    <i class="ri-sun-line sun"></i>
                     <i class="ri-moon-line moon"></i>
                     <i class="ri-search-2-line"></i>
                 </div>
