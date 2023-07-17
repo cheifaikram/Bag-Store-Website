@@ -26,7 +26,7 @@ if (isset($_SESSION['user_id'])) {
   
 </head>
 
-<body class="body">
+<body class="user-body">
    <?php include 'header.php'; ?>
 
    <div class="main--container">

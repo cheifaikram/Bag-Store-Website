@@ -27,34 +27,34 @@ document.onclick = (e) => {
 };
 
 //DARK MODE
-const body = document.querySelector(".body")
-const sun = document.querySelector(".sun")
-const moon = document.querySelector(".moon")
+const userBody = document.querySelector(".user-body");
+const userSun = document.querySelector(".user-sun");
+const userMoon = document.querySelector(".user-moon");
 
-const darkMode = 'dark--mode';
+const userDarkMode = 'user-dark-mode';
 
-const setDarkMode = (mode) => {
-body.classList.toggle(darkMode, mode === 'dark');
-localStorage.setItem('dark-mode', mode);
+const setUserDarkMode = (mode) => {
+  userBody.classList.toggle(userDarkMode, mode === 'dark');
+  localStorage.setItem('user-dark-mode', mode);
 };
 
-const removeDarkMode = () => {
-body.classList.remove(darkMode);
-localStorage.removeItem('dark-mode');
+const removeUserDarkMode = () => {
+  userBody.classList.remove(userDarkMode);
+  localStorage.removeItem('user-dark-mode');
 };
 
-const getCurrentMode = () => document.body.classList.contains(darkMode) ? 'dark' : 'light';
+const getUserCurrentMode = () => userBody.classList.contains(userDarkMode) ? 'dark' : 'light';
 
-const selectedMode = localStorage.getItem('dark-mode');
+const selectedUserMode = localStorage.getItem('user-dark-mode');
 
-if (selectedMode) {
-setDarkMode(selectedMode);
+if (selectedUserMode) {
+  setUserDarkMode(selectedUserMode);
 }
 
-moon.addEventListener('click', () => {
-setDarkMode('dark');
+userMoon.addEventListener('click', () => {
+  setUserDarkMode('dark');
 });
 
-sun.addEventListener('click', () => {
-setDarkMode('light');
+userSun.addEventListener('click', () => {
+  setUserDarkMode('light');
 });

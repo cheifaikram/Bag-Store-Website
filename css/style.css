@@ -38,7 +38,7 @@ body{
 }
 
 /* variables dark mode */
-.body.dark--mode{
+.user-body.user-dark-mode{
   --bg-color-body: #202020;
 
   --bg-color-first:linear-gradient(to bottom right, #242424,#3d3d3d);
@@ -229,21 +229,21 @@ body{
 }
 /* DARRRRRRRRRRRRRRRRRRRRRRRRRRRKKKKKKKKKK MODEEEEEEEEEEEEEEEEEE */
 
-i.moon{
+i.user-moon{
   display: block;
   color: var(--text-color-third);
 }
 
-.body.dark--mode .moon{
+.user-body.user-dark-mode .user-moon{
   display: none;
 }
 
-i.sun{
+i.user-sun{
   color: #ecd765;
   display: none;
 }
 
-.body.dark--mode .sun{
+.user-body.user-dark-mode .user-sun{
   display: block;
 }
 
