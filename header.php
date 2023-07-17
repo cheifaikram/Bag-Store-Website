@@ -15,7 +15,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="user-body">
     <nav class="navbar">
         <div class="navbar-left">
            <div class="logo">
