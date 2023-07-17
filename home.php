@@ -26,7 +26,7 @@ if (isset($_SESSION['user_id'])) {
   
 </head>
 
-<body>
+<body class="body">
    <?php include 'header.php'; ?>
 
    <div class="main--container">
@@ -199,6 +199,40 @@ if (isset($_SESSION['user_id'])) {
       wrapper.addEventListener("mouseover", () => clearInterval(intervalId));
       wrapper.addEventListener("mouseleave", autoSlide);
 
+    </script>
+
+    <script>        
+        const body = document.querySelector(".body")
+        const sun = document.querySelector(".sun")
+        const moon = document.querySelector(".moon")
+        
+        const darkMode = 'dark--mode';
+        
+        const setDarkMode = (mode) => {
+          body.classList.toggle(darkMode, mode === 'dark');
+          localStorage.setItem('dark-mode', mode);
+        };
+        
+        const removeDarkMode = () => {
+          body.classList.remove(darkMode);
+          localStorage.removeItem('dark-mode');
+        };
+        
+        const getCurrentMode = () => document.body.classList.contains(darkMode) ? 'dark' : 'light';
+        
+        const selectedMode = localStorage.getItem('dark-mode');
+        
+        if (selectedMode) {
+          setDarkMode(selectedMode);
+        }
+        
+        moon.addEventListener('click', () => {
+          setDarkMode('dark');
+        });
+        
+        sun.addEventListener('click', () => {
+          setDarkMode('light');
+        });
     </script>
 
     <script src="js/user_script.js"></script>

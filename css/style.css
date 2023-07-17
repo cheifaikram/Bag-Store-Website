@@ -226,6 +226,28 @@ body{
   cursor: pointer;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
+/* DARRRRRRRRRRRRRRRRRRRRRRRRRRRKKKKKKKKKK MODEEEEEEEEEEEEEEEEEE */
+
+
+i.moon{
+  display: block;
+  color: var(--text-color-third);
+}
+
+.body.dark--mode .moon{
+  display: none;
+}
+
+i.sun{
+  color: #ecd765;
+  display: none;
+}
+
+.body.dark--mode .sun{
+  display: block;
+  color: var(--text-color-third);
+}
+
 
 /* +++++++++++++++++++ HOME +++++++++++++++++ */
 

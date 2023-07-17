@@ -74,17 +74,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
               </ul>
         </div>
 
-        <!-- <div class="dark--theme--btn">
-            <i class="ri-sun-line sun" style="display: none;"></i>
-            <i class="ri-moon-line moon"></i>
-        </div>  -->
-
         <div class="navbar-right">
             <?php
             if (isset($_SESSION['user_id'])) {
                 ?>
 
                 <div class="logo-icons">
+                    <i class="ri-sun-line sun"></i>
                     <i class="ri-moon-line moon"></i>
                     <i class="ri-search-2-line"></i>
                     <i id="user-btn" class="ri-user-line"></i>
@@ -103,6 +99,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <a href="index.html" class="log-reg-btn">Register</a>
                 </div>
                 <div class="logo-icons">
+                <i class="ri-sun-line sun"></i>
                     <i class="ri-moon-line moon"></i>
                     <i class="ri-search-2-line"></i>
                 </div>
