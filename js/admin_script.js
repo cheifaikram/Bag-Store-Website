@@ -20,30 +20,24 @@ const moon = document.querySelector(".moon")
 
 const darkMode = 'dark--mode';
 
-// Function to set the dark mode in local storage
 const setDarkMode = (mode) => {
   body.classList.toggle(darkMode, mode === 'dark');
   localStorage.setItem('dark-mode', mode);
 };
 
-// Function to remove dark mode from local storage
 const removeDarkMode = () => {
   body.classList.remove(darkMode);
   localStorage.removeItem('dark-mode');
 };
 
-// Function to get the current dark mode
 const getCurrentMode = () => document.body.classList.contains(darkMode) ? 'dark' : 'light';
 
-// Check if dark mode is already selected in local storage
 const selectedMode = localStorage.getItem('dark-mode');
 
-// Apply the selected mode
 if (selectedMode) {
   setDarkMode(selectedMode);
 }
 
-// Toggle between dark and light mode
 moon.addEventListener('click', () => {
   setDarkMode('dark');
 });
@@ -51,6 +45,8 @@ moon.addEventListener('click', () => {
 sun.addEventListener('click', () => {
   setDarkMode('light');
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
   let menu = document.querySelector(".menu");
