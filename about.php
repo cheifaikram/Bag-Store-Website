@@ -33,52 +33,45 @@ if (isset($_SESSION['user_id'])) {
 
     <section class="history-section">
   <div class="container">
-    <h2>Our History</h2>
-    <p>Welcome to the captivating tale of our journey, where passion, innovation, and excellence intertwine.</p>
-    
+    <h2 class="history-title">Our Journey</h2>
+    <p class="history-description">Discover the remarkable story of our company</p>
+  
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-year">2005</div>
         <div class="timeline-content">
-          <h3>Founding of the Company</h3>
-          <p>Our story began with a visionary dream, when our founder, John Smith, dared to embark on a quest to redefine luxury bag craftsmanship.</p>
+          <h3 class="timeline-title">Company Founding</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus nulla eu aliquet mollis.</p>
         </div>
       </div>
-      
+  
       <div class="timeline-item">
         <div class="timeline-year">2010</div>
         <div class="timeline-content">
-          <h3>Unveiling of Iconic Collection</h3>
-          <p>A pivotal moment in our history was the launch of our iconic collection, which captivated the world with its exquisite designs and meticulous attention to detail.</p>
+          <h3 class="timeline-title">Expansion and Growth</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus nulla eu aliquet mollis.</p>
         </div>
       </div>
-      
+  
       <div class="timeline-item">
         <div class="timeline-year">2015</div>
         <div class="timeline-content">
-          <h3>Expansion into International Markets</h3>
-          <p>Driven by our commitment to global luxury enthusiasts, we expanded our presence into international markets, establishing flagship boutiques in fashion capitals worldwide.</p>
+          <h3 class="timeline-title">International Presence</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus nulla eu aliquet mollis.</p>
         </div>
       </div>
-      
+  
       <div class="timeline-item">
         <div class="timeline-year">2020</div>
         <div class="timeline-content">
-          <h3>Celebrating a Decade of Excellence</h3>
-          <p>As we marked our 10th anniversary, we reflected upon a decade of unparalleled craftsmanship and celebrated the trust and loyalty of our discerning customers.</p>
-        </div>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-year">Present</div>
-        <div class="timeline-content">
-          <h3>Continuing the Legacy</h3>
-          <p>Today, we continue our pursuit of perfection, crafting timeless masterpieces that embody elegance, sophistication, and the essence of luxury.</p>
+          <h3 class="timeline-title">Innovation and Success</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus nulla eu aliquet mollis.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
     <section class="philosophy-section">
