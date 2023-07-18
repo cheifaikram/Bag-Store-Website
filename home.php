@@ -6,13 +6,7 @@ if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
     echo "Welcome, User!";
 } else {
-    // Generate an anonymous ID
-    $anonymous_id = generateAnonymousID(); // Replace this with your logic to generate the anonymous ID
-    
-    // Save the anonymous ID in the session
-    $_SESSION['anonymous_id'] = $anonymous_id;
-    
-    echo "Welcome, Anonymous User!";
+  echo "Welcome, Anonymous User!";
 }
 
 function generateAnonymousID() {
