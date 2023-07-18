@@ -228,23 +228,24 @@ body{
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 /* DARRRRRRRRRRRRRRRRRRRRRRRRRRRKKKKKKKKKK MODEEEEEEEEEEEEEEEEEE */
-
-i.user-moon{
+.logo-icons .user-moon{
   display: block;
   color: var(--text-color-third);
+  cursor: pointer;
 }
 
 .user-body.user-dark-mode .user-moon{
   display: none;
 }
 
-i.user-sun{
+.logo-icons .user-sun{
   color: #ecd765;
   display: none;
 }
 
 .user-body.user-dark-mode .user-sun{
   display: block;
+  cursor: pointer;
 }
 
 

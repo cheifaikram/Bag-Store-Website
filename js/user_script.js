@@ -1,3 +1,39 @@
+//DARK MODE
+document.addEventListener('DOMContentLoaded', function() {
+  const userBody = document.querySelector(".user-body");
+  const userSun = document.querySelector(".user-sun");
+  const userMoon = document.querySelector(".user-moon");
+
+  const userDarkMode = 'user-dark-mode';
+
+  const setUserDarkMode = (mode) => {
+    userBody.classList.toggle(userDarkMode, mode === 'dark');
+    localStorage.setItem('user-dark-mode', mode);
+  };
+
+  const removeUserDarkMode = () => {
+    userBody.classList.remove(userDarkMode);
+    localStorage.removeItem('user-dark-mode');
+  };
+
+  const getUserCurrentMode = () => userBody.classList.contains(userDarkMode) ? 'dark' : 'light';
+
+  const selectedUserMode = localStorage.getItem('user-dark-mode');
+
+  if (selectedUserMode) {
+    setUserDarkMode(selectedUserMode);
+  }
+
+  userMoon.addEventListener('click', () => {
+    setUserDarkMode('dark');
+  });
+
+  userSun.addEventListener('click', () => {
+    setUserDarkMode('light');
+  });
+  });
+
+  
 const list = document.querySelectorAll('.list');
 function activeLink() {
     list.forEach((item) =>
@@ -26,35 +62,3 @@ document.onclick = (e) => {
   }
 };
 
-//DARK MODE
-const userBody = document.querySelector(".user-body");
-const userSun = document.querySelector(".user-sun");
-const userMoon = document.querySelector(".user-moon");
-
-const userDarkMode = 'user-dark-mode';
-
-const setUserDarkMode = (mode) => {
-  userBody.classList.toggle(userDarkMode, mode === 'dark');
-  localStorage.setItem('user-dark-mode', mode);
-};
-
-const removeUserDarkMode = () => {
-  userBody.classList.remove(userDarkMode);
-  localStorage.removeItem('user-dark-mode');
-};
-
-const getUserCurrentMode = () => userBody.classList.contains(userDarkMode) ? 'dark' : 'light';
-
-const selectedUserMode = localStorage.getItem('user-dark-mode');
-
-if (selectedUserMode) {
-  setUserDarkMode(selectedUserMode);
-}
-
-userMoon.addEventListener('click', () => {
-  setUserDarkMode('dark');
-});
-
-userSun.addEventListener('click', () => {
-  setUserDarkMode('light');
-});

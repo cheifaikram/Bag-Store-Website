@@ -78,36 +78,35 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <?php
             if (isset($_SESSION['user_id'])) {
                 ?>
-
                 <div class="logo-icons">
-                    <i class="ri-sun-line user-sun"></i>
-                    <i class="ri-moon-line user-moon"></i>
-                    <i class="ri-search-2-line"></i>
-                    <i id="user-btn" class="ri-user-line"></i>
-                    <?php
-                      $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-                      $cart_rows_number = mysqli_num_rows($select_cart_number); 
-                    ?>
-                    <a href="cart.php" class="cart-logo"> <i class="ri-shopping-cart-2-line"></i> <span>(<?php echo $cart_rows_number; ?>)</span> </a>
+                  <i class="ri-sun-line user-sun"></i>
+                  <i class="ri-moon-line user-moon"></i>
+                  <i class="ri-search-2-line"></i>
+                  <i id="user-btn" class="ri-user-line"></i>
+                  <?php
+                  $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+                  $cart_rows_number = mysqli_num_rows($select_cart_number); 
+                  ?>
+                  <a href="cart.php" class="cart-logo"> <i class="ri-shopping-cart-2-line"></i> <span>(<?php echo $cart_rows_number; ?>)</span> </a>
                 </div>
-
                 <?php
-            } else {
+            } else{
                 ?>
                 <div class="log-reg">
                     <a href="index.html" class="log-reg-btn">Login</a>
                     <a href="index.html" class="log-reg-btn">Register</a>
                 </div>
+                
                 <div class="logo-icons">
                     <i class="ri-sun-line user-sun"></i>
                     <i class="ri-moon-line user-moon"></i>
                     <i class="ri-search-2-line"></i>
                 </div>
-                
                 <?php
             }
             ?>
         </div>
+ 
         <div class="account-box">
             <p>Username : <span><?php echo $_SESSION['user_name']; ?></span></p>
             <p>Email : <span><?php echo $_SESSION['user_email']; ?></span></p>
@@ -116,9 +115,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             </div>
         </div>
     </nav>
-      
-      
-      
-    <script src="js/user_script.js"></script>
+<script src="js/user_script.js"></script>
+
+
+
 </body>
 </html>

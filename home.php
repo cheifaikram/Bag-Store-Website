@@ -4,11 +4,29 @@ session_start();
 
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-  
     echo "Welcome, User!";
-  } else {
+} else {
+    // Generate an anonymous ID
+    $anonymous_id = generateAnonymousID(); // Replace this with your logic to generate the anonymous ID
+    
+    // Save the anonymous ID in the session
+    $_SESSION['anonymous_id'] = $anonymous_id;
+    
     echo "Welcome, Anonymous User!";
+}
+
+function generateAnonymousID() {
+  // Generate a random string for anonymous ID
+  $length = 10; // Length of the generated ID
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $randomString = '';
+  
+  for ($i = 0; $i < $length; $i++) {
+    $randomString .= $characters[rand(0, strlen($characters) - 1)];
   }
+  
+  return $randomString;
+}
 
 ?>
 
@@ -23,6 +41,7 @@ if (isset($_SESSION['user_id'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 
   <link rel="stylesheet" href="css/style.css">
+   
   
 </head>
 
@@ -169,38 +188,32 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </section>
     
+    
+    <script src="js/user_script.js"></script>
     <script>
       const wrapper = document.querySelector(".wrapper");
       const carousel = document.querySelector(".carousel");
       const images = document.querySelectorAll(".img");
       const buttons = document.querySelectorAll(".button");
-      
+
       let imageIndex = 1;
       let intervalId;
-
-      const autoSlide = () => {
-        intervalId = setInterval(() => slideImage(++imageIndex), 2000);
+      const autoSlide = () => { intervalId = setInterval(() => slideImage(++imageIndex), 2000);
       };
       autoSlide();
-
       const slideImage = () => {
         imageIndex = imageIndex === images.length ? 0 : imageIndex < 0 ? images.length - 1 : imageIndex;
         carousel.style.transform = `translate(-${imageIndex * 100}%)`;
       };
-
       const updateClick = (e) => {
         clearInterval(intervalId);
         imageIndex += e.target.id === "next" ? 1 : -1;
         slideImage(imageIndex);
         autoSlide();
       };
-      
       buttons.forEach((button) => button.addEventListener("click", updateClick));
       wrapper.addEventListener("mouseover", () => clearInterval(intervalId));
       wrapper.addEventListener("mouseleave", autoSlide);
-
     </script>
-
-    <script src="js/user_script.js"></script>
   </body>
 </html>
