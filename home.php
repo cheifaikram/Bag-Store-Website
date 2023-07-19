@@ -33,7 +33,6 @@ function generateAnonymousID() {
   
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-
   <link rel="stylesheet" href="css/style.css">
    
   
@@ -71,7 +70,7 @@ function generateAnonymousID() {
     <h1 class="bag-title"> Our Best Selling Bags </h1>
     <div class="bag-cont">
       <div class="bag-box">
-        <img src="images/bag_img1.jpg" alt="">
+        <img src="images/bag_img1.jpg" alt="" >
         <p class="brand-bag">Hermes</p>
         <h2 class="bag-name"> Taurillon Novillo Birkin 25 </h2>
         <p class="bag-price">$21695</p>
@@ -182,8 +181,8 @@ function generateAnonymousID() {
       </div>
     </section>
     
-    
     <script src="js/user_script.js"></script>
+    
     <script>
       const wrapper = document.querySelector(".wrapper");
       const carousel = document.querySelector(".carousel");

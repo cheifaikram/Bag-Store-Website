@@ -30,7 +30,7 @@ body{
   --bg-card-2:#3bc59a;
   --bg-card-3:#eec79c;
   --bg-card-4:#cb84f9;
-  --bg-card-5:#d1e5ff;
+  --bg-card-5:#ffffff;
 
   --more-and-less:#555;
 
@@ -56,7 +56,7 @@ body{
   --bg-card-2:linear-gradient(to bottom right, #2b2b2b, #2c715b);
   --bg-card-3:linear-gradient(to bottom right, #2b2b2b, #654828);
   --bg-card-4:linear-gradient(to bottom right, #2b2b2b, #755090);
-  --bg-card-5:linear-gradient(to bottom right, #2b2b2b, #060b2d);
+  --bg-card-5:linear-gradient(to bottom right, #000000 ,#006FFF);
 
 
   --more-and-less:#237158;
@@ -279,6 +279,7 @@ body{
   font-size: 48px;
   text-align: center;
   margin: 0 2rem;
+  color: var(--text-color-first);
 }
 
 .home-title span{
@@ -322,21 +323,22 @@ body{
 .brands-container .brand-title{
   font-size: 32px;
   margin: 0 2rem;
+  color: var(--text-color-first);
 }
 
 .brand-images{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: var(--bg-color-first);
-  margin: 1rem 2rem;
+  background-color: white;
+  margin: 2rem 2rem;
   box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.4);
   border-radius: 20px;
 
 }
 
 .brands-container img{
-  /* filter: brightness(0) invert(1); */
+  /* filter: brightness(0) invert(1);  */
   height: auto;
   width: 200px;
   
@@ -350,6 +352,7 @@ body{
 .bags-container .bag-title{
   font-size: 32px;
   margin: 0 2rem;
+  color: var(--text-color-first);
 }
 
 .bag-cont {
@@ -365,7 +368,7 @@ body{
   width: 23%;
   margin-bottom: 20px;
   border-radius: 12px;
-  background-color: var(--bg-color-first);
+  background: white;
   padding: 1rem;
   box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.4);
 }
@@ -448,6 +451,7 @@ body{
 .showroom-container .title-desc .showroom-title-cont .showroom-title{
   font-size: 32px;
   margin: 0;
+  color: var(--text-color-first);
 }
 
 .showroom-container .title-desc .about-showroom{
@@ -543,6 +547,7 @@ i#next {
   margin: 1rem 0;
   padding: 1rem;
   font-size: 32px;
+  color: var(--text-color-first);
 }
 
 /* +++++++++++++++  FOOTER ++++++++++++++++++  */
