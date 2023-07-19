@@ -41,7 +41,7 @@ body{
 .user-body.user-dark-mode{
   --bg-color-body: #202020;
 
-  --bg-color-first:linear-gradient(to bottom right, #893a3a,#838080);
+  --bg-color-first:linear-gradient(to bottom right, #3e3e3e,#585858);
   --bg-color-second:#202020;
   --bg-color-grey:rgb(77, 77, 77);
 
@@ -233,7 +233,11 @@ body{
   cursor: pointer;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
-/* DARRRRRRRRRRRRRRRRRRRRRRRRRRRKKKKKKKKKK MODEEEEEEEEEEEEEEEEEE */
+
+.logo-icons, .cart-logo .cart, .cart-logo span {
+  color: var(--text-color-first);
+}
+
 .logo-icons .user-moon{
   display: block;
   color: var(--text-color-third);

@@ -87,7 +87,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                   $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
                   $cart_rows_number = mysqli_num_rows($select_cart_number); 
                   ?>
-                  <a href="cart.php" class="cart-logo"> <i class="ri-shopping-cart-2-line"></i> <span>(<?php echo $cart_rows_number; ?>)</span> </a>
+                  <a href="cart.php" class="cart-logo"> <i class="ri-shopping-cart-2-line cart"></i> <span>(<?php echo $cart_rows_number; ?>)</span> </a>
                 </div>
                 <?php
             } else{
