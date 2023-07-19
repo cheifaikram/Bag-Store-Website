@@ -186,7 +186,7 @@ body{
   text-align: center;
   border-radius: .5rem;
   border:1px solid var(--text-color-first);
-  background-color: var(--hover-text-color) ;
+  background: var(--bg-color-first) ;
   display: none; 
   animation:fadeIn .2s linear;
   z-index: 2;
@@ -263,7 +263,7 @@ body{
 
 .home-container {
   display: flex;
-  height: 400px;
+  height: 500px;
   margin-bottom: 3rem;
 }
 
@@ -378,6 +378,7 @@ body{
   margin-bottom: .5rem;
   font-size: 24px;
   font-weight: 600;
+  color: #000;
 }
 
 .bag-box img {
@@ -391,7 +392,7 @@ body{
   font-size: 20px;
   text-align: center;
   font-weight: 500;
-  color: var(--text-color-first);
+  color: black;
 }
 
 .bag-price {
@@ -399,7 +400,7 @@ body{
   font-size: 22px;
   font-weight: 600;
   text-align: center;
-  color: var(--text-color-first);
+  color: black;
 }
 
 .button-cont{
@@ -413,7 +414,7 @@ body{
   padding: .8rem 4rem;
   background-color:var(--bg-color-third);
   cursor: pointer;
-  color: var(--text-color-light);
+  color: var(--hover-text-color);
   border: none;
   font-size: 16px;
   font-weight: 500;
@@ -462,6 +463,8 @@ body{
 
 .showroom-container .title-desc .about-showroom .showroom-par{
   font-size: 18px;
+  color: var(--text-color-first);
+  line-height: 1.8rem;
 }
 
 .showroom-container .wrapper {
