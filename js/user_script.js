@@ -65,3 +65,17 @@ document.onclick = (e) => {
 
 
 //// 
+document.addEventListener('DOMContentLoaded', function() {
+  const timeline = document.querySelector('.timeline');
+
+  timeline.addEventListener('click', function(event) {
+    // Check if the clicked element has the class .timeline-title
+    if (event.target.classList.contains('timeline-title')) {
+      // Get the corresponding .timeline-content element
+      const timelineContent = event.target.nextElementSibling;
+      
+      // Toggle the class .hidden to show or hide the .timeline-content paragraph
+      timelineContent.classList.toggle('hidden');
+    }
+  });
+});

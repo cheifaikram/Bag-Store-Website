@@ -30,8 +30,7 @@ if (isset($_SESSION['user_id'])) {
           of luxury bags to our esteemed customers.</p>
       </div>
     </section>
-
-    <section class="history-section">
+<section class="history-section">
   <div class="container">
     <h2 class="history-title">Our Journey</h2>
     <p class="history-description">Discover the remarkable story of our company</p>
@@ -41,7 +40,8 @@ if (isset($_SESSION['user_id'])) {
         <div class="timeline-year">2005</div>
         <div class="timeline-content">
           <h3 class="timeline-title">Company Founding</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus nulla eu aliquet mollis.</p>
+          <p class="hidden">Founded with a passion for elegance, our luxury bag online store curated an exquisite collection
+             that captivated discerning connoisseurs from the very beginning.</p>
         </div>
       </div>
   
@@ -49,7 +49,8 @@ if (isset($_SESSION['user_id'])) {
         <div class="timeline-year">2010</div>
         <div class="timeline-content">
           <h3 class="timeline-title">Expansion and Growth</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus nulla eu aliquet mollis.</p>
+          <p class="hidden">Our small boutique venture flourished into an iconic destination, delivering unparalleled service 
+            and exceptional products that captivated fashion enthusiasts worldwide.</p>
         </div>
       </div>
   
@@ -57,41 +58,35 @@ if (isset($_SESSION['user_id'])) {
         <div class="timeline-year">2015</div>
         <div class="timeline-content">
           <h3 class="timeline-title">International Presence</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus nulla eu aliquet mollis.</p>
+          <p class="hidden">Embracing international markets, our timeless designs transcended cultural boundaries, making our luxury
+             bags a statement of global style.</p>
         </div>
       </div>
   
       <div class="timeline-item">
-        <div class="timeline-year">2020</div>
+        <div class="timeline-year">2022</div>
         <div class="timeline-content">
           <h3 class="timeline-title">Innovation and Success</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus nulla eu aliquet mollis.</p>
+          <p class="hidden">By blending craftsmanship and modern technology, we revolutionized luxury e-commerce, garnering unprecedented
+             success and customer satisfaction.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-
     <section class="philosophy-section">
       <div class="container">
         <h2>Our Philosophy</h2>
-        <p>Share the philosophy and values that drive your brand. Explain what sets your luxury bags apart in terms of quality, craftsmanship, and design.</p>
-      </div>
-    </section>
-
-    <section class="product-section">
-      <div class="container">
-        <h2>Our Luxury Bags</h2>
-        <p>Describe the range of luxury bags you offer. Talk about different categories, materials used, and unique features that make your bags special.</p>
+        <p>Share the philosophy and values that drive your brand. Explain what sets your 
+          luxury bags apart in terms of quality, craftsmanship, and design.</p>
       </div>
     </section>
 
     <section class="experience-section">
       <div class="container">
         <h2>Customer Experience</h2>
-        <p>Explain your commitment to providing an excellent customer experience. Mention easy online shopping, secure payment options, and fast shipping.</p>
+        <p>Mention easy online shopping, secure payment options, and fast shipping, fast return.</p>
       </div>
     </section>
 
