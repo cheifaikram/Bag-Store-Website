@@ -112,7 +112,7 @@ if (isset($_SESSION['user_id'])) {
             </div>
 
             <div class="theback">
-              <img src="images/sus.jpeg" alt="">
+              <img src="images/elegance.jpeg" alt="">
             </div>
 
           </div>
@@ -128,7 +128,7 @@ if (isset($_SESSION['user_id'])) {
             </div>
 
             <div class="theback">
-              <img src="images/sus.jpeg" alt="">
+              <img src="images/art.jpg" alt="">
             </div>
 
           </div>
@@ -144,7 +144,7 @@ if (isset($_SESSION['user_id'])) {
             </div>
 
             <div class="theback">
-              <img src="images/sus.jpeg" alt="">
+              <img src="images/unique.jpg" alt="">
             </div>
 
           </div>
