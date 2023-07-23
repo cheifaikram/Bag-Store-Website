@@ -77,10 +77,39 @@ if (isset($_SESSION['user_id'])) {
 
     <section class="philosophy-section">
       <div class="container">
-        <h2>Our Philosophy</h2>
-        <p>Share the philosophy and values that drive your brand. Explain what sets your 
-          luxury bags apart in terms of quality, craftsmanship, and design.</p>
+        <h2 class="history-title">Our Philosophy</h2>
+        <p>At Kim's Shop, we believe that true luxury lies in the art of simplicity 
+          and timeless elegance. Our philosophy centers around the idea that a chic bag is 
+          more than just a fashion accessory; it's a statement of sophistication and 
+          individuality. Each bag is meticulously designed with an unwavering commitment 
+          to quality, craftsmanship, and ethical practices.</p>
       </div>
+      <div class="about-cont">
+        <div class="box">
+          <h2 class="title">Elegance</h2>
+          <p>We strive to redefine elegance, combining classic designs with contemporary elements 
+            to create bags that exude refined charm and everlasting allure.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="title">Sustainability</h2>
+          <p> Our dedication to sustainability drives us to source the finest materials
+             ethically, ensuring that our bags leave a positive impact on both fashion and the environment.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="title">Artistry</h2>
+          <p>Our bags are the result of the passion and expertise of skilled artisans who pour 
+            their heart into every stitch, making each piece a work of art.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="title">Individuality</h2>
+          <p>We celebrate the uniqueness of each customer, crafting limited-edition 
+            collections that reflect diverse styles and personalities.</p>
+        </div>
+      </div>
+
     </section>
 
     <section class="experience-section">
