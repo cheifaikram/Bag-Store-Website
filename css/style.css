@@ -600,6 +600,7 @@ i#next {
   
 
 /* //////////////////////////////////////////THE ABOUT PAGEEEEE //////////////////////////////////////////////*/
+/* Base styles */
 .history-section {
   padding: 3rem 0;
 }
@@ -678,9 +679,6 @@ i#next {
 .timeline-content p.hidden {
   display: none;
 }
-
-
-
 
 /* Media Queries */
 @media screen and (max-width: 1024px), screen and (max-width: 768px), screen and (max-width: 480px),screen and (max-width: 260px) {
@@ -828,6 +826,31 @@ i#next {
     margin: 0;
   }
 
+  /* =============================================== ABOUT PAGE ================================== */
+  /* HISTORY */
+  .history-title {
+    font-size: 28px;
+  }
+
+  .timeline-year {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+  }
+
+  .timeline-content .timeline-title{
+    font-size: 22px;
+  }
+
+  .timeline-content {
+    margin: 0 40px;
+  }
+
+  .timeline-content p {
+    font-size: 14px;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -906,6 +929,31 @@ i#next {
   /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
   .footer .box {
     width: calc(50% - 1rem); 
+  }
+
+  /* =============================================== ABOUT PAGE ================================== */
+  /* HISTORY */
+  .history-title {
+    font-size: 24px;
+  }
+
+  .timeline-year {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+  }
+
+  .timeline-content .timeline-title{
+    font-size: 22px;
+  }
+
+  .timeline-content {
+    margin: 0 40px;
+  }
+
+  .timeline-content p {
+    font-size: 12px;
   }
 }
 
@@ -1005,6 +1053,32 @@ i#next {
       margin-right: 0;
       margin-bottom: 1rem; 
     }
+
+    /* =============================================== ABOUT PAGE ================================== */
+  /* HISTORY */
+  .history-title {
+    font-size: 20px;
+  }
+
+  .timeline-year {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+    top: -40px;
+  }
+
+  .timeline-content .timeline-title{
+    font-size: 20px;
+  }
+
+  .timeline-content {
+    margin: 0 20px;
+  }
+
+  .timeline-content p {
+    font-size: 10px;
+  }
   }
 
   @media screen and (max-width: 260px) {
@@ -1094,6 +1168,32 @@ i#next {
       width: 100%;
       margin-right: 0;
       margin-bottom: 1rem; 
+    }
+
+  /* =============================================== ABOUT PAGE ================================== */
+  /* HISTORY */
+  .history-title {
+    font-size: 18px;
+  }
+
+  .timeline-year {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 9px;
+    top: -36px;
+  }
+
+  .timeline-content .timeline-title{
+    font-size: 16px;
+  }
+
+  .timeline-content {
+    margin: 0 20px;
+  }
+
+  .timeline-content p {
+    font-size: 9px;
   }
 }
 
