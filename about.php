@@ -75,7 +75,6 @@ if (isset($_SESSION['user_id'])) {
   </div>
 </section>
 
-
     <section class="philosophy-section">
       <div class="container">
         <h2 class="history-title">Our Philosophy</h2>
@@ -157,8 +156,31 @@ if (isset($_SESSION['user_id'])) {
     <section class="experience-section">
       <div class="container">
         <h2>Customer Experience</h2>
-        <p>Mention easy online shopping, secure payment options, and fast shipping, fast return.</p>
       </div>
+      <div class="experience-cont">
+
+        <div class="delivery">
+            <h2> Free Delivery</h2> 
+            <img src="images/truck.png" alt="">
+            <p>For all the south african countries </p>
+        </div>
+        <div class="return">
+            <h2> 5 Days Return </h2> 
+            <img src="images/money.png" alt="">
+            <p>You Will Get Your Money Back ASAP</p>
+         </div>
+        <div class="gift">
+            <h2>  Special Gifts</h2> 
+            <img src="images/gift.png" alt="">
+            <p>Free Gifts For Every Candy Order </p>
+        </div> 
+        <div class="payment">
+            <h2> highly secured</h2> 
+            <img src="images/pay.png" alt="">
+            <p>Protected and Secured By Paypal </p>
+        </div>
+        
+    </div>
     </section>
 
     <section class="testimonials-section">

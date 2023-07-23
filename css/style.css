@@ -761,40 +761,41 @@ i#next {
 
 /* Responsive styles */
 @media screen and (max-width: 1024px) {
-  .box {
+  .about-cont .box-container .box {
     width: 45%;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .box {
-    width: 70%;
-  }
+/* EXPRIENCE */
+.experience-cont{
+  display: flex;
+  align-items:flex-start;
+  width: auto;
+  width:100%;
+  height: auto;
 }
 
-@media screen and (max-width: 480px) {
-  .box {
-    width: 90%;
-    margin: 10px;
-  }
-
-  .title {
-    font-size: 20px;
-  }
+/*For images & h1 & p in container*/
+.experience-cont img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70px;
+  height: 70px;
 }
 
-@media screen and (max-width: 260px) {
-  .box {
-    width: 100%;
-    margin: 5px;
-  }
-
-  .title {
-    font-size: 18px;
-  }
+.experience-cont h2 {
+  color: black;
+  text-align: center;
 }
 
-
+.experience-cont p {
+  color: black;
+  font-size: 14px;
+  font-weight: normal;
+  text-align:center;
+  padding-top: 5%;
+}
 
 
 
@@ -1099,6 +1100,11 @@ i#next {
   .timeline-content p {
     font-size: 12px;
   }
+
+  /* PHYLO */
+  .about-cont .box-container .box {
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 480px){
@@ -1223,6 +1229,15 @@ i#next {
   .timeline-content p {
     font-size: 10px;
   }
+  /* phylo */
+  .about-cont .box-container .box {
+    width: 90%;
+    margin: 10px;
+  }
+
+  .thefront .title {
+    font-size: 20px;
+  }
   }
 
   @media screen and (max-width: 260px) {
@@ -1338,6 +1353,16 @@ i#next {
 
   .timeline-content p {
     font-size: 9px;
+  }
+
+  /* phylo */
+  .about-cont .box-container .box {
+    width: 100%;
+    margin: 5px;
+  }
+
+  .thefront .title {
+    font-size: 18px;
   }
 }
 
