@@ -85,13 +85,73 @@ if (isset($_SESSION['user_id'])) {
           to quality, craftsmanship, and ethical practices.</p>
       </div>
       <div class="about-cont">
-        <div class="box">
-          <h2 class="title">Elegance</h2>
-          <p>We strive to redefine elegance, combining classic designs with contemporary elements 
-            to create bags that exude refined charm and everlasting allure.</p>
+
+        <div class="box-container">
+          <div class="box">
+
+            <div class="thefront">
+              <h2 class="title">Sustainability</h2>
+              <p> Our dedication to sustainability drives us to source the finest materials
+              ethically, ensuring that our bags leave a positive impact on both fashion and the environment.</p>
+            </div>
+
+            <div class="theback">
+              <img src="images/sus.jpeg" alt="">
+            </div>
+
+          </div>
         </div>
 
-        <div class="box">
+        <div class="box-container">
+          <div class="box">
+
+            <div class="thefront">
+              <h2 class="title">Elegance</h2>
+              <p>We strive to redefine elegance, combining classic designs with contemporary elements 
+              to create bags that exude refined charm and everlasting allure.</p>
+            </div>
+
+            <div class="theback">
+              <img src="images/sus.jpeg" alt="">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="box-container">
+          <div class="box">
+
+            <div class="thefront">
+              <h2 class="title">Artistry</h2>
+              <p>Our bags are the result of the passion and expertise of skilled artisans who pour 
+            their heart into every stitch, making each piece a work of art.</p>
+            </div>
+
+            <div class="theback">
+              <img src="images/sus.jpeg" alt="">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="box-container">
+          <div class="box">
+
+            <div class="thefront">
+              <h2 class="title">Individuality</h2>
+              <p>We celebrate the uniqueness of each customer, crafting limited-edition 
+            collections that reflect diverse styles and personalities.</p>
+            </div>
+
+            <div class="theback">
+              <img src="images/sus.jpeg" alt="">
+            </div>
+
+          </div>
+        </div>
+        
+
+        <!-- <div class="box">
           <h2 class="title">Sustainability</h2>
           <p> Our dedication to sustainability drives us to source the finest materials
              ethically, ensuring that our bags leave a positive impact on both fashion and the environment.</p>
@@ -107,7 +167,7 @@ if (isset($_SESSION['user_id'])) {
           <h2 class="title">Individuality</h2>
           <p>We celebrate the uniqueness of each customer, crafting limited-edition 
             collections that reflect diverse styles and personalities.</p>
-        </div>
+        </div> -->
       </div>
 
     </section>
