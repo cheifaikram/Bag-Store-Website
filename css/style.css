@@ -601,7 +601,7 @@ i#next {
 /* //////////////////////////////////////////THE ABOUT PAGEEEEE //////////////////////////////////////////////*/
 /* Base styles */
 .history-section {
-  padding: 3rem 0;
+  padding: 1rem 0;
 }
 
 .container {
@@ -689,6 +689,7 @@ i#next {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .about-cont .box-container{ 
@@ -759,27 +760,28 @@ i#next {
   text-align:center;
 }
 
-/* Responsive styles */
-@media screen and (max-width: 1024px) {
-  .about-cont .box-container .box {
-    width: 45%;
-  }
-}
-
 /* EXPRIENCE */
-.experience-cont{
-  display: flex;
-  align-items:flex-start;
-  width: auto;
-  width:100%;
-  height: auto;
+.experience-card {
+  flex: 1;
+  max-width: 240px;
+  background-color: var(--bg-color-first);
+  color: black;
+  padding:  1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.3);
 }
 
-/*For images & h1 & p in container*/
+.experience-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .experience-cont img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 70px;
   height: 70px;
 }
@@ -793,7 +795,7 @@ i#next {
   color: black;
   font-size: 14px;
   font-weight: normal;
-  text-align:center;
+  text-align: center;
   padding-top: 5%;
 }
 
@@ -824,8 +826,13 @@ i#next {
 
 
 
+
+
+
+
 /* Media Queries */
-@media screen and (max-width: 1024px), screen and (max-width: 768px), screen and (max-width: 480px),screen and (max-width: 260px) {
+@media screen and (max-width: 1024px), screen and (max-width: 768px), 
+screen and (max-width: 480px),screen and (max-width: 260px) {
   .navbar-right { 
     width: 100%;
   }
@@ -995,7 +1002,15 @@ i#next {
   .timeline-content p {
     font-size: 14px;
   }
-
+  
+  /* EXPRIENCE */
+  .experience-card {
+    max-width: 200px;
+  }
+  .experience-cont img {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1101,9 +1116,13 @@ i#next {
     font-size: 12px;
   }
 
-  /* PHYLO */
-  .about-cont .box-container .box {
-    width: 70%;
+  /* EXPRIENCE */
+  .experience-card {
+    max-width: 150px;
+  }
+  .experience-cont img {
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -1230,17 +1249,22 @@ i#next {
     font-size: 10px;
   }
   /* phylo */
-  .about-cont .box-container .box {
-    width: 90%;
-    margin: 10px;
-  }
-
   .thefront .title {
     font-size: 20px;
   }
-  }
 
-  @media screen and (max-width: 260px) {
+  /* EXP */
+  .experience-card {
+    max-width: 150px;
+    margin: .8rem ;
+  }
+  .experience-cont img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 260px) {
     body {
       background-color: purple;
     }
@@ -1364,5 +1388,16 @@ i#next {
   .thefront .title {
     font-size: 18px;
   }
+
+  /* EXPRIENCE */
+  .experience-card {
+    max-width: 100%;
+    margin: 1rem;
+  }
+  .experience-cont img {
+    width: 30px;
+    height: 30px;
+  }
+
 }
 
