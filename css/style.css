@@ -565,33 +565,33 @@ i#next {
   justify-content:space-around;
 }
 
-.footer .box {
+.footer .box-container .box {
   width: calc(25% - 3rem); 
   margin-bottom: 2rem; 
 }
 
-.footer .box h3 {
+.footer .box-container .box h3 {
   text-transform: uppercase;
   color: var(--text-color-first);
   font-size: 1.5rem;
   padding-bottom: 0.5rem;
 }
 
-.footer .box p,
-.footer .box a {
+.footer .box-container .box p,
+.footer .box-container .box a {
   display: block;
   font-size: 1rem;
   color: var(--text-color-second);
   padding: 0.5rem 0;
 }
 
-.footer .box p i,
-.footer .box a i {
+.footer .box-container .box p i,
+.footer .box-container .box a i {
   color: var(--text-color-third);
   padding-right: 0.5rem;
 }
 
-.footer .box a:hover {
+.footer .box-container .box a:hover {
   color: var(--text-color-third);
   text-decoration: underline;
 }
@@ -777,6 +777,7 @@ i#next {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .experience-cont img {
@@ -798,6 +799,101 @@ i#next {
   text-align: center;
   padding-top: 5%;
 }
+
+/* TESTIMONIALS */
+
+.testimonials-container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.veiw-box{
+  width: 900px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;    
+}
+
+#testimonials{
+  display: flex;
+  transition: 0.5s;
+}
+.user{
+  width: 800px;
+  text-align: center;
+  padding: 20px 70px;
+  box-sizing: border-box;
+  background: #321764;
+  border-radius: 200px;
+  box-shadow: 0 10px 20px -5px #00000061;
+  position: relative;
+}
+
+.space{
+  margin: 0 70px;
+}
+.user img{
+  width: 120px;
+  border-radius: 50%;
+  border: 10px solid #e8ecff;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.user p{
+  font-size: 22px;
+  color: #cbb4f5;
+  line-height: 32px;
+  margin: 60px 0 30px;
+}
+.user p::before{
+  content: '\201C';
+  font-size: 120px;
+  height: 0;
+  display: inline-block;
+  vertical-align: -57;
+  margin-right: 10px;
+}
+.user p::after{
+  content: '\201D';
+  font-size: 120px;
+  height: 0;
+  display: inline-block;
+  vertical-align: -70;
+  margin-left: 10px;
+}
+.user h3{
+  font-size: 26px;
+  color: #cbb4f5;
+}
+.controls{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.controls span{
+  width: 15px;
+  height: 15px;
+  background: #321764;
+  border-radius: 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.active{
+  width: 45px !important;
+}
+
 
 
 
@@ -1002,7 +1098,7 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
   .timeline-content p {
     font-size: 14px;
   }
-  
+
   /* EXPRIENCE */
   .experience-card {
     max-width: 200px;
