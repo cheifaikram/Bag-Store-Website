@@ -185,7 +185,7 @@ if (isset($_SESSION['user_id'])) {
     </section>
 
 
-    <section class="testimonials-section">
+    <!-- <section class="testimonials-section">
       <div class="container">
         <h2 class="history-title">Testimonials</h2>
       </div>
@@ -223,7 +223,7 @@ if (isset($_SESSION['user_id'])) {
             
         </div>
     </div>
-    </section>
+    </section> -->
 
     
 
