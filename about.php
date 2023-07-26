@@ -190,57 +190,57 @@ if (isset($_SESSION['user_id'])) {
     <section class="testimonial-section">
       <div class="container">
         <h2 class="history-title">Customer Experience</h2>
-      </div>
+      </div> 
 
       <section class="con">
-      <div class="testimonial mySwiper">
+        <div class="testimonial mySwiper">
         <div class="testi-content swiper-wrapper">
           <div class="slide swiper-slide">
             <img src="images/user1.jpg" alt="" class="image" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-              saepe provident dolorem a quaerat quo error facere nihil deleniti
-              eligendi ipsum adipisci, fugit, architecto amet asperiores
-              doloremque deserunt eum nemo.
+            "I recently purchased a stunning luxury bag from your website, and I am absolutely 
+            in love with it! The craftsmanship is impeccable, and the design is so elegant and unique.
+            I receive compliments every time I carry it. Thank you for offering such a high-quality 
+            product that truly stands out. I'll definitely be a repeat customer!"
             </p>
 
             <i class="bx bxs-quote-alt-left quote-icon"></i>
 
             <div class="details">
-              <span class="name">Marnie Lotter</span>
-              <span class="job">Web Developer</span>
+              <span class="name"> Sarah W</span>
             </div>
           </div>
           <div class="slide swiper-slide">
             <img src="images/user2.jpg" alt="" class="image" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-              saepe provident dolorem a quaerat quo error facere nihil deleniti
-              eligendi ipsum adipisci, fugit, architecto amet asperiores
-              doloremque deserunt eum nemo.
+            "I've been a fashion enthusiast for years, and I must say that the luxury bag I 
+            bought from your website has exceeded all my expectations. The attention to detail 
+            and the choice of materials make it a true work of art. It's not just a bag; it's 
+            a statement piece that enhances any outfit. I'm incredibly satisfied with my purchase
+             and can't wait to explore more of your exquisite collection!"
             </p>
 
             <i class="bx bxs-quote-alt-left quote-icon"></i>
 
             <div class="details">
-              <span class="name">Marnie Lotter</span>
-              <span class="job">Web Developer</span>
+              <span class="name">Michael R</span>
             </div>
           </div>
           <div class="slide swiper-slide">
             <img src="images/user3.jpg" alt="" class="image" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-              saepe provident dolorem a quaerat quo error facere nihil deleniti
-              eligendi ipsum adipisci, fugit, architecto amet asperiores
-              doloremque deserunt eum nemo.
+            "I'm not usually one to write testimonials, but I couldn't resist sharing my wonderful 
+            experience with your luxury bag. The entire process, from browsing the website to 
+            receiving the package, was seamless and enjoyable. The bag itself is a dream come 
+            true – the perfect combination of style and functionality. I appreciate the commitment
+             to quality and the excellent customer service. Your brand has earned a loyal customer
+              in me!" 
             </p>
 
             <i class="bx bxs-quote-alt-left quote-icon"></i>
 
             <div class="details">
-              <span class="name">Marnie Lotter</span>
-              <span class="job">Web Developer</span>
+              <span class="name"> Emma S </span>
             </div>
           </div>
         </div>
@@ -248,17 +248,17 @@ if (isset($_SESSION['user_id'])) {
         <div class="swiper-button-prev nav-btn"></div>
         <div class="swiper-pagination"></div>
       </div>
-    </section>
+    </section> 
 
     </section>
     
 
-    <br><br><br>
+    <br><br><br> <br><br><br><br> <br><br><br><br> <br>
 
 
     <section class="footer">
       <div class="box-container">
-        <div class="box">
+        <!-- <div class="box">
           <h3>quick links</h3>
           <a href="home.php">Home</a>
           <a href="about.php">About</a>
@@ -289,7 +289,7 @@ if (isset($_SESSION['user_id'])) {
           <a href="#"> <i class="bx bxl-twitter"></i> Twitter </a>
           <a href="#"> <i class="bx bxl-instagram"></i> Instagram </a>
           <a href="#"> <i class="bx bxl-linkedin"></i> Linkedin </a>
-        </div>
+        </div> -->
       </div>
     </section>
 

@@ -801,15 +801,13 @@ i#next {
 }
 
 
-
-
-
 .con {
-  height: 60vh;
+  height: 30vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 3rem auto;
 }
 
 .testimonial {
@@ -825,6 +823,7 @@ i#next {
   width: 170px;
   object-fit: cover;
   border-radius: 50%;
+  
 }
 
 .testimonial .slide {
@@ -832,9 +831,10 @@ i#next {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 20px;
   height: 100%;
   width: 100%;
+  
 }
 
 .slide p {
@@ -857,18 +857,12 @@ i#next {
 }
 
 .details .name {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   color: #333;
+  text-align: center;
 }
 
-.details .job {
-  font-size: 12px;
-  font-weight: 400;
-  color: #333;
-}
-
-/* swiper button css */
 .nav-btn {
   height: 40px;
   width: 40px;
@@ -896,9 +890,34 @@ i#next {
   background-color: #4070f4;
 }
 
+@media screen and (max-width: 1024px) {
+  .slide p {
+    padding: 0 100px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .slide p {
-    padding: 0 20px;
+    padding: 0 50px;
+  }
+  .nav-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slide p {
+    padding: 0;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  .slide p {
+    padding: 0 10px;
   }
 
   .nav-btn {
