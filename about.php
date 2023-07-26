@@ -185,47 +185,6 @@ if (isset($_SESSION['user_id'])) {
     </section>
 
 
-    <!-- <section class="testimonials-section">
-      <div class="container">
-        <h2 class="history-title">Testimonials</h2>
-      </div>
-      
-      <div class="testimonials-container">
-        <div class="veiw-box">
-            <div id="testimonials">
-                
-                <div class="user">
-                    <img src="images/user1.jpg" alt="">
-                    <p>Many people feel that there is a limited amount of abundance, wealth, or chance to succeed in life. Furthermore, there is a solid beleif that if one person succeeds, another must fail.</p>
-                    <h3>Riley Olie</h3>
-                </div>
-                
-                <div class="user space">
-                    <img src="images/user2.jpg" alt="">
-                    <p>Many people feel that there is a limited amount of abundance, wealth, or chance to succeed in life. Furthermore, there is a solid beleif that if one person succeeds, another must fail.</p>
-                    <h3>Steve McCurry</h3>
-                </div>
-                
-                <div class="user">
-                    <img src="images/user3.jpg" alt="">
-                    <p>Many people feel that there is a limited amount of abundance, wealth, or chance to succeed in life. Furthermore, there is a solid beleif that if one person succeeds, another must fail.</p>
-                    <h3>Merlin Nguyen</h3>
-                </div>
-                
-                
-            </div>
-            
-            <div class="controls">
-                <span id="control1"></span>
-                <span id="control2" class="active"></span>
-                <span id="control3"></span>
-            </div>
-            
-        </div>
-    </div>
-    </section> -->
-
-    
 
     <br><br><br>
     <section class="footer">
