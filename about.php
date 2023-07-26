@@ -187,7 +187,12 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </section>
 
-    <section class="con">
+    <section class="testimonial-section">
+      <div class="container">
+        <h2 class="history-title">Customer Experience</h2>
+      </div>
+
+      <section class="con">
       <div class="testimonial mySwiper">
         <div class="testi-content swiper-wrapper">
           <div class="slide swiper-slide">
@@ -245,6 +250,9 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </section>
 
+    </section>
+    
+
     <br><br><br>
 
 
@@ -287,7 +295,6 @@ if (isset($_SESSION['user_id'])) {
 
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/user_script.js"></script>
-
     <script>
       const timeline = document.querySelector('.timeline');
       timeline.addEventListener('click', function(event) {
@@ -295,6 +302,20 @@ if (isset($_SESSION['user_id'])) {
           const timelineContent = event.target.nextElementSibling;
           timelineContent.classList.toggle('hidden');
         }
+      });
+
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        grabCursor: true,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
       });
     </script>
 

@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   //DARK MODE
   const userBody = document.querySelector(".user-body");
@@ -34,19 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // TESTIMONAALS SWIPER
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    grabCursor: true,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+  
 
 
   const list = document.querySelectorAll('.list');
@@ -76,16 +63,6 @@ document.onclick = (e) => {
     accountBox.style.display = "none";
   }
 };
-
-// timeline
-  const timeline = document.querySelector('.timeline');
-  timeline.addEventListener('click', function(event) {
-    if (event.target.classList.contains('timeline-title')) {
-      const timelineContent = event.target.nextElementSibling;
-      
-      timelineContent.classList.toggle('hidden');
-    }
-  });
 
 
 });
