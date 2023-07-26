@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost:3307','root','','shopping_db') or die('connection failed');
+$conn = mysqli_connect('localhost:3306','root','','shopping_db') or die('connection failed');
 if (mysqli_connect_error()) {
     die('Database connection error: ' . mysqli_connect_error());
 }
