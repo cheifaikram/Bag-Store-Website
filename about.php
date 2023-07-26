@@ -158,7 +158,7 @@ if (isset($_SESSION['user_id'])) {
 
     <section class="experience-section">
       <div class="container">
-        <h2 class="history-title">Customer Experience</h2>
+        <h2 class="history-title">customer testimonials</h2>
       </div>
       <div class="experience-cont">
         <div class="experience-card">
