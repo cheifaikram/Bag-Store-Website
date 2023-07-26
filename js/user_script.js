@@ -1,11 +1,9 @@
-
-
-//DARK MODE
-document.addEventListener('DOMContentLoaded', function() {
+// Dark Mode
+document.addEventListener('DOMContentLoaded', function () {
+  // Dark Mode Elements
   const userBody = document.querySelector(".user-body");
   const userSun = document.querySelector(".user-sun");
   const userMoon = document.querySelector(".user-moon");
-
   const userDarkMode = 'user-dark-mode';
 
   const setUserDarkMode = (mode) => {
@@ -13,95 +11,69 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('user-dark-mode', mode);
   };
 
-  const removeUserDarkMode = () => {
-    userBody.classList.remove(userDarkMode);
-    localStorage.removeItem('user-dark-mode');
-  };
-
   const getUserCurrentMode = () => userBody.classList.contains(userDarkMode) ? 'dark' : 'light';
 
-  const selectedUserMode = localStorage.getItem('user-dark-mode');
+  const initializeDarkMode = () => {
+    const selectedUserMode = localStorage.getItem('user-dark-mode');
+    if (selectedUserMode) {
+      setUserDarkMode(selectedUserMode);
+    }
+    userMoon.addEventListener('click', () => setUserDarkMode('dark'));
+    userSun.addEventListener('click', () => setUserDarkMode('light'));
+  };
 
-  if (selectedUserMode) {
-    setUserDarkMode(selectedUserMode);
-  }
+  initializeDarkMode();
 
-  userMoon.addEventListener('click', () => {
-    setUserDarkMode('dark');
+  // Swiper Configuration
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    grabCursor: true,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
 
-  userSun.addEventListener('click', () => {
-    setUserDarkMode('light');
-  });
-  });
-
-  
-const list = document.querySelectorAll('.list');
-function activeLink() {
-    list.forEach((item) =>
-    item.classList.remove('active'));
+  // Active Link Function
+  const list = document.querySelectorAll('.list');
+  function activeLink() {
+    list.forEach((item) => item.classList.remove('active'));
     this.classList.add('active');
-}
-
-list.forEach((item) =>
-item.addEventListener('click',activeLink));
-
-
-let userBtn = document.querySelector('#user-btn');
-let accountBox = document.querySelector('.account-box');
-let mainContainer = document.querySelector('.main--container');
-
-userBtn.onclick = () => {
-  accountBox.style.display = "block";
-  mainContainer.style.zIndex = -1;
-};
-
-
-// Close the account box when clicking outside of it
-document.onclick = (e) => {
-  if (!accountBox.contains(e.target) && !userBtn.contains(e.target)) {
-    accountBox.style.display = "none";
   }
-};
+
+  list.forEach((item) => item.addEventListener('click', activeLink));
 
 
-document.addEventListener('DOMContentLoaded', function() {
+  // Toggle Timeline Content Function
   const timeline = document.querySelector('.timeline');
-
-  timeline.addEventListener('click', function(event) {
+  timeline.addEventListener('click', function (event) {
     if (event.target.classList.contains('timeline-title')) {
       const timelineContent = event.target.nextElementSibling;
-      
       timelineContent.classList.toggle('hidden');
     }
   });
+
+  // Toggle Account Box Function
+  let userBtn = document.querySelector('#user-btn');
+  let accountBox = document.querySelector('.account-box');
+  let mainContainer = document.querySelector('.main--container');
+  userBtn.onclick = () => {
+    accountBox.style.display = "block";
+    // mainContainer.style.zIndex = -1;
+  };
+  
+  // Close the account box when clicking outside of it
+  document.onclick = (e) => {
+    if (!accountBox.contains(e.target) && !userBtn.contains(e.target)) {
+      accountBox.style.display = "none";
+    }
+  };
+
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-var testimonials = document.getElementById('testimonials');
-var control1 = document.getElementById('control1');
-var control2 = document.getElementById('control2');
-var control3 = document.getElementById('control3');
-
-
-control1.onclick=function(){
-    testimonials.style.transform = "translateX(870px)";
-    control1.classList.add("active");
-    control2.classList.remove("active");
-    control3.classList.remove("active");
-}
-
-control2.onclick=function(){
-    testimonials.style.transform = "translateX(0px)";
-    control1.classList.remove("active");
-    control2.classList.add("active");
-    control3.classList.remove("active");
-}
-
-control3.onclick=function(){
-    testimonials.style.transform = "translateX(-870px)";
-    control1.classList.remove("active");
-    control2.classList.remove("active");
-    control3.classList.add("active");
-}});
