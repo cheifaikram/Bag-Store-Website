@@ -25,13 +25,13 @@ if (isset($_SESSION['user_id'])) {
 </head>
 <body>
 <?php include 'header.php'; ?>
-    <h1>about page</h1>
     <section class="about-section">
-      <div class="container">
-        <h1>About Us</h1>
-        <p>Welcome to our luxury bag e-commerce site. We are dedicated to providing the finest selection 
+      <div class="about-container">
+        <h1 class="history-title">About Us</h1>
+        <p class="about-desc">Welcome to our luxury bag e-commerce site. We are dedicated to providing the finest selection 
           of luxury bags to our esteemed customers.</p>
       </div>
+
     </section>
 <section class="history-section">
   <div class="container">
