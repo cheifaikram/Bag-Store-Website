@@ -59,7 +59,7 @@
    align-items: center;
 }
 
-.dbtn_container .delete-btn{
+.dbtn_container .delete-btn, .logout-btn{
   padding: 10px 20px;
   font-size: 14px;
   border-radius: 30px;

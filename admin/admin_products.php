@@ -62,23 +62,23 @@ if (isset($_POST['add_product'])) {
        }
     }
  }
- 
- // DELETE A PRODUCT 
- if (isset($_GET['delete'])) {
-   $delete_id = $_GET['delete'];
-   
-   $delete_image_query = mysqli_query($conn, "SELECT image FROM `products` WHERE id = '$delete_id'") or die('query failed');
-   $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
-   $image_path = 'uploaded_img/' . $fetch_delete_image['image'];
+ //delete
+   if (isset($_GET['delete'])) {
+      $delete_id = $_GET['delete'];
+  
+      $delete_image_query = mysqli_query($conn, "SELECT image FROM `products` WHERE id = '$delete_id'") or die('query failed');
+      $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
+      $image_name = $fetch_delete_image['image'];
+      $image_path = 'uploaded_img/' . $image_name;
+  
+      if (file_exists($image_path)) {
+          unlink($image_path);
+      }
+  
+      mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed');
+  }
+  
 
-   if (file_exists($image_path)) {
-      unlink($image_path);
-   }
-   
-   mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed');
-   
-   header('location:admin_products.php');
-}
 
 //UPDATE A PRODUCT
 if (isset($_POST['update_product'])) {
