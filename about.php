@@ -246,6 +246,8 @@ if (isset($_SESSION['user_id'])) {
     </section>
 
     <br><br><br>
+
+
     <section class="footer">
       <div class="box-container">
         <div class="box">
@@ -283,9 +285,18 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </section>
 
-    
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/user_script.js"></script>
+
+    <script>
+      const timeline = document.querySelector('.timeline');
+      timeline.addEventListener('click', function(event) {
+        if (event.target.classList.contains('timeline-title')) {
+          const timelineContent = event.target.nextElementSibling;
+          timelineContent.classList.toggle('hidden');
+        }
+      });
+    </script>
 
   </body>
 </html>
