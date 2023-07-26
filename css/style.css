@@ -204,7 +204,7 @@ body{
 }
 
 .account-box p span{
-  color:purple;
+  color:var(--text-color-second);
 }
 
 .account-box .delete-btn{
@@ -721,10 +721,10 @@ i#next {
   border-radius: 10px;
   transform-style:preserve-3d;
   transition: all 0.8s ease;
-  background: var(--bg-color-first);
   border-radius: 10px;
   box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.3);
   color: var(--text-color-first);
+  background: var(--bg-color-first);
   
 }
 
@@ -781,8 +781,8 @@ i#next {
 .experience-card {
   flex: 1;
   max-width: 240px;
-  background-color: var(--bg-color-first);
   color: var(--text-color-first);
+  background: var(--bg-color-first);
   padding:  1rem;
   margin: 1rem;
   border-radius: 10px;
