@@ -553,6 +553,8 @@ i#next {
 }
 
 /* +++++++++++++++  FOOTER ++++++++++++++++++  */
+
+/* Base styles */
 .footer {
   width: 100%;
 }
@@ -562,12 +564,12 @@ i#next {
   margin-left: 5%;
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-around;
+  justify-content: space-around;
 }
 
 .footer .box-container .box {
-  width: calc(25% - 3rem); 
-  margin-bottom: 2rem; 
+  width: calc(25% - 3rem);
+  margin-bottom: 2rem;
 }
 
 .footer .box-container .box h3 {
@@ -595,6 +597,37 @@ i#next {
   color: var(--text-color-third);
   text-decoration: underline;
 }
+
+/* Media Queries */
+/* Screens with a maximum width of 1024px */
+@media screen and (max-width: 1024px) {
+  .footer .box-container .box {
+    width: calc(33.33% - 2rem);
+  }
+}
+
+/* Screens with a maximum width of 768px */
+@media screen and (max-width: 768px) {
+  .footer .box-container .box {
+    width: calc(50% - 2rem);
+  }
+}
+
+/* Screens with a maximum width of 480px */
+@media screen and (max-width: 480px) {
+  .footer .box-container .box {
+    width: 100%;
+  }
+}
+
+/* Screens with a maximum width of 260px */
+@media screen and (max-width: 260px) {
+  .footer .box-container .box {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 
   
 
@@ -1094,9 +1127,8 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
   }
 
   /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
-  .footer .box {
-    width: calc(33.33% - 2rem); 
-    margin: 0;
+  .footer .box-container .box {
+    width: calc(33.33% - 2rem);
   }
 
   /* =============================================== ABOUT PAGE ================================== */
@@ -1208,8 +1240,8 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
   }
 
   /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
-  .footer .box {
-    width: calc(50% - 1rem); 
+  .footer .box-container .box {
+    width: calc(50% - 2rem);
   }
 
   /* =============================================== ABOUT PAGE ================================== */
@@ -1338,10 +1370,8 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
     }
 
     /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
-    .footer .box {
+    .footer .box-container .box {
       width: 100%;
-      margin-right: 0;
-      margin-bottom: 1rem; 
     }
 
     /* =============================================== ABOUT PAGE ================================== */
@@ -1369,6 +1399,7 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
   .timeline-content p {
     font-size: 10px;
   }
+
   /* phylo */
   .thefront .title {
     font-size: 20px;
@@ -1468,10 +1499,9 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
     }
 
     /* +++++++++++++++++++++  FOOTER +++++++++++++++++ */
-    .footer .box {
+    .footer .box-container .box {
       width: 100%;
-      margin-right: 0;
-      margin-bottom: 1rem; 
+      margin-left: 0;
     }
 
   /* =============================================== ABOUT PAGE ================================== */

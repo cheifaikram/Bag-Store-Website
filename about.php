@@ -253,12 +253,12 @@ if (isset($_SESSION['user_id'])) {
     </section>
     
 
-    <br><br><br> <br><br><br><br> <br><br><br><br> <br>
+    <br><br><br> 
 
 
     <section class="footer">
       <div class="box-container">
-        <!-- <div class="box">
+        <div class="box">
           <h3>quick links</h3>
           <a href="home.php">Home</a>
           <a href="about.php">About</a>
@@ -289,9 +289,13 @@ if (isset($_SESSION['user_id'])) {
           <a href="#"> <i class="bx bxl-twitter"></i> Twitter </a>
           <a href="#"> <i class="bx bxl-instagram"></i> Instagram </a>
           <a href="#"> <i class="bx bxl-linkedin"></i> Linkedin </a>
-        </div> -->
+        </div>
       </div>
     </section>
+    
+    <br><br><br> 
+    <br><br><br> 
+    <br><br><br> 
 
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/user_script.js"></script>
