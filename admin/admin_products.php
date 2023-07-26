@@ -246,7 +246,7 @@ if (isset($_POST['update_product'])) {
                   <h2> Update Product</h2>
                   <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id']; ?>">
                   <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
-                  <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
+                  <img src="<?php echo $image_path; ?>" alt="">
                   <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box input" required placeholder="enter product name">
                   <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box input" required placeholder="enter product price">
                   <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">

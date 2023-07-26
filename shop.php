@@ -55,7 +55,7 @@ if (isset($_POST['add_to_cart'])) {
           while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>
       <form action="" method="post" class="box">
-        <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
+        <img class="image" src="/admin/uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
         <div class="name"><?php echo $fetch_products['name']; ?></div>
         <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
         <input type="number" min="1" name="product_quantity" value="1" class="qty">
