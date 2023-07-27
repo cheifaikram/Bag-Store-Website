@@ -933,11 +933,16 @@ i#next {
 .products .box-container .box {
   width: 30%;
   margin: 10px;
-  padding: 10px;
-  background-color: #f5f5f5;
-  border-radius: 5px;
+  padding: 2rem 0;
+  background:var(--bg-color-first);
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .products .box-container .box .image {
@@ -948,31 +953,57 @@ i#next {
 }
 
 .products .box-container .box .name {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
-  color: #333;
-  margin-top: 10px;
+  color: var(--text-color-first);
+  margin-top: 15px;
 }
 
 .products .box-container .box .price {
-  font-size: 16px;
-  color: #555;
+  font-size: 20px;
+  color: var(--text-color-second);
 }
 
-.products .box-container .box .qty {
-  width: 50px;
+.products .box-container .box .input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.products .box-container .box .input-container .qty {
+  width: 80px;
   margin-top: 10px;
+  padding: 8px;
+  border: 3px solid #4070f4;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
 }
 
-.products .box-container .box .btn {
-  padding: 8px 12px;
+.products .box-container .box .input-container .qty:focus {
+  border-color: #55aaff;
+}
+
+.products .box-container .box .input-container .qty::placeholder {
+  color: #999;
+}
+
+.products .box-container .box  .btn {
+  padding: .8rem 2rem;
   background-color: #4070f4;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  transition: background-color 0.3s;
 }
+
+
+
+
 
 
 
