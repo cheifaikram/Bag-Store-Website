@@ -45,8 +45,14 @@ if (isset($_POST['order_btn'])) {
       mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
     }
   }
-}
 
+  // Store messages in the session
+  $_SESSION['messages'] = $message;
+
+  // Redirect to the same page to prevent form resubmission on refresh
+  header('Location: ' . $_SERVER['REQUEST_URI']);
+  exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,27 +68,9 @@ if (isset($_POST['order_btn'])) {
 <body>
 
 <?php include 'header.php'; ?>
-<?php
-// Display messages using SweetAlert2
-if (!empty($message)) {
-  $script = '<script>';
-  foreach ($message as $msg) {
-    $script .= "Swal.fire({
-                  icon: 'info',
-                  title: 'Message',
-                  text: '$msg',
-                  showConfirmButton: false,
-                  timer: 3000
-                });";
-  }
-  $script .= '</script>';
-  echo $script;
-}
-?>
 
 <section class="display-order">
-
-   <?php  
+ <?php  
       $grand_total = 0;
       $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
       if(mysqli_num_rows($select_cart) > 0){
@@ -102,9 +90,8 @@ if (!empty($message)) {
 </section>
 
 <section class="checkout">
-
-   <form action="" method="post">
-      <h3>place your order</h3>
+  <form action="" method="post">
+  <h3>place your order</h3>
       <div class="flex">
          <div class="inputBox">
             <span>your name :</span>
@@ -153,10 +140,28 @@ if (!empty($message)) {
          </div>
       </div>
       <input type="submit" value="order now" class="btn" name="order_btn">
-   </form>
-
+  </form>
 </section>
 
+<?php
+// Display messages using SweetAlert2
+if (isset($_SESSION['messages']) && !empty($_SESSION['messages'])) {
+  echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>';
+  echo '<script>';
+  foreach ($_SESSION['messages'] as $msg) {
+    echo "Swal.fire({
+            icon: 'info',
+            title: 'Message',
+            text: '$msg',
+            showConfirmButton: false,
+            timer: 3000
+          });";
+  }
+  echo '</script>';
+  // Clear the messages from the session to avoid displaying them again on refresh
+  unset($_SESSION['messages']);
+}
+?>
 
 <?php include 'footer.php'; ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
