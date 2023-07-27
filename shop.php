@@ -54,7 +54,6 @@ if (isset($_POST['add_to_cart'])) {
   </section>
 
   <section class="products">
-    <div class="prod-box-cont">
     <div class="box-container">
       <?php  
         $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
@@ -80,7 +79,6 @@ if (isset($_POST['add_to_cart'])) {
           echo '<p class="empty">no products added yet!</p>';
         }
       ?>
-    </div>
     </div>
     
   </section>
