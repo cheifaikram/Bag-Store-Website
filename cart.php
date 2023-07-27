@@ -67,17 +67,16 @@ if (isset($_GET['delete_all'])) {
       <div class="about-container"> 
         <h1 class="history-title">Your <span>Cart</span></h1>
       </div>
-      <?php } else{?>
+      <?php 
+    } else{?>
         <div class="about-container"> 
           <h1 class="history-title">Your <span>Cart</span> Is Empty</h1>
-        </div> <?php } ?>
-
-  
+        </div> <?php 
+      } ?>
 </section>
-<!-- <section class="shopping-cart"> -->
+
 <section class="cart-section">
    <div class="box-container">
-
       <?php
          $grand_total = 0;
          $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
@@ -93,7 +92,7 @@ if (isset($_GET['delete_all'])) {
         <form action="" method="post" class="input-container">
           <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
           <input class="qte" type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['qte']; ?>">
-          <input type="submit" name="update_cart" value="update" class="option-btn">
+          <input type="submit" name="update_cart" value="Update" class="option-btn">
         </form>
 
         <div class="sub-total"> Total Product Price : <span>$<?php echo $sub_total = ($fetch_cart['qte'] * $fetch_cart['price']); ?>/-</span> </div>
@@ -106,10 +105,19 @@ if (isset($_GET['delete_all'])) {
        }
       ?>
    </div>
-
-   
-
 </section>
+
+<div class="cart-delete-all">
+  <a href="cart.php?delete_all" class="delete-btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>" id="deleteAllLink">Delete All</a>
+</div>
+
+<div class="cart-total">
+  <p>Grand Total : <span>$<?php echo $grand_total; ?>/-</span></p>
+  <div class="flex">
+    <a href="shop.php" class="option-btn">Continue Shopping</a>
+    <a href="checkout.php" class="btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">Proceed To Checkout</a>
+  </div>
+</div>
 
 <?php include 'footer.php'; ?>
 <script src="js/user_script.js"></script>
