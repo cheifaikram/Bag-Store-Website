@@ -32,10 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setUserDarkMode('light');
   });
 
-  // TESTIMONAALS SWIPER
-  
-
-
   const list = document.querySelectorAll('.list');
  function activeLink() {
     list.forEach((item) =>
@@ -63,6 +59,7 @@ document.onclick = (e) => {
     accountBox.style.display = "none";
   }
 };
+
 
 
 });
