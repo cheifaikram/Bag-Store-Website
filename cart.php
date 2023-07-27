@@ -56,6 +56,7 @@ if (isset($_GET['delete_all'])) {
       <?php } ?>
    </script>
    <?php } ?>
+
 </head>
 <body>
    
@@ -73,16 +74,15 @@ if (isset($_GET['delete_all'])) {
             while($fetch_cart = mysqli_fetch_assoc($select_cart)){   
       ?>
       <div class="box">
-         <a href="cart.php?delete=<?php echo $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a> 
-         <img src="admin/uploaded_img/<?php echo $fetch_cart['image']; ?>" alt="">
-         <div class="name"><?php echo $fetch_cart['name']; ?></div>
-         <div class="price">$<?php echo $fetch_cart['price']; ?>/-</div>
-         <form action="" method="post">
-            <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
-            <input type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['qte']; ?>">
-            <input type="submit" name="update_cart" value="update" class="option-btn">
-         </form>
-         <div class="sub-total"> sub total : <span>$<?php echo $sub_total = ($fetch_cart['qte'] * $fetch_cart['price']); ?>/-</span> </div>
+        <a href="cart.php?delete=<?php echo $fetch_cart['id']; ?>" class="fas fa-times delete-cart-item" data-cart-id="<?php echo $fetch_cart['id']; ?>"></a><img src="admin/uploaded_img/<?php echo $fetch_cart['image']; ?>" alt="">
+        <div class="name"><?php echo $fetch_cart['name']; ?></div>
+        <div class="price">$<?php echo $fetch_cart['price']; ?>/-</div>
+        <form action="" method="post">
+          <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
+          <input type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['qte']; ?>">
+          <input type="submit" name="update_cart" value="update" class="option-btn">
+        </form>
+        <div class="sub-total"> sub total : <span>$<?php echo $sub_total = ($fetch_cart['qte'] * $fetch_cart['price']); ?>/-</span> </div>
       </div>
       <?php
       $grand_total += $sub_total;
@@ -94,8 +94,8 @@ if (isset($_GET['delete_all'])) {
    </div>
 
    <div style="margin-top: 2rem; text-align:center;">
-      <a href="cart.php?delete_all" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('delete all from cart?');">delete all</a>
-   </div>
+      <a href="cart.php?delete_all" class="delete-btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>" id="deleteAllLink">delete all</a>
+    </div>
 
    <div class="cart-total">
       <p>grand total : <span>$<?php echo $grand_total; ?>/-</span></p>
@@ -109,6 +109,54 @@ if (isset($_GET['delete_all'])) {
 
 <?php include 'footer.php'; ?>
 <script src="js/user_script.js"></script>
+<script>
 
+ const deleteButtons = document.querySelectorAll('.delete-cart-item');
+ deleteButtons.forEach((button) => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    const cartId = button.getAttribute('data-cart-id');
+
+    const confirmationShown = sessionStorage.getItem(`confirmation_${cartId}`);
+    if (confirmationShown === null) {
+      Swal.fire({
+        title: 'Delete Item from Cart',
+        text: 'Are you sure you want to delete this item from your cart?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'Cancel',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = `cart.php?delete=${cartId}`;
+        }
+      });
+      sessionStorage.setItem(`confirmation_${cartId}`, true);
+    } else {
+      window.location.href = `cart.php?delete=${cartId}`;
+    }
+  });
+ });
+  const deleteAllLink = document.getElementById('deleteAllLink');
+
+  deleteAllLink.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    if (!deleteAllLink.classList.contains('disabled')) {
+      Swal.fire({
+        title: 'Delete All Items from Cart',
+        text: 'Are you sure you want to delete all items from your cart?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete all!',
+        cancelButtonText: 'Cancel',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = 'cart.php?delete_all';
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
