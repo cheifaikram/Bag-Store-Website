@@ -45,7 +45,13 @@ if (isset($_POST['add_to_cart'])) {
 </head>
 <body>
   <?php include 'header.php'; ?>
-  <h1>SHOP HERE</h1> 
+  <section class="about-section">
+    <div class="about-container">
+      <h1 class="history-title">Shop <span>Now</span></h1>
+      <p class="about-desc">Welcome to our luxury bag e-commerce site. We are dedicated to providing the finest selection 
+      of luxury bags to our esteemed customers. Have fun shopping </p>
+    </div>
+  </section>
 
   <section class="products">
     <div class="prod-box-cont">
@@ -89,6 +95,8 @@ if (isset($_POST['add_to_cart'])) {
       });
     </script>
   <?php endif; ?>
+
+  <?php include 'footer.php'; ?>
 </body>
 </html>
 

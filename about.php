@@ -27,7 +27,7 @@ if (isset($_SESSION['user_id'])) {
 <?php include 'header.php'; ?>
     <section class="about-section">
       <div class="about-container">
-        <h1 class="history-title">About Us</h1>
+        <h1 class="history-title">About <span>Us</span></h1>
         <p class="about-desc">Welcome to our luxury bag e-commerce site. We are dedicated to providing the finest selection 
           of luxury bags to our esteemed customers.</p>
       </div>

@@ -629,6 +629,10 @@ i#next {
   color: var(--text-color-first);
 }
 
+.history-title span{
+  color: var(--bg-color-third);
+}
+
 .history-description {
   font-size: 18px;
   margin-bottom: 5rem;
@@ -916,6 +920,7 @@ i#next {
   justify-content: center;
   width: 100%;
   align-items: center;
+  margin-bottom: 5rem;
 }
 .products  .box-container {
   display: flex;
@@ -1005,45 +1010,67 @@ i#next {
   transition: background-color 0.3s;
 }
 
-
-
-
-
-
-
-@media screen and (max-width: 1024px) {
-  .products .box-container{
-    justify-content: center;
-  }
-  .products .box-container .box {
-    width: 45%;
-    margin: 1rem;
-  }
+/* +++++++++++++++++++++++++++++++++++++++ CONTACT +++++++++++++++++++++++++++ */
+/* Styling for the contact section */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 5rem;
 }
 
-@media screen and (max-width: 768px) {
-  .products .box-container{
-    justify-content: center;
-  }
-
-  .products .box-container .box {
-    width: 45%;
-    margin: .5rem; 
-  }
+/* Styling for the form elements */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
 }
 
-@media screen and (max-width: 480px) {
-  .products .box-container .box {
-    width: 100%; 
-    margin: .6rem 1.5rem ; 
-  }
+.contact h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color-first);
+  margin-bottom: 20px;
 }
 
-@media screen and (max-width: 260px) {
-  .products .box-container .box {
-    width: 100%; 
-    margin:.6rem 2.5rem ; 
-  }
+.contact-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+}
+
+.contact-box::placeholder {
+  color: black;
+}
+
+.contact-box:focus {
+  border-color: #4070f4;
+}
+
+textarea.contact-box {
+  resize: vertical;
+}
+
+.contact .btn {
+  padding: 10px 20px;
+  background-color: #4070f4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.contact .btn:hover {
+  background-color: #375ec8;
 }
 
 
@@ -1255,6 +1282,15 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
   .slide p {
     padding: 0 100px;
   }
+
+  /* PRODUCTSSSSSSSSSSSSSSS */
+  .products .box-container{
+    justify-content: center;
+  }
+  .products .box-container .box {
+    width: 45%;
+    margin: 1rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1375,6 +1411,16 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
   }
   .nav-btn{
     display: none;
+  }
+
+  /* PRODUCTSSSSSSSSSSSSS */
+  .products .box-container{
+    justify-content: center;
+  }
+
+  .products .box-container .box {
+    width: 45%;
+    margin: .5rem; 
   }
 }
 
@@ -1518,6 +1564,12 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
   .slide p {
     padding: 0 30px;
   }
+
+  /* PRODUCTSSSSSSSSSSSSSSS */
+  .products .box-container .box {
+    width: 100%; 
+    margin: .6rem 1.5rem ; 
+  }
 }
 
 @media screen and (max-width: 260px) {
@@ -1659,5 +1711,11 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
     padding: 0 10px;
   }
 
+
+  /* PRODUCTSSSSSSSSSSSSSSS */
+  .products .box-container .box {
+    width: 100%; 
+    margin:.6rem 2.5rem ; 
+  }
 }
 
