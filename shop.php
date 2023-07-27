@@ -48,6 +48,7 @@ if (isset($_POST['add_to_cart'])) {
   <h1>SHOP HERE</h1> 
 
   <section class="products">
+    <div class="prod-box-cont">
     <div class="box-container">
       <?php  
         $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
@@ -64,7 +65,7 @@ if (isset($_POST['add_to_cart'])) {
           <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
           <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
         </div>
-        <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+        <input type="submit" value="Add To Cart" name="add_to_cart" class="btn">
       </form>
     
       <?php
@@ -74,6 +75,8 @@ if (isset($_POST['add_to_cart'])) {
         }
       ?>
     </div>
+    </div>
+    
   </section>
 
   <?php if (isset($message) && isset($alertType)) : ?>
