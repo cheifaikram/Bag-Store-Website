@@ -140,7 +140,7 @@ body{
 
 .logo-icons a{
   text-decoration: none;
-  color: #000;
+  color: var(--text-color-first);
 }
 
 .logo-icons a span{
@@ -1301,16 +1301,16 @@ textarea.contact-box {
 
 
 
-/* Styles for search form */
+/* ++++++++++++++++++++++++++++++++++++++++SEARCH++++++++++++++++++++++++++++++++++++++++++ */
 .search-form {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 .search-box {
-  padding: 8px;
+  padding: 10px 150px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1.5px solid var(--bg-color-third);
   border-radius: 5px;
 }
 

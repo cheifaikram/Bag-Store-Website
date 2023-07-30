@@ -81,7 +81,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <div class="logo-icons">
                   <i class="ri-sun-line user-sun"></i>
                   <i class="ri-moon-line user-moon"></i>
-                  <i class="ri-search-2-line"></i>
+                  <a href="search.php"> <i class="ri-search-2-line"></i> </a>
                   <i id="user-btn" class="ri-user-line"></i>
                   <?php
                   $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
