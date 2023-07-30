@@ -56,47 +56,57 @@ if (isset($_POST['add_to_cart'])) {
 
 <section class="products">
    <div class="box-container">
-      <?php
-         if (isset($_POST['submit'])) {
-            $search_item = $_POST['search'];
-            $select_products = mysqli_query($conn, "SELECT * FROM `products` WHERE name LIKE '%{$search_item}%'") or die('Query failed');
-            if (mysqli_num_rows($select_products) > 0) {
-               while ($fetch_product = mysqli_fetch_assoc($select_products)) {
-      ?>
-      <form action="" method="post" class="product-box">
-      <img src="/admin/uploaded_img/<?php echo $fetch_product['image']; ?>" alt="" class="image">
+   <?php
+   if (isset($_POST['submit'])) {
+      $search_item = $_POST['search'];
+      $search_term = $search_item . '%';
 
-         <div class="product-name"><?php echo $fetch_product['name']; ?></div>
-         <div class="product-price">$<?php echo $fetch_product['price']; ?>/-</div>
-         <input type="number" class="quantity" name="product_quantity" min="1" value="1">
-         <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
-         <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
-         <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
-         <input type="submit" class="add-to-cart-btn" value="Add to Cart" name="add_to_cart">
-      </form>
-      <?php
-               }
-            } else {
-               echo '<p class="empty">No result found!</p>';
-            }
-         } else {
-            echo '<p class="empty">Search something!</p>';
+      $stmt = mysqli_prepare($conn, "SELECT * FROM `products` WHERE name LIKE ?");
+      mysqli_stmt_bind_param($stmt, "s", $search_term);
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
+
+      if (mysqli_num_rows($result) > 0) {
+         while ($fetch_product = mysqli_fetch_assoc($result)) {
+   ?>
+            <form action="" method="post" class="product-box">
+               <img src="/admin/uploaded_img/<?php echo $fetch_product['image']; ?>" alt="" class="image">
+               <div class="product-name"><?php echo $fetch_product['name']; ?></div>
+               <div class="product-price">$<?php echo $fetch_product['price']; ?>/-</div>
+               <input type="number" class="quantity" name="product_quantity" min="1" value="1">
+               <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
+               <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
+               <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
+               <input type="submit" class="add-to-cart-btn" value="Add to Cart" name="add_to_cart">
+            </form>
+   <?php
          }
-      ?>
+      } else {
+         echo '<p class="empty">No result found!</p>';
+      }
+   } else {
+      echo '<p class="empty">Search something!</p>';
+   }
+   ?>
    </div>
 </section>
+
 
 
    <?php if (isset($message) && isset($alertType)) : ?>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
     <script>
+
       Swal.fire({
         icon: '<?php echo $alertType; ?>',
         title: '<?php echo ($alertType === "success") ? "Success" : "Error"; ?>',
         text: '<?php echo $message; ?>',
       });
+
     </script>
   <?php endif; ?>
+
+  
   <?php include 'footer.php'; ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
   <script src="js/user_script.js"></script>
