@@ -54,7 +54,7 @@ if (isset($_POST['add_to_cart'])) {
    </form>
 </section>
 
-<section class="products">
+<section class="search-products">
    <div class="box-container">
    <?php
    if (isset($_POST['submit'])) {
@@ -106,7 +106,7 @@ if (isset($_POST['add_to_cart'])) {
     </script>
   <?php endif; ?>
 
-  
+
   <?php include 'footer.php'; ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
   <script src="js/user_script.js"></script>
