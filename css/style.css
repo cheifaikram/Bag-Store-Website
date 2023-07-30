@@ -1301,6 +1301,82 @@ textarea.contact-box {
 
 
 
+/* Styles for search form */
+.search-form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-btn {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styles for product display */
+.products {
+  padding-top: 0;
+}
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-box {
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.image {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 16px;
+}
+
+.quantity {
+  width: 70px;
+  margin: 10px 0;
+}
+
+.add-to-cart-btn {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
 
 
 
