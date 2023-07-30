@@ -1181,17 +1181,20 @@ textarea.contact-box {
 .display-order p {
   margin: 5px 0;
   font-size: 16px;
+  color: var(--text-color-first);
 }
 
 .display-order .empty {
   text-align: center;
   font-size: 18px;
+  color: var(--text-color-first);
 }
 
 .grand-total {
   text-align: right;
   margin-top: 10px;
   font-size: 18px;
+  color: var(--text-color-third);
 }
 
 .checkout {
@@ -1205,6 +1208,7 @@ textarea.contact-box {
   margin: 0 0 15px;
   font-size: 24px;
   text-align: center;
+  color: var(--text-color-first);
 }
 
 .checkout .flex {
@@ -1215,12 +1219,13 @@ textarea.contact-box {
 
 .checkout .inputBox {
   width: calc(50% - 10px);
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .checkout .inputBox span {
   display: block;
   font-size: 16px;
+  color: var(--text-color-first);
 }
 
 .checkout input[type="text"],
@@ -1233,6 +1238,8 @@ textarea.contact-box {
   border-radius: 5px;
   font-size: 16px;
   outline: none;
+  margin-top: 12px;
+
 }
 
 .checkout input[type="submit"] {
