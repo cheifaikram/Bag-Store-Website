@@ -82,7 +82,7 @@ if (isset($_POST['order_btn'])) {
    <?php
       }
    }else{
-      echo '<p class="empty">your cart is empty</p>';
+      echo '<p class="empty">Your Cart Is Empty</p>';
    }
    ?>
    <div class="grand-total"> Grand Total : <span>$<?php echo $grand_total; ?>/-</span> </div>
@@ -95,15 +95,15 @@ if (isset($_POST['order_btn'])) {
       <div class="flex">
          <div class="inputBox">
             <span>Your Name :</span>
-            <input type="text" name="name" required placeholder="enter your name">
+            <input type="text" name="name" required placeholder="Enter your name">
          </div>
          <div class="inputBox">
             <span>Your Number :</span>
-            <input type="number" name="number" required placeholder="enter your number">
+            <input type="number" name="number" required placeholder="Enter your number">
          </div>
          <div class="inputBox">
             <span>Your Email :</span>
-            <input type="email" name="email" required placeholder="enter your email">
+            <input type="email" name="email" required placeholder="Enter your email">
          </div>
          <div class="inputBox">
             <span>Payment Method :</span>
