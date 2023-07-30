@@ -1260,6 +1260,49 @@ textarea.contact-box {
   background-color: var(--bg-color-third);
 }
 
+/* ORDERSSSSSSSSSSSSSSSSSSSSSSSSSS  */
+
+/* Styles for the placed-orders section */
+.placed-orders {
+  margin: 20px;
+  padding: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.box {
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 15px;
+}
+
+.box p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.empty {
+  text-align: center;
+  font-size: 18px;
+}
+
+.payment-status-pending {
+  color: red;
+}
+
+.payment-status-completed {
+  color: green;
+}
 
 
 
