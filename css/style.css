@@ -1170,32 +1170,12 @@ textarea.contact-box {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Common styles for both sections */
-section {
-  margin: 20px;
-  padding: 10px;
-}
-
-/* Styles for the display-order section */
+/* ++++++++++++++++++++++ CHECK OUT ++++++++++++++++++++++++++ */
 .display-order {
   border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  background:var(--bg-color-first);
   padding: 15px;
+  margin: 20px;
 }
 
 .display-order p {
@@ -1214,11 +1194,11 @@ section {
   font-size: 18px;
 }
 
-/* Styles for the checkout section */
 .checkout {
   border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  background:var(--bg-color-first);
   padding: 15px;
+  margin: 20px;
 }
 
 .checkout h3 {
@@ -1258,7 +1238,7 @@ section {
 .checkout input[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: #4070f4;
+  background-color: var(--bg-color-third);
   color: white;
   border: none;
   border-radius: 5px;
@@ -1268,44 +1248,10 @@ section {
 }
 
 .checkout input[type="submit"]:hover {
-  background-color: #345ac2;
+  background-color: var(--bg-color-third);
 }
 
 
-
-
-
-@media screen and (max-width: 1024px) {
-  
-}
-
-@media screen and (max-width: 768px) {
-  .checkout .inputBox {
-    width: 100%;
-  }
-
-  .checkout .flex {
-    flex-direction: column;
-  }
-
-}
-
-@media screen and (max-width: 480px) {
-  .checkout .inputBox {
-    width: 100%;
-  }
-  
-}
-
-@media screen and (max-width: 260px) {
-  .checkout .inputBox {
-    width: 100%;
-  }
-
-  .checkout input[type="submit"] {
-    font-size: 16px;
-  }
-}
 
 
 
@@ -1526,6 +1472,7 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
     width: 45%;
     margin: 1rem;
   }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -1662,6 +1609,15 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
   .cart-total p{
     font-size: 2rem;
     
+  }
+
+  /* CHECK OUTTTTTT */
+  .checkout .inputBox {
+    width: 100%;
+  }
+
+  .checkout .flex {
+    flex-direction: column;
   }
 }
 
@@ -1827,6 +1783,11 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
   .cart-total p{
     font-size: 1.5rem;
   }
+
+  /* CHECKOUTTTTTT */
+  .checkout .inputBox {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 260px) {
@@ -1989,6 +1950,15 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
 
   .cart-total p{
     font-size: 1.2rem;
+  }
+
+  /* CHECKOUTTTT */
+  .checkout .inputBox {
+    width: 100%;
+  }
+
+  .checkout input[type="submit"] {
+    font-size: 16px;
   }
 }
 
