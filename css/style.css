@@ -915,14 +915,14 @@ i#next {
 
 /* +++++++++++++++++++++++++++++++++++ SHOPPPPPPPPPPPPPPPPPPPPPPPPP ++++++++++++++++++ */
 
-.products, .cart-section {
+.products, .cart-section, .oreder-section {
   display: flex;
   justify-content: center;
   width: 100%;
   align-items: center;
   margin-bottom: 5rem;
 }
-.products  .box-container, .cart-section .box-container {
+.products  .box-container, .cart-section .box-container, .oreder-section .box-container{
   display: flex;
   width: 100%;
   height: 100%;
@@ -932,10 +932,14 @@ i#next {
   justify-content:center; 
 }
 
-.cart-section .box-container, .cart-section .box-container .box{
+.cart-section .box-container, 
+.cart-section .box-container .box,
+ .oreder-section .box-container .box{
 position: relative;}
 
-.products  .box-container .box, .cart-section .box-container .box{
+.products  .box-container .box, 
+.cart-section .box-container .box, 
+.oreder-section .box-container .box{
   width: 30%;
   margin: 10px;
   padding: 2rem 0;
@@ -950,26 +954,34 @@ position: relative;}
   align-items: center;
 }
 
-.products .box-container .box .image, .cart-section .box-container .box .image {
+.products .box-container .box .image, 
+.cart-section .box-container .box .image
+, .oreder-section .box-container .box .image {
   height: 200px;
   width: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.products .box-container .box .name, .cart-section .box-container .box .name {
+.products .box-container .box .name, 
+.cart-section .box-container .box .name,
+.oreder-section .box-container .box .name {
   font-size: 24px;
   font-weight: bold;
   color: var(--text-color-first);
   margin-top: 15px;
 }
 
-.products .box-container .box .price, .cart-section .box-container .box .price {
+.products .box-container .box .price, 
+.cart-section .box-container .box .price,
+.oreder-section .box-container .box .price {
   font-size: 20px;
   color: var(--text-color-second);
 }
 
-.products .box-container .box .input-container, .cart-section .box-container .box .input-container {
+.products .box-container .box .input-container,
+ .cart-section .box-container .box .input-container 
+ , .oreder-section .box-container .box .input-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -977,7 +989,8 @@ position: relative;}
 }
 
 .products .box-container .box .input-container .qty , 
-.cart-section .box-container .box .input-container .qte{
+.cart-section .box-container .box .input-container .qte,
+.oreder-section .box-container .box .input-container .qte{
   width: 80px;
   margin-top: 10px;
   padding: 8px;
@@ -993,12 +1006,14 @@ position: relative;}
 }
 
 .products .box-container .box .input-container .qty:focus,
-.cart-section .box-container .box .input-container .qte:focus {
+.cart-section .box-container .box .input-container .qte:focus,
+.oreder-section .box-container .box .input-container .qte:focus {
   border-color: #55aaff;
 }
 
 .products .box-container .box .input-container .qty::placeholder,
-.cart-section .box-container .box .input-container .qte::placeholder {
+.cart-section .box-container .box .input-container .qte::placeholder 
+,.oreder-section .box-container .box .input-container .qte::placeholder{
   color: #999;
 }
 
@@ -1080,6 +1095,8 @@ textarea.contact-box {
   background-color: #375ec8;
 }
 
+
+/* +++++++++++++++++++++++    CARTTTTTTTT  +++++++++++++++++++++++ */
 .cart-section .box-container .box .fa-times {
   position: absolute;
   top: 1rem;
@@ -1274,16 +1291,17 @@ textarea.contact-box {
   margin-bottom: 20px;
 }
 
-.box-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.placed-orders .box-container {
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-.box {
+.placed-orders .box {
   border: 1px solid #ccc;
   background-color: #f9f9f9;
   padding: 15px;
+  flex: 1 1 300px; /* Each box will have a minimum width of 300px and grow to fill the available space */
 }
 
 .box p {
@@ -1303,11 +1321,6 @@ textarea.contact-box {
 .payment-status-completed {
   color: green;
 }
-
-
-
-
-
 
 
 

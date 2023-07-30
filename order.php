@@ -23,10 +23,7 @@ if (isset($_SESSION['user_id'])) {
 </head>
 <body>
   <?php include 'header.php'; ?>
-  <section class="placed-orders">
-
-   <h1 class="title">Placed Orders</h1>
-
+  <section class="oreder-section">
    <div class="box-container">
       <?php
          function getOrders($conn, $user_id) {
