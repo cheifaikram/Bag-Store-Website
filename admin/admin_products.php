@@ -69,11 +69,14 @@ if (isset($_POST['add_product'])) {
       $delete_image_query = mysqli_query($conn, "SELECT image FROM `products` WHERE id = '$delete_id'") or die('query failed');
       $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
       $image_name = $fetch_delete_image['image'];
-      $image_path = 'uploaded_img/' . $image_name;
-  
-      if (file_exists($image_path)) {
-          unlink($image_path);
-      }
+      
+      if ($image_name) {
+         $image_path = 'uploaded_img/' . $image_name;
+ 
+         if (file_exists($image_path) && is_file($image_path)) {
+             unlink($image_path);
+         }
+     }
   
       mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed');
   }
