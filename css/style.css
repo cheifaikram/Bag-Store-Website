@@ -1303,7 +1303,7 @@ textarea.contact-box {
 
 
 /* ++++++++++++++++++++++++++++++++++++++++SEARCH++++++++++++++++++++++++++++++++++++++++++ */
-.search-form {
+/* .search-form {
   text-align: center;
   margin: 20px;
 }
@@ -1323,7 +1323,7 @@ textarea.contact-box {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+} */
 
 .search-products {
   padding-top: 0;
@@ -1377,6 +1377,57 @@ textarea.contact-box {
 
 
 
+.search-form {
+  text-align: center;
+  background-color: #000;
+  margin: 2rem 0;
+}
+
+.search-box {
+  width: 50%; /* Set the width of the search box */
+  height: 40px; /* Set the height of the search box */
+  font-size: 16px;
+  border: 1.5px solid var(--bg-color-third);
+  border-radius: 5px;
+  padding: 8px; /* Add some padding inside the search box for better appearance */
+}
+
+.search-btn {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: var(--bg-color-third);
+  color: var(--hover-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .search-box {
+    width: 60%; 
+  }
+
+ }
+
+ @media screen and (max-width: 768) {
+  .search-box {
+    width: 60%; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-box {
+    width: 60%; 
+  }
+}
+
+@media screen and (max-width: 260px){
+  .search-box {
+    width: 40%;
+  }
+}
 
 
 
