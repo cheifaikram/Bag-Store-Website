@@ -3,13 +3,8 @@ include 'config.php';
 session_start();
 $message = array(); 
 
-if (isset($_SESSION['user_id'])) {
-  $user_id = $_SESSION['user_id'];
-
-  echo "Welcome, User!";
-} else {
-  echo "Welcome, Anonymous User!"; 
-}
+$logged_in = isset($_SESSION['user_id']);
+$user_id = $logged_in ? $_SESSION['user_id'] : null;
 
 if (isset($_POST['update_cart'])) {
   $cart_id = $_POST['cart_id'];

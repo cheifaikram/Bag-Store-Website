@@ -2,12 +2,8 @@
 include 'config.php';
 session_start();
 
-if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
-    
-} else {
-  echo "Welcome, Anonymous User!";
-}
+$logged_in = isset($_SESSION['user_id']);
+$user_id = $logged_in ? $_SESSION['user_id'] : null;
 ?>
 
 <!DOCTYPE html>

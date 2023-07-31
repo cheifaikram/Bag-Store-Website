@@ -53,15 +53,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <span class="circle"></span>
                     </a>
                 </li>
+                <?php if ($logged_in): ?>
                 <li class="list <?php echo ($current_page == 'order.php') ? 'active' : ''; ?>">
                     <a href="order.php">
-                        <span class="icon">
-                           <i class="ri-shopping-cart-2-line"></i>
-                        </span>
-                        <span class="text">Orders</span>
-                        <span class="circle"></span>
+                    <span class="icon">
+                        <i class="ri-shopping-cart-2-line"></i>
+                    </span>
+                    <span class="text">Orders</span>
+                    <span class="circle"></span>
                     </a>
                 </li>
+               <?php endif; ?>
                 <li class="list <?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>">
                     <a href="contact.php">
                         <span class="icon">
