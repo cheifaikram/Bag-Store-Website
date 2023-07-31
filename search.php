@@ -74,7 +74,11 @@ if (isset($_POST['add_to_cart'])) {
                <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
                <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
                <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
-               <input type="submit" class="add-to-cart-btn" value="Add to Cart" name="add_to_cart">
+               <?php if ($logged_in) : ?>
+                  <input type="submit" class="add-to-cart-btn" value="Add to Cart" name="add_to_cart">
+               <?php else : ?>
+                  <button type="button" disabled class="add-to-cart-btn">Add to Cart (Login Required)</button>
+               <?php endif; ?>
             </form>
    <?php
          }

@@ -102,7 +102,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <div class="logo-icons">
                     <i class="ri-sun-line user-sun"></i>
                     <i class="ri-moon-line user-moon"></i>
-                    <i class="ri-search-2-line"></i>
+                    <a href="search.php"> <i class="ri-search-2-line"></i> </a>
                 </div>
                 <?php
             }
