@@ -8,20 +8,6 @@ if (isset($_SESSION['user_id'])) {
 } else {
   echo "Welcome, Anonymous User!";
 }
-
-function generateAnonymousID() {
-  // Generate a random string for anonymous ID
-  $length = 10; // Length of the generated ID
-  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  $randomString = '';
-  
-  for ($i = 0; $i < $length; $i++) {
-    $randomString .= $characters[rand(0, strlen($characters) - 1)];
-  }
-  
-  return $randomString;
-}
-
 ?>
 
 <!DOCTYPE html>
