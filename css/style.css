@@ -1506,13 +1506,14 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
     background: linear-gradient(45deg, #2196f3, #e91e63);
     z-index: -1000;
   }
+
+  .testimonial-section{
+    margin: 5rem 0;
+    background-color: #006FFF;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-  body {
-    background-color: red;
-  }
-
   .navigation {
     width: 80%;
   }
@@ -1610,10 +1611,6 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    background-color: blue;
-  }
-
   .navigation {
     width: 80%;
   }
@@ -1767,10 +1764,6 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
 }
 
 @media screen and (max-width: 480px){
-    body {
-      background-color: yellow;
-    }
-
     .log-reg-btn {
       padding: 5px 10px;
     }
@@ -1944,10 +1937,6 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
 }
 
 @media screen and (max-width: 260px) {
-    body {
-      background-color: purple;
-    }
-
     .log-reg-btn {
       padding: 3px 6px;
       font-size: 12px;
