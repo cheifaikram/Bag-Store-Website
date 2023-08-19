@@ -1508,9 +1508,14 @@ screen and (max-width: 480px),screen and (max-width: 260px) {
   }
 
   .testimonial-section{
-    margin: 5rem 0;
-    background-color: #006FFF;
+    margin-bottom: 10rem;
   }
+
+  .testimonial-section .container{
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+  }
+
 }
 
 @media screen and (max-width: 1024px) {

@@ -188,8 +188,8 @@ $user_id = $logged_in ? $_SESSION['user_id'] : null;
 
       <section class="con">
         <div class="testimonial mySwiper">
-        <div class="testi-content swiper-wrapper">
-          <div class="slide swiper-slide">
+          <div class="testi-content swiper-wrapper">
+            <div class="slide swiper-slide">
             <img src="images/user1.jpg" alt="" class="image" />
             <p>
             "I recently purchased a stunning luxury bag from your website, and I am absolutely 
@@ -203,8 +203,8 @@ $user_id = $logged_in ? $_SESSION['user_id'] : null;
             <div class="details">
               <span class="name"> Sarah W</span>
             </div>
-          </div>
-          <div class="slide swiper-slide">
+            </div>
+            <div class="slide swiper-slide">
             <img src="images/user2.jpg" alt="" class="image" />
             <p>
             "I've been a fashion enthusiast for years, and I must say that the luxury bag I 
@@ -219,31 +219,30 @@ $user_id = $logged_in ? $_SESSION['user_id'] : null;
             <div class="details">
               <span class="name">Michael R</span>
             </div>
-          </div>
-          <div class="slide swiper-slide">
-            <img src="images/user3.jpg" alt="" class="image" />
-            <p>
-            "I'm not usually one to write testimonials, but I couldn't resist sharing my wonderful 
-            experience with your luxury bag. The entire process, from browsing the website to 
-            receiving the package, was seamless and enjoyable. The bag itself is a dream come 
-            true – the perfect combination of style and functionality. I appreciate the commitment
-             to quality and the excellent customer service. Your brand has earned a loyal customer
+            </div>
+            <div class="slide swiper-slide">
+             <img src="images/user3.jpg" alt="" class="image" />
+             <p>
+             "I'm not usually one to write testimonials, but I couldn't resist sharing my wonderful 
+             experience with your luxury bag. The entire process, from browsing the website to 
+             receiving the package, was seamless and enjoyable. The bag itself is a dream come 
+             true – the perfect combination of style and functionality. I appreciate the commitment
+              to quality and the excellent customer service. Your brand has earned a loyal customer
               in me!" 
-            </p>
+             </p>
 
-            <i class="bx bxs-quote-alt-left quote-icon"></i>
+             <i class="bx bxs-quote-alt-left quote-icon"></i>
 
-            <div class="details">
-              <span class="name"> Emma S </span>
+             <div class="details">
+               <span class="name"> Emma S </span>
+             </div>
             </div>
           </div>
+          <div class="swiper-button-next nav-btn"></div>
+          <div class="swiper-button-prev nav-btn"></div>
+          <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-button-next nav-btn"></div>
-        <div class="swiper-button-prev nav-btn"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </section> 
-
+      </section> 
     </section>
     
 
