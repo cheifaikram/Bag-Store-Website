@@ -181,7 +181,7 @@ $user_id = $logged_in ? $_SESSION['user_id'] : null;
       </div>
     </section>
 
-    <section class="testimonial-section">
+    <!-- <section class="testimonial-section">
       <div class="container">
         <h2 class="history-title">Customer Experience</h2>
       </div> 
@@ -243,14 +243,14 @@ $user_id = $logged_in ? $_SESSION['user_id'] : null;
           <div class="swiper-pagination"></div>
         </div>
       </section> 
-    </section>
+    </section> -->
     
 
     <?php include 'footer.php'; ?>
 
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/user_script.js"></script>
-    <script>
+    <!-- <script>
       const timeline = document.querySelector('.timeline');
       timeline.addEventListener('click', function(event) {
         if (event.target.classList.contains('timeline-title')) {
@@ -272,7 +272,7 @@ $user_id = $logged_in ? $_SESSION['user_id'] : null;
           prevEl: ".swiper-button-prev",
         },
       });
-    </script>
+    </script> -->
 
   </body>
 </html>

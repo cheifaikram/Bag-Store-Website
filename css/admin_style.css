@@ -754,9 +754,6 @@ select{
 }
 
 @media screen and (max-width:775px){
-   body{
-      background-color: blue;
-   }
    .menu{
       display: block;
    }
@@ -855,4 +852,3 @@ select{
       text-align: center;
    }
 }
-
