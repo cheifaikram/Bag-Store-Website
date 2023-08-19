@@ -137,25 +137,25 @@ if (isset($_POST['update_product'])) {
 
       <div class="shop--container">
          <section class="add-products">
-               <h1 class="title">Shop Products</h1>
-               <form action="" method="post" enctype="multipart/form-data">
-                  <h3>Add Product</h3>
-                  <div>
-                     <label for="name">Product Name:</label>
-                     <input type="text" name="name" id="name" class="box input" placeholder="Enter product name" required>
-                  </div>
-                  <div>
-                     <label for="price">Product Price:</label>
-                     <input type="number" min="0" name="price" id="price" class="box input" placeholder="Enter product price" required>
-                  </div>
-                  <div>
-                     <label for="image">Product Image:</label>
-                     <input type="file" name="image" id="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
-                  </div>
-                  <div>
-                     <input type="submit" value="Add Product" name="add_product" class="btn">
-                  </div>
-               </form>
+            <h1 class="title">Shop Products</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+               <h3>Add Product</h3>
+               <div>
+                  <label for="name">Product Name:</label>
+                  <input type="text" name="name" id="name" class="box input" placeholder="Enter product name" required>
+               </div>
+               <div>
+                  <label for="price">Product Price:</label>
+                  <input type="number" min="0" name="price" id="price" class="box input" placeholder="Enter product price" required>
+               </div>
+               <div>
+                  <label for="image">Product Image:</label>
+                  <input type="file" name="image" id="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
+               </div>
+               <div>
+                  <input type="submit" value="Add Product" name="add_product" class="btn">
+               </div>
+            </form>
          </section>
 
          <section class="show-products">
