@@ -61,27 +61,30 @@ if (isset($_POST['add_product'])) {
                 </script>";
        }
     }
- }
- //delete
-   if (isset($_GET['delete'])) {
-      $delete_id = $_GET['delete'];
-  
-      $delete_image_query = mysqli_query($conn, "SELECT image FROM `products` WHERE id = '$delete_id'") or die('query failed');
-      $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
-      $image_name = $fetch_delete_image['image'];
-      
-      if ($image_name) {
-         $image_path = 'uploaded_img/' . $image_name;
- 
-         if (file_exists($image_path) && is_file($image_path)) {
-             unlink($image_path);
-         }
-     }
-  
-      mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed');
-  }
-  
+}
 
+// delete
+ if (isset($_GET['delete'])) {
+   $delete_id = $_GET['delete'];
+
+   $delete_image_query = mysqli_query($conn, "SELECT image FROM `products` WHERE id = '$delete_id'") or die('query failed');
+   $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
+
+   // Check if $fetch_delete_image is not null and contains the 'image' key
+   if ($fetch_delete_image !== null && array_key_exists('image', $fetch_delete_image)) {
+       $image_name = $fetch_delete_image['image'];
+
+       if ($image_name) {
+           $image_path = 'uploaded_img/' . $image_name;
+
+           if (file_exists($image_path) && is_file($image_path)) {
+               unlink($image_path);
+           }
+       }
+   }
+
+   mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed');
+}
 
 //UPDATE A PRODUCT
 if (isset($_POST['update_product'])) {
@@ -301,5 +304,6 @@ if (isset($_POST['update_product'])) {
   </script>
 
    <script src="../js/admin_script.js" defer></script> 
+
 </body>
 </html>
