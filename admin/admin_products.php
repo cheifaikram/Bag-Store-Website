@@ -10,58 +10,39 @@ if(!isset($admin_id)){
 
 //ADD A PRODUCT 
 if (isset($_POST['add_product'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $price = $_POST['price'];
-    $image = $_FILES['image']['name'];
-    $image_size = $_FILES['image']['size'];
-    $image_tmp_name = $_FILES['image']['tmp_name'];
-    $image_folder = 'uploaded_img/' . $image;
- 
-    $select_product_query = "SELECT name FROM products WHERE name = '$name'";
-    $result_product = mysqli_query($conn, $select_product_query);
- 
-    if (mysqli_num_rows($result_product) > 0) {
-       echo "<script>
-                Swal.fire({
-                   icon: 'error',
-                   title: 'Product Name Error',
-                   text: 'Product name already added',
-                });
-             </script>";
-    } else {
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $price = $_POST['price'];
+   $image = $_FILES['image']['name'];
+   $image_size = $_FILES['image']['size'];
+   $image_tmp_name = $_FILES['image']['tmp_name'];
+   $image_folder = 'uploaded_img/' . $image;
+
+   $select_product_query = "SELECT name FROM products WHERE name = '$name'";
+   $result_product = mysqli_query($conn, $select_product_query);
+
+   if (mysqli_num_rows($result_product) > 0) {
+       $alertType = 'error';
+       $message = 'Product name already added';
+   } else {
        $insert_product_query = "INSERT INTO products (name, price, image) VALUES ('$name', '$price', '$image')";
        $result_insert = mysqli_query($conn, $insert_product_query);
- 
+
        if ($result_insert) {
-          if ($image_size > 2000000) {
-             echo "<script>
-                      Swal.fire({
-                         icon: 'error',
-                         title: 'Image Size Error',
-                         text: 'Image size is too large',
-                      });
-                   </script>";
-          } else {
-             move_uploaded_file($image_tmp_name, $image_folder);
-             echo "<script>
-                      Swal.fire({
-                         icon: 'success',
-                         title: 'Product Added',
-                         text: 'Product added successfully!',
-                      });
-                   </script>";
-          }
+           if ($image_size > 2000000) {
+               $alertType = 'success';
+               $message = 'Although the image size is too large';
+           } else {
+               move_uploaded_file($image_tmp_name, $image_folder);
+               $alertType = 'success';
+               $message = 'Product added successfully!';
+           }
        } else {
-          echo "<script>
-                   Swal.fire({
-                      icon: 'error',
-                      title: 'Product Error',
-                      text: 'Product could not be added!',
-                   });
-                </script>";
+           $alertType = 'error';
+           $message = 'Product could not be added!';
        }
-    }
+   }
 }
+
 
 // delete
  if (isset($_GET['delete'])) {
@@ -118,8 +99,6 @@ if (isset($_POST['update_product'])) {
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -130,9 +109,9 @@ if (isset($_POST['update_product'])) {
    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
 </head>
 <body class="body">
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
    <?php include 'admin_head.php'; ?>
    <section class="main">
 
@@ -162,97 +141,81 @@ if (isset($_POST['update_product'])) {
          </section>
 
          <section class="show-products">
-               <div class="box-container">
-                  <?php $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
-                  if(mysqli_num_rows($select_products) > 0){
-                     while($fetch_products = mysqli_fetch_assoc($select_products)){
-                        $image_path = "uploaded_img/" . $fetch_products['image'];
-                        $product_name = $fetch_products['name'];
-                        $product_price = $fetch_products['price'];
-                        $product_id = $fetch_products['id']; ?>
-                        <div class="box">
-                          <div class="image-container">
-                              <img src="<?php echo $image_path; ?>" alt="">
-                           </div>
-                           <div class="details">
-                              <div class="name"><?php echo $product_name; ?></div>
-                              <div class="price">$<?php echo $product_price; ?>/-</div>
-                              <div class="buttons">
-                                 <a href="admin_products.php?update=<?php echo $product_id; ?>" class="option-btn">Update</a>
-                                 <a href="#" class="delete-btn" data-product-id="<?php echo $product_id; ?>">Delete</a>
-                              </div>
-                           </div>
-                        </div>
+          <div class="box-container">
+            <?php
+              $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+              if (mysqli_num_rows($select_products) > 0) {
+                 while ($fetch_products = mysqli_fetch_assoc($select_products)) {
+                   $image_path = "uploaded_img/" . $fetch_products['image'];
+                   $product_name = $fetch_products['name'];
+                   $product_price = $fetch_products['price'];
+                   $product_id = $fetch_products['id'];
+            ?>     <div class="box">
+                      <div class="image-container">
+                      <img src="<?php echo $image_path; ?>" alt="">
+                   </div>
+                   <div class="details">
+                      <div class="name"><?php echo $product_name; ?></div>
+                      <div class="price">$<?php echo $product_price; ?>/-</div>
+                      <div class="buttons">
+                         <a href="admin_products.php?update=<?php echo $product_id; ?>" class="option-btn">Update</a>
+                         <a href="#" class="delete-btn" data-product-id="<?php echo $product_id; ?>">Delete</a>
+                      </div>
+                   </div>
+                  </div>
 
-                        <script>
-                           document.querySelectorAll('.delete-btn').forEach(function(btn) {
-                           btn.addEventListener('click', function(e) {
-                              e.preventDefault();
-                              var productId = this.getAttribute('data-product-id');
-                              confirmDelete(productId);
-                           });});
+        <?php
+            }
+        } else {
+            echo '<p class="empty">no products added yet!</p>';
+        }
+        ?>
+    </div>
+</section>
 
-                           function confirmDelete(productId) {
-                           Swal.fire({
-                              title: 'Delete Product',
-                              text: 'Are you sure you want to delete this product?',
-                              icon: 'warning',
-                              showCancelButton: true,
-                              confirmButtonText: 'Yes, delete it!',
-                              cancelButtonText: 'Cancel',
-                           }).then(function(result) {
-                              if (result.isConfirmed) {
-                                 window.location.href = 'admin_products.php?delete=' + productId;
-                              }
-                           });}
-                        </script>
-                        <script>
-                          document.querySelectorAll('.delete-btn').forEach(function(btn) {
-                           btn.addEventListener('click', function(e) {
-                              e.preventDefault();
-                              var productId = this.getAttribute('data-product-id');
-                              confirmDelete(productId);
-                           });});
-                           function confirmDelete(productId) {
-                              Swal.fire({
-                                 title: 'Delete Product',
-                                 text: 'Are you sure you want to delete this product?',
-                                 icon: 'warning',
-                                 showCancelButton: true,
-                                 confirmButtonText: 'Yes, delete it!',
-                                 cancelButtonText: 'Cancel',
-                              }).then(function(result) {
-                                 if (result.isConfirmed) {
-                                    window.location.href = 'admin_products.php?delete=' + productId;
-                                 }
-                              });
-                           }
-                        </script>
-                        <?php
-                        }
-                     } else {
-                        echo '<p class="empty">no products added yet!</p>';
-                     }
-                     ?>
-               </div>
-         </section>
+<script>
+    document.querySelectorAll('.delete-btn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            var productId = this.getAttribute('data-product-id');
+            confirmDelete(productId);
+        });
+    });
+
+    function confirmDelete(productId) {
+        Swal.fire({
+            title: 'Delete Product',
+            text: 'Are you sure you want to delete this product?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'Cancel',
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                window.location.href = 'admin_products.php?delete=' + productId;
+            }
+        });
+    }
+</script>
+
       </div>
    </section>
 
    <section class="edit">
-   <section class="edit-product-form">
+    <section class="edit-product-form">
       <?php
       if (isset($_GET['update'])) {
          $update_id = $_GET['update'];
          $update_query = mysqli_query($conn, "SELECT * FROM `products` WHERE id = '$update_id'") or die('query failed');
          if (mysqli_num_rows($update_query) > 0) {
-            while ($fetch_update = mysqli_fetch_assoc($update_query)) { 
+            while ($fetch_update = mysqli_fetch_assoc($update_query)) {
+               $image_path = "uploaded_img/" . $fetch_update['image']; // Define the image path here
                ?>
                <form action="" method="post" enctype="multipart/form-data" class="edit-form">
                   <h2> Update Product</h2>
                   <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id']; ?>">
                   <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
-                  <img src="<?php echo $image_path; ?>" alt="">
+                  <img src="<?php echo $image_path; ?>" alt=""> <!-- Use the correct image path here -->
                   <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box input" required placeholder="enter product name">
                   <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box input" required placeholder="enter product price">
                   <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">
@@ -265,34 +228,12 @@ if (isset($_POST['update_product'])) {
             }
          }
       } else {
-      echo '<script>document.querySelector(".edit-product-form").style.display = "none";</script>'; }?>
-      <script>
-   <?php if (isset($_POST['update_product'])) : ?>
-   var alertType = "<?php echo $alertType; ?>";
-   var message = "<?php echo $message; ?>";
-   Swal.fire({
-      icon: alertType,
-      title: alertType.charAt(0).toUpperCase() + alertType.slice(1),
-      text: message,
-      didOpen: function() {
-         var form = document.querySelector(".edit-product-form");
-         form.style.display = "none"; // Hide the form immediately
-         var overlay = document.querySelector(".edit-page-overlay");
-         overlay.classList.add("active"); // Show the overlay
-      },
-      willClose: function() {
-         var overlay = document.querySelector(".edit-page-overlay");
-         overlay.classList.remove("active"); // Hide the overlay when the alert is closed
-      }
-   }).then(function(result) {
-      if (result.isConfirmed && alertType === 'success') {
-         window.location.href = "admin_products.php";
-      }
-   });
-   <?php endif; ?>
-</script>
+      echo '<script>document.querySelector(".edit-product-form").style.display = "none";</script>';
+      }?>
 
    </section>
+</section>
+
    <div class="edit-page-overlay"></div>
    </section>
 
@@ -303,7 +244,49 @@ if (isset($_POST['update_product'])) {
       window.location.href = 'admin_products.php';});
   </script>
 
-   <script src="../js/admin_script.js" defer></script> 
+   <script src="../js/admin_script.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+<script>
+    <?php if (isset($_POST['add_product'])) : ?>
+    var alertType = "<?php echo $alertType; ?>";
+    var message = "<?php echo $message; ?>";
+    Swal.fire({
+        icon: alertType,
+        title: alertType.charAt(0).toUpperCase() + alertType.slice(1),
+        text: message,
+    }).then(function(result) {
+        if (result.isConfirmed && alertType === 'success') {
+            window.location.href = "admin_products.php";
+        }
+    });
+<?php endif; ?>
+
+    <?php if (isset($_POST['update_product'])) : ?>
+    var alertType = "<?php echo $alertType; ?>";
+    var message = "<?php echo $message; ?>";
+    Swal.fire({
+        icon: alertType,
+        title: alertType.charAt(0).toUpperCase() + alertType.slice(1),
+        text: message,
+    }).then(function(result) {
+        if (result.isConfirmed && alertType === 'success') {
+            window.location.href = "admin_products.php";
+        } else {
+            // If not confirmed or not a success alert, simply hide the form and overlay
+            var form = document.querySelector(".edit-product-form");
+            form.style.display = "none";
+            var overlay = document.querySelector(".edit-page-overlay");
+            overlay.classList.remove("active");
+        }
+    });
+    <?php endif; ?>
+</script>
+
+</body>
+</html>
+
+   
+   
 
 </body>
 </html>

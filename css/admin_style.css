@@ -412,6 +412,7 @@ select{
    overflow-y: scroll;
    background-color: var(--bg-color-second);
    
+   background-color: red;
 }
 
 
